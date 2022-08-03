@@ -1,0 +1,43 @@
+#!/usr/bin/env sh
+
+alias yc='yabai -m config'
+alias yr='yabai -m rule --add'
+alias ys='yabai -m signal --add'
+
+sudo yabai --load-sa
+ys event=dock_did_restart action="sudo yabai --load-sa"
+
+yc layout bsp
+yc mouse_follows_focus on
+yc focus_follows_mouse autoraise
+yc window_border off
+yc window_placement second_child
+yc window_topmost off
+yc window_opacity off
+yc window_shadow float
+yc split_ratio 0.50
+yc auto_balance off
+yc mouse_modifier fn
+yc mouse_action1 move
+yc mouse_action2 resize
+
+yr app="^System Preferences$" manage=off
+yr app="System Information" manage=off
+yr app="Digital Color Meter" manage=off sticky=on
+yr app="Preview" manage=off
+yr app="IINA" manage=off
+yr app="Calculator" manage=off
+yr app="coconutBattery" manage=off
+yr app="Keka" manage=off
+yr app="Installer" manage=off
+yr app="Archive Utility" manage=off
+
+gap=4
+yc external_bar all:23:0
+yc top_padding $gap
+yc bottom_padding $gap
+yc left_padding $gap
+yc right_padding $gap
+yc window_gap $gap
+
+echo "yabai configuration loaded.."

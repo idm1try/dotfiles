@@ -1,0 +1,185 @@
+#!/usr/bin/env bash
+
+BG=0xff3B4252
+FG=0xff949fb5
+
+PLUGINS="$HOME/.config/sketchybar/plugins"
+
+sketchybar --bar \
+	position=top \
+	height=30 \
+	margin=4 \
+	y_offset=-35 \
+	corner_radius=10 \
+	border_width=0 \
+	border_color=$BG \
+	blur_radius=0 \
+	padding_left=16 \
+	padding_right=16 \
+	color=$BG \
+	display=all \
+	hidden=off \
+	topmost=off \
+	font_smoothing=off \
+	shadow=off \
+	sticky=on
+
+sketchybar --default \
+	updates=when_shown \
+	drawing=on \
+	cache_scripts=on
+
+sketchybar --default \
+	label.font="Cascadia Code:Bold:11.0" \
+	label.color=$FG \
+	label.highlight_color=$FG \
+	label.padding_left=2 \
+	label.padding_right=2 \
+	label.y_offset=-3
+
+sketchybar --default \
+	icon.font="Liga SFMono Nerd Font:Bold:11.0"
+
+sketchybar --default \
+	background.height=32 \
+	background.border_color=$BG \
+	background.border_width=0 \
+	background.corner_radius=0 \
+	background.color=$BG \
+	background.drawing=off
+
+sketchybar --default \
+	icon.padding_left=2 \
+	icon.padding_right=2 \
+	icon.y_offset=-3 \
+	icon.color=$FG \
+	--add space one left \
+	--set one associated_display=1 \
+	associated_space=1 \
+	icon=1 \
+	icon.highlight_color=0xff88c0d0 \
+	click_script="yabai -m space --focus 1" \
+	icon.font="Cascadia Code:Bold:11.0" \
+	--add space two left \
+	--set two associated_display=1 \
+	associated_space=2 \
+	icon=2 \
+	icon.highlight_color=0xff88c0d0 \
+	click_script="yabai -m space --focus 2" \
+	icon.font="Cascadia Code:Bold:11.0" \
+	--add space three left \
+	--set three associated_display=1 \
+	associated_space=3 \
+	icon=3 \
+	icon.highlight_color=0xff88c0d0 \
+	click_script="yabai -m space --focus 3" \
+	icon.font="Cascadia Code:Bold:11.0" \
+	--add space four left \
+	--set four associated_display=1 \
+	associated_space=4 \
+	icon=4 \
+	icon.highlight_color=0xff88c0d0 \
+	click_script="yabai -m space --focus 4" \
+	icon.font="Cascadia Code:Bold:11.0" \
+	--add space five left \
+	--set five associated_display=1 \
+	associated_space=5 \
+	icon=5 \
+	icon.highlight_color=0xff88c0d0 \
+	click_script="yabai -m space --focus 5" \
+	icon.font="Cascadia Code:Bold:11.0" \
+	--add space six left \
+	--set six associated_display=1 \
+	associated_space=6 \
+	icon=6 \
+	icon.highlight_color=0xff88c0d0 \
+	click_script="yabai -m space --focus 6" \
+	icon.font="Cascadia Code:Bold:11.0" \
+	--add space seven left \
+	--set seven associated_display=1 \
+	associated_space=7 \
+	icon=7 \
+	icon.highlight_color=0xff88c0d0 \
+	click_script="yabai -m space --focus 7" \
+	icon.font="Cascadia Code:Bold:11.0" \
+	--add space eight left \
+	--set eight associated_display=1 \
+	associated_space=8 \
+	icon=8 \
+	icon.highlight_color=0xff88c0d0 \
+	click_script="yabai -m space --focus 8" \
+	icon.font="Cascadia Code:Bold:11.0" \
+	--add item title left \
+	--set title \
+	script="$PLUGINS/title.sh" \
+	update_freq=1 \
+	--subscribe \
+	title window_focus front_app_switched space_change title_change
+
+sketchybar --default \
+	label.padding_left=0 \
+	label.padding_right=0 \
+	icon.padding_left=15 \
+	icon.padding_right=6 \
+	icon.y_offset=-3 \
+	--add item date right \
+	--set date \
+	update_freq=1 \
+	script="$PLUGINS/date.sh" \
+	icon= \
+	icon.y_offset=-3 \
+	icon.color=0xffb48ead \
+	--add item battery right \
+	--set battery \
+	update_freq=5 \
+	script="$PLUGINS/power.sh" \
+	icon= \
+	icon.color=0xffbf616a \
+	--add item sound right \
+	--set sound \
+	update_freq=5 \
+	icon.color=0xff5e81ac \
+	script="$PLUGINS/sound.sh" \
+	--add item brightness right \
+	--set brightness \
+	icon= \
+	update_freq=5 \
+	icon.color=0xffebcb8b \
+	script="$PLUGINS/brightness.sh" \
+	--add item wifi right \
+	--set wifi \
+	update_freq=5 \
+	script="$PLUGINS/wifi.sh" \
+	icon= \
+	icon.color=0xff8FBCBB \
+	--add item cpu right \
+	--set cpu \
+	update_freq=5 \
+	script="$PLUGINS/cpu.sh" \
+	icon= \
+	icon.color=0xff88c0d0 \
+	--add item ram right \
+	--set ram \
+	update_freq=5 \
+	script="$PLUGINS/ram.sh" \
+	icon= \
+	icon.color=0xff81A1C1 \
+	--add item weather right \
+	--set weather \
+	update_freq=1800 \
+	icon.color=0xffebcb8b \
+	script="$PLUGINS/weather.sh" \
+	--add item input right \
+	--set input \
+	script="$PLUGINS/input.sh"
+
+sketchybar --add event input_change 'AppleSelectedInputSourcesChangedNotification' \
+	--add item input \
+	--set input script="$PLUGINS/input.sh" \
+	--subscribe input input_change
+
+sketchybar --animate tanh 30 --bar y_offset=-7
+
+sketchybar --update
+
+echo "sketchybar configuration loaded.."

@@ -1,0 +1,5 @@
+# vim:ft=conf
+--theme="base16"
+-pp
+--italic-text=always
+--pager 'less -rf'

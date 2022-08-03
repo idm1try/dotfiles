@@ -1,0 +1,9 @@
+bold = true
+color_mode = "ansi"
+palette = "default"
+delay_ms = 20
+inherit_style = false
+kinds = ["heavy"] # heavy, light, curved, knobby, emoji, outline, dots, blocks
+num_pipes = 8
+reset_threshold = 0.9
+turn_chance = 0.15

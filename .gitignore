@@ -1,0 +1,7 @@
+.DS_Store
+.config/nvim/plugin
+.config/zsh/.zcompdump
+.config/zsh/.zsh_sessions
+.config/zsh/.zcompcache
+.config/kitty/kitty.conf-e
+.config/karabiner/automatic_backups

@@ -1,0 +1,69 @@
+add_newline = true
+
+[character]
+success_symbol = "[▎](bold green)"
+error_symbol = "[▎](bold red)"
+
+[package]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[python]
+symbol = " "
+
+[lua]
+symbol= " "
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch(:$remote_branch)]($style) "
+
+[cmake]
+symbol = "卑 "
+
+[golang]
+symbol = "ﳑ "
+
+[aws]
+symbol = "  "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[java]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[hostname]
+ssh_symbol = " "

@@ -1,0 +1,128 @@
+# vim:ft=conf
+set previewer ~/.config/lf/preview
+set cleaner ~/.config/lf/cleaner
+set icons true
+set info "size"
+set hidden
+
+cmd open ${{
+	case $(file -b --mime-type "$f") in
+		video/* | image/gif)
+			iina "$f"
+			;;
+		image/*)
+			open -a Preview.app "$f"
+			;;
+		application/pdf)
+			open -a Preview.app "$f"
+			;;
+		*)
+			$EDITOR "$f"
+			;;
+	esac
+}}
+
+cmd mkdir ${{
+	mkdir "$1"
+}}
+
+cmd touch ${{
+	touch "$1"
+}}
+
+cmd edit ${{
+	$EDITOR "$1"
+}}
+
+cmd mv ${{
+	mv "$f" "$1"
+}}
+
+cmd rn ${{
+	EXT=$(basename "$f" | cut -d . -f2)
+	mv "$f" "${1}.${EXT}"
+}}
+
+cmd chmod ${{
+	chmod +x "$f"
+	lf -remote 'send reload'
+}}
+
+cmd exc ${{
+	if [ -f "$f" ]; then
+		case $f in
+		*.tar.xz) tar -xvf "$f" ;;
+		*.tar.bz2) tar -jxvf "$f" ;;
+		*.tar.gz) tar -zxvf "$f" ;;
+		*.bz2) bunzip2 "$f" ;;
+		*.dmg) hdiutil mount "$f" ;;
+		*.gz) gunzip "$f" ;;
+		*.tar) tar -xvf "$f" ;;
+		*.tbz2) tar -jxvf "$f" ;;
+		*.tgz) tar -zxvf "$f" ;;
+		*.zip) unzip "$f" ;;
+		*.pax) pax -r <"$f" ;;
+		*.pax.z) uncompress "$f" --stdout | pax -r ;;
+		*.rar) 7zz x "$f" ;;
+		*.z) uncompress "$f" ;;
+		*.7z) 7zz x "$f" ;;
+		*) echo "'$f' cannot be extracted/mounted via extract()" ;;
+		esac
+	else
+		echo "exc: file does not exist"
+	fi
+}}
+
+cmd z %{{
+  lf -remote "send $id cd '$(zoxide query $@)'"
+}}
+
+cmd fzf_search ${{
+  file=$(ls -a -F | tail -n +3 | sed 's/*//g;s/@//g' | fzfp --header='Jump to location')
+  lf -remote "send $id select \"$file\""
+}}
+
+cmd git_branch ${{
+    git branch | fzf | xargs git checkout
+    pwd_shell=$(pwd)
+    lf -remote "send $id updir"
+    lf -remote "send $id cd \"$pwd_shell\""
+}}
+map gb :git_branch
+map gp ${{clear; git pull --rebase || true; read ENTER}}
+map gs ${{clear; git status; read ENTER}}
+map gl ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit; read ENTER}}
+
+cmd on-cd &{{
+    source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+    GIT_PS1_SHOWDIRTYSTATE=auto
+    GIT_PS1_SHOWSTASHSTATE=auto
+    GIT_PS1_SHOWUNTRACKEDFILES=auto
+    GIT_PS1_SHOWUPSTREAM=auto
+    GIT_PS1_COMPRESSSPARSESTATE=auto
+    git=$(__git_ps1 "  %s") || true
+    fmt="\033[32;1m%u@%h\033[0m:\033[34;1m%w\033[0m\033[33;1m$git\033[0m"
+    lf -remote "send $id set promptfmt \"$fmt\""
+}}
+
+map m
+map r
+
+map C clear
+map c cut
+map d delete
+map <space> toggle
+
+map F fzf_search
+map t push :touch<space>
+map md push :mkdir<space>
+map mv push :mv<space>
+map rn push :rn<space>
+map z push :z<space>
+map x $chmod +x "$f" && lf -remote "send $id reload"
+map X $chmod -x "$f" && lf -remote "send $id reload"
+map U exc
+map o open "$f"
+map W &osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$f\""
+map K page-up
+map J page-down
