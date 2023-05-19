@@ -1,0 +1,26 @@
+return {
+  "lukas-reineke/indent-blankline.nvim",
+  event = { "BufReadPost", "BufNewFile" },
+  opts = {
+    char = "▏",
+    context_char = "▏",
+    space_char_blankline = " ",
+    use_treesitter = true,
+    show_current_context = true,
+    show_current_context_start = false,
+    show_trailing_blankline_indent = false,
+    filetype_exclude = {
+      "NvimTree",
+      "TelescopePrompt",
+      "dashboard",
+      "fugitive",
+      "git",
+      "gitcommit",
+      "help",
+      "lazy",
+      "markdown",
+      "txt",
+    },
+    buftype_exclude = { "help", "terminal", "nofile" },
+  },
+}
