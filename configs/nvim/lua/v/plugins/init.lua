@@ -24,18 +24,14 @@ require("lazy").setup({
   { import = "v.plugins.lspconfig" },
   { import = "v.plugins.noice" },
   { import = "v.plugins.nvimtree" },
-  { import = "v.plugins.plenary" },
   { import = "v.plugins.smart-splits" },
   { import = "v.plugins.surround" },
   { import = "v.plugins.telescope" },
   { import = "v.plugins.treesitter" },
   { import = "v.plugins.treesj" },
-  { import = "v.plugins.trouble" },
   { import = "v.plugins.which_key" },
-  { import = "v.plugins.ssr" },
   { import = "v.plugins.spectre" },
   { import = "v.plugins.hop" },
-  { import = "v.plugins.dressing" },
 }, {
   defaults = {
     lazy = true,
