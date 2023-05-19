@@ -8,7 +8,6 @@
     ./desktop/gtk.nix
     ./desktop/dunst.nix
     ./desktop/sway.nix
-    ./desktop/rofi
   ];
   home.stateVersion = "21.11";
   home.packages = with pkgs;

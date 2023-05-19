@@ -78,14 +78,14 @@ lib.mkIf pkgs.stdenv.isLinux {
             "exec 'swaymsg move container to workspace ${toString i}'";
         }) (lib.range 0 9));
       in tagBinds // {
-        "${mod}+Return" = "exec ${pkgs.wezterm-git}/bin/wezterm";
         "${mod}+o" = "exec ${pkgs.hyprpicker}/bin/hyprpicker -a -n";
         "${mod}+p" = "exec ${pkgs.screenshot}/bin/screenshot";
         "${mod}+Shift+p" = "exec ${pkgs.fullscreenshot}/bin/fullscreenshot";
         "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
 
-        "${mod}+d" = "exec rofi -show drun";
-        "${mod}+c" = "exec rofi -show calc -modi calc";
+        "${mod}+Return" = "exec ${pkgs.wezterm-git}/bin/wezterm";
+        "${mod}+s" = "exec ${pkgs.librewolf}/bin/librewolf";
+        "${mod}+d" = "exec ${pkgs.evolution}/bin/evolution";
 
         "XF86LaunchA" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%-";
         "XF86Search" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%+";
@@ -113,7 +113,6 @@ lib.mkIf pkgs.stdenv.isLinux {
         "${mod}+Shift+j" = "move down";
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move right";
-        "${mod}+s" = "layout stacking";
         "${mod}+w" = "layout tabbed";
         "${mod}+e" = "layout toggle split";
         "${mod}+f" = "fullscreen";
