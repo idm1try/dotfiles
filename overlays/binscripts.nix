@@ -1,6 +1,6 @@
 final: prev: {
   screenshot = prev.writeShellScriptBin "screenshot" ''
-    ${prev.grim}/bin/grim -g "$(${prev.slurp}/bin/slurp)" - -t png | ${prev.wl-clipboard}/bin/wl-copy -t image/png && ${prev.libnotify}/bin/notify-send -a "Screenshot Captured" "Copied to clipboard"
+    ${prev.grim}/bin/grim -g "$(${prev.slurp}/bin/slurp -b '#18182577' -c '#11111b' -w 1)" - -t png | ${prev.wl-clipboard}/bin/wl-copy -t image/png && ${prev.libnotify}/bin/notify-send -a "Screenshot Captured" "Copied to clipboard"
   '';
   fullscreenshot = prev.writeShellScriptBin "fullscreenshot" ''
     ${prev.grim}/bin/grim - -t png | ${prev.wl-clipboard}/bin/wl-copy -t image/png && ${prev.libnotify}/bin/notify-send -a "Full Screen Captured" "Copied to clipboard"
