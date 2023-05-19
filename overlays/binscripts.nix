@@ -75,7 +75,7 @@ final: prev: {
     #!/bin/sh
 
     battery=$(echo "$(cat /sys/class/power_supply/macsmc-battery/capacity)%")
-    battery_status=$(echo "($(cat /sys/class/power_supply/macsmc-battery/status))")
+    battery_status=$(echo "($(cat /sys/class/power_supply/macsmc-battery/status))" | sed 's/(Discharging)//')
 
     ${prev.libnotify}/bin/notify-send -r 69 \
         -a "$(date +'%A, %d %B %H:%M')" "Battery at $battery $battery_status" \
