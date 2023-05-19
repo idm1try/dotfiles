@@ -154,7 +154,7 @@ lib.mkIf pkgs.stdenv.isLinux {
         };
       };
       output = {
-        "*".bg = "#f5c2e7 solid_color";
+        "*".bg = "#b4befe solid_color";
         "eDP-1".scale = "1";
       };
     };

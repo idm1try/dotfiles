@@ -1,9 +1,9 @@
 final: prev: {
   screenshot = prev.writeShellScriptBin "screenshot" ''
-    ${prev.grim}/bin/grim -g "$(${prev.slurp}/bin/slurp -b '#18182577' -c '#11111b' -w 1)" - -t png | ${prev.wl-clipboard}/bin/wl-copy -t image/png && ${prev.libnotify}/bin/notify-send -a "Screenshot Captured" "Copied to clipboard"
+    ${prev.grim}/bin/grim -g "$(${prev.slurp}/bin/slurp -b '#18182577' -c '#11111b' -w 1)" - -t png | ${prev.wl-clipboard}/bin/wl-copy -t image/png && ${prev.libnotify}/bin/notify-send -a "Screenshot Captured" "Copied to clipboard" -t 888
   '';
   fullscreenshot = prev.writeShellScriptBin "fullscreenshot" ''
-    ${prev.grim}/bin/grim - -t png | ${prev.wl-clipboard}/bin/wl-copy -t image/png && ${prev.libnotify}/bin/notify-send -a "Full Screen Captured" "Copied to clipboard"
+    ${prev.grim}/bin/grim - -t png | ${prev.wl-clipboard}/bin/wl-copy -t image/png && ${prev.libnotify}/bin/notify-send -a "Full Screen Captured" "Copied to clipboard" -t 888
   '';
   volume = prev.writeShellScriptBin "volume" ''
     #!/bin/sh
@@ -82,6 +82,7 @@ final: prev: {
     ${prev.libnotify}/bin/notify-send -r 69 \
         -a "$(date +'%A, %d %B %H:%M')" "Battery at $battery $battery_status" \
         -h int:value:"$battery" \
+        -t 888 \
         -u low
   '';
 }
