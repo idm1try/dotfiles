@@ -75,14 +75,13 @@ final: prev: {
     #!/bin/sh
 
     battery=$(echo "$(cat /sys/class/power_supply/macsmc-battery/capacity)%")
-    battery_status=$(echo "($(cat /sys/class/power_supply/macsmc-battery/status))" | sed 's/(Discharging)//')
+    if [ $(cat /sys/class/power_supply/macsmc-battery/status) = 'Charging' ]; then
+      battery_status='(Charging)'
+    fi
 
     ${prev.libnotify}/bin/notify-send -r 69 \
         -a "$(date +'%A, %d %B %H:%M')" "Battery at $battery $battery_status" \
         -h int:value:"$battery" \
         -u low
-  '';
-  nyxt-dev = prev.writeShellScriptBin "nyxt" ''
-    nix-shell ~/Projects/nyxt-git/build-scripts/shell.nix --run ~/Projects/nyxt-git/nyxt
   '';
 }
