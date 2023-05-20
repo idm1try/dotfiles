@@ -1,5 +1,7 @@
 # Nix(OS) dotfiles for macOS/Asahi Linux
 
+![screenshot](./screenshot.png)
+
 ## Installing on NixOS
 
 Follow [nixos-apple-silicon guide](https://github.com/tpwrules/nixos-apple-silicon/tree/main/docs/uefi-standalone.md)
