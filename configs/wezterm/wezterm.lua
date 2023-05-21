@@ -26,6 +26,20 @@ return {
 				{ family = "CartographCF Nerd Font", weight = "Black", style = "Italic" },
 			}),
 		},
+		{
+			italic = false,
+			intensity = "Half",
+			font = wezterm.font_with_fallback({
+				{ family = "CartographCF Nerd Font", weight = "Light" },
+			}),
+		},
+		{
+			italic = true,
+			intensity = "Half",
+			font = wezterm.font_with_fallback({
+				{ family = "CartographCF Nerd Font", weight = "Light", style = "Italic" },
+			}),
+		},
 	},
 	underline_thickness = "200%",
 	underline_position = "-4pt",
