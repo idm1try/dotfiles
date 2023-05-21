@@ -52,6 +52,7 @@ return {
 	line_height = 1.4,
 	window_decorations = "RESIZE",
 	window_close_confirmation = "NeverPrompt",
+	hide_mouse_cursor_when_typing = false,
 	audible_bell = "Disabled",
 	window_padding = {
 		left = 30,
