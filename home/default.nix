@@ -20,7 +20,7 @@
       wezterm-git
       wthrr
       fzf
-    ] ++ lib.optionals pkgs.stdenv.isLinux [ evolution librewolf ]);
+    ] ++ lib.optionals pkgs.stdenv.isLinux [ librewolf mpv ]);
   disabledModules = [ "targets/darwin/linkapps.nix" ];
   home.activation = lib.mkIf pkgs.stdenv.isDarwin {
     copyApplications = let

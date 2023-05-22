@@ -85,7 +85,6 @@ lib.mkIf pkgs.stdenv.isLinux {
 
         "${mod}+Return" = "exec ${pkgs.wezterm-git}/bin/wezterm";
         "${mod}+s" = "exec ${pkgs.librewolf}/bin/librewolf";
-        "${mod}+d" = "exec ${pkgs.evolution}/bin/evolution";
 
         "XF86LaunchA" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%-";
         "XF86Search" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%+";
