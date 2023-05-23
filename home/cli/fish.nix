@@ -62,9 +62,7 @@
       set -gx XDG_CACHE_HOME ~/.cache
       set -gx MANPAGER "nvim +Man!"
 
-      ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
-
-      bind -M insert \cs accept-autosuggestion
+      ${pkgs.nix-your-shell}/bin/nix-your-shell fish | source
 
       fish_vi_key_bindings
 

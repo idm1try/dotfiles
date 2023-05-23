@@ -78,14 +78,13 @@
     upower.enable = true;
     fstrim.enable = true;
     timesyncd.enable = true;
-    gnome.gnome-keyring.enable = true;
   };
 
   security.rtkit.enable = true;
 
   zramSwap.enable = true;
 
-  time.timeZone = "Asia/Yekaterinburg";
+  time.timeZone = "Europe/Moscow";
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -101,8 +100,7 @@
   users.users.idm1try = {
     isNormalUser = true;
     home = "/home/idm1try";
-    extraGroups =
-      [ "wheel" "networkmanager" "audio" "video" "render" "docker" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" "video" "render" "input" ];
     shell = pkgs.fish;
   };
 
