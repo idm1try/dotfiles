@@ -153,7 +153,7 @@ lib.mkIf pkgs.stdenv.isLinux {
         };
       };
       output = {
-        "*".bg = "~/.dotfiles/wallpapers/aesthetically_pleasing.png fill";
+        "*".bg = "#b4befe solid_color";
         "eDP-1".scale = "1";
       };
     };
