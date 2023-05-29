@@ -64,10 +64,6 @@ lib.mkIf pkgs.stdenv.isLinux {
         };
       };
       bars = lib.mkForce [ ];
-      gaps = {
-        outer = 10;
-        inner = 10;
-      };
       defaultWorkspace = "workspace 1";
       keybindings = let
         mod = "Mod4";
@@ -153,7 +149,7 @@ lib.mkIf pkgs.stdenv.isLinux {
         };
       };
       output = {
-        "*".bg = "#b4befe solid_color";
+        "*".bg = "#1e1e2e solid_color";
         "eDP-1".scale = "1";
       };
     };

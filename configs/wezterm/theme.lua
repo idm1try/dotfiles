@@ -32,7 +32,7 @@ Theme.palette = {
 }
 
 Theme.colors = {
-	split = Theme.palette.crust,
+	split = Theme.palette.base,
 	foreground = Theme.palette.text,
 	background = Theme.palette.base,
 	cursor_bg = Theme.palette.rosewater,

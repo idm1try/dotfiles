@@ -62,7 +62,7 @@ return {
 	},
 	inactive_pane_hsb = {
 		saturation = 1.0,
-		brightness = 0.85,
+		brightness = 1.0,
 	},
 	enable_scroll_bar = false,
 	tab_bar_at_bottom = true,
