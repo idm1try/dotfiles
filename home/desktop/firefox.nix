@@ -13,6 +13,7 @@
         vimium
         stylus
         i-dont-care-about-cookies
+        firefox-color
       ];
       settings = {
         "app.normandy.api_url" = "";
@@ -616,7 +617,7 @@
 
 
         /* adaptive tab width */
-        .tabbrowser-tab[selected][fadein]:not([pinned]) { max-width: var(--uc-active-tab-width) !important; }
+        .tabbrowser-tab[selected][fadein]:not([pinned]) { max-width: var(--uc-active-tab-width) !important; font-style: italic; font-weight: 900; }
         .tabbrowser-tab[fadein]:not([selected]):not([pinned]) { max-width: var(--uc-inactive-tab-width) !important; }
 
 
@@ -732,6 +733,67 @@
         #TabsToolbar .tab-icon-overlay:not([crashed])[soundplaying]:hover,
         #TabsToolbar .tab-icon-overlay:not([crashed])[muted]:hover,
         #TabsToolbar .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover { color: var(--toolbar-bgcolor) !important; }
+
+        #mainPopupSet ~ box {
+          order: 10;
+        }
+
+        #titlebar {
+          order: 10;
+        }
+
+        #urlbar {
+          top: unset !important;
+          bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2  ) !important;
+          box-shadow: none !important;
+          display: flex !important;
+          flex-direction: column !important;
+        }
+
+        #urlbar-input-container {
+          order: 2;
+        }
+
+        #urlbar > .urlbarView {
+          order: 1;
+          border-bottom: 1px solid #666;
+        }
+
+        #urlbar-results {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+
+        .search-one-offs {
+          display: none !important;
+        }
+
+        .tab-background {
+          border-top: none !important;
+        }
+
+        #navigator-toolbox::after {
+          border: none;
+        }
+
+        #TabsToolbar .tabbrowser-arrowscrollbox,
+        #tabbrowser-tabs,
+        .tab-stack {
+          min-height: 24px !important;
+        }
+
+        .tab-content {
+          padding: 0 5px;
+        }
+
+        .tab-close-button .toolbarbutton-icon {
+          width: 12px !important;
+          height: 12px !important;
+        }
+
+        toolbox[inFullscreen="true"] {
+          display: none;
+        }
       '';
     };
   };
