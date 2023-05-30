@@ -761,15 +761,11 @@
 
         #urlbar-results {
           display: flex;
-          flex-direction: column-reverse;
+          flex-direction: column;
         }
 
         .search-one-offs {
           display: none !important;
-        }
-
-        .tab-background {
-          border-top: none !important;
         }
 
         #navigator-toolbox::after {
@@ -780,15 +776,6 @@
         #tabbrowser-tabs,
         .tab-stack {
           min-height: 24px !important;
-        }
-
-        .tab-content {
-          padding: 0 5px;
-        }
-
-        .tab-close-button .toolbarbutton-icon {
-          width: 12px !important;
-          height: 12px !important;
         }
 
         toolbox[inFullscreen="true"] {
