@@ -84,7 +84,7 @@
 
   zramSwap.enable = true;
 
-  time.timeZone = "Europe/Moscow";
+  time.timeZone = "Asia/Yekaterinburg";
 
   i18n = {
     defaultLocale = "en_US.UTF-8";

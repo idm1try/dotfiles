@@ -142,6 +142,7 @@
         "browser.uiCustomization.state" = ''
           {"placements":{"widget-overflow-fixed-list":[],"unified-extensions-area":["_af37054b-3ace-46a2-ac59-709e4412bec6_-browser-action","_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action","_testpilot-containers-browser-action","jid1-bofifl9vbdl2zq_jetpack-browser-action","jid1-kkzogwgsw3ao4q_jetpack-browser-action","ublock0_raymondhill_net-browser-action","_74145f27-f039-47ce-a470-a662b129930a_-browser-action","_7a7a4a92-a2a0-41d1-9fd7-1e92480d612d_-browser-action","_b7f9d2cd-d772-4302-8c3f-eb941af36f76_-browser-action"],"nav-bar":["back-button","forward-button","urlbar-container","save-to-pocket-button","unified-extensions-button"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["firefox-view-button","tabbrowser-tabs","alltabs-button"],"PersonalToolbar":["personal-bookmarks"]},"seen":["_af37054b-3ace-46a2-ac59-709e4412bec6_-browser-action","_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action","_testpilot-containers-browser-action","jid1-bofifl9vbdl2zq_jetpack-browser-action","jid1-kkzogwgsw3ao4q_jetpack-browser-action","ublock0_raymondhill_net-browser-action","_74145f27-f039-47ce-a470-a662b129930a_-browser-action","_7a7a4a92-a2a0-41d1-9fd7-1e92480d612d_-browser-action","_b7f9d2cd-d772-4302-8c3f-eb941af36f76_-browser-action","developer-button"],"dirtyAreaCache":["unified-extensions-area","nav-bar","toolbar-menubar","TabsToolbar","PersonalToolbar"],"currentVersion":19,"newElementCount":4}'';
         "browser.search.hiddenOneOffs" = "Google,Amazon.com,Bing";
+        "toolkit.cosmeticAnimations.enabled" = false;
       };
       userChrome = ''
         /*---+---+---+---+---+---+
@@ -438,16 +439,10 @@
           --identity-icon-color: var(--uc-identity-colour-purple) !important;
         }
         :root {
-
           --toolbarbutton-border-radius: var(--uc-border-radius) !important;
           --tab-border-radius: var(--uc-border-radius) !important;
           --arrowpanel-border-radius: var(--uc-border-radius) !important;
-
         }
-
-
-
-
 
         #main-window,
         #toolbar-menubar,
@@ -456,7 +451,6 @@
         #sidebar-box,
         #nav-bar { box-shadow: none !important; }
 
-
         #main-window,
         #toolbar-menubar,
         #TabsToolbar,
@@ -464,7 +458,6 @@
         #navigator-toolbox,
         #sidebar-box,
         #nav-bar { border: none !important; }
-
 
         /* remove "padding" left and right from tabs */
         .titlebar-spacer { display: none !important; }
@@ -476,91 +469,53 @@
           > #tracking-protection-icon {
             padding-bottom: 1px;
         }
-
-
-
-
-
         #PersonalToolbar {
-
           padding: 6px !important;
           box-shadow: inset 0 0 50vh rgba(0, 0, 0, var(--uc-darken-toolbar)) !important;;
-
         }
-
-
-
-
 
         #statuspanel #statuspanel-label {
-
           border: none !important;
           border-radius: var(--uc-border-radius) !important;
-
         }
         @media (min-width: 1000px) {
-
-
           #navigator-toolbox { display: flex; flex-wrap: wrap; flex-direction: row; }
 
-
           #nav-bar {
-
             order: var(--uc-urlbar-position);
             width: var(--uc-urlbar-min-width);
-
           }
           
           #nav-bar #urlbar-container { min-width: 0px !important; width: auto !important; }
 
-
           #titlebar {
-
             order: 2;
             width: calc(100vw - var(--uc-urlbar-min-width) - 1px);
-
           }
-
 
           #PersonalToolbar {
-
             order: var(--uc-toolbar-position);
             width: 100%;
-
           }
-
-
           #navigator-toolbox:focus-within #nav-bar { width: var(--uc-urlbar-max-width); }
           #navigator-toolbox:focus-within #titlebar { width: calc(100vw - var(--uc-urlbar-max-width) - 1px); }
-
-
         }
         #statuspanel #statuspanel-label { margin: 0 0 var(--uc-status-panel-spacing) var(--uc-status-panel-spacing) !important; }
         #navigator-toolbox:not(:-moz-lwtheme) { background: var(--toolbar-field-background-color) !important; ) }
 
-
-
         #nav-bar {
-
           padding-block-start: 0px !important;
-
           border:     none !important;
           box-shadow: none !important;
           background: transparent !important;
-
         }
-
 
         #urlbar,
         #urlbar * {
-
           padding-block-start: var(--uc-urlbar-top-spacing) !important;
-
           outline: none !important;
           box-shadow: none !important;
-
         }
-
 
         #urlbar-background { border: transparent !important; }
 
@@ -569,16 +524,13 @@
         #urlbar:not([open])
           > #urlbar-background { background: var(--toolbar-field-background-color) !important; }
 
-
         #urlbar[open]
           > #urlbar-background { background: var(--toolbar-field-background-color) !important; }
-
 
         .urlbarView-row:hover
           > .urlbarView-row-inner,
         .urlbarView-row[selected]
           > .urlbarView-row-inner { background: var(--toolbar-field-focus-background-color) !important; }
-
 
         .urlbar-icon, #urlbar-go-button { margin: auto; }
 
@@ -588,146 +540,98 @@
           > #tabbrowser-arrowscrollbox
           > .tabbrowser-tab[first-visible-unpinned-tab] { margin-inline-start: 0 !important; }
 
-
         /* Hides the list-all-tabs button*/
         #alltabs-button { display: var(--uc-show-all-tabs-button) !important; }
-
 
         /* remove tab shadow */
         .tabbrowser-tab
           >.tab-stack
           > .tab-background { box-shadow: none !important;  }
 
-
         /* multi tab selection */
         #tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([multiselected])
           > .tab-stack
           > .tab-background:-moz-lwtheme { outline-color: var(--toolbarseparator-color) !important; }
 
-
-
-
-
         /* tab close button options */
         .tabbrowser-tab:not([pinned]) .tab-close-button { display: var(--show-tab-close-button) !important; }
         .tabbrowser-tab:not([pinned]):hover .tab-close-button { display: var(--show-tab-close-button-hover) !important }
 
-
-
-
-
         /* adaptive tab width */
         .tabbrowser-tab[selected][fadein]:not([pinned]) { max-width: var(--uc-active-tab-width) !important; font-style: italic; font-weight: 900; }
         .tabbrowser-tab[fadein]:not([selected]):not([pinned]) { max-width: var(--uc-inactive-tab-width) !important; }
-
-
-
-
 
         /* container tabs indicator */
         .tabbrowser-tab[usercontextid]
           > .tab-stack
           > .tab-background
           > .tab-context-line {
-
             margin: -1px var(--container-tabs-indicator-margin) 0 var(--container-tabs-indicator-margin) !important;
             height: 1px !important;
-
             box-shadow: var(--uc-identity-glow) var(--identity-tab-color) !important;
-
         }
-
-
-
-
 
         /* show favicon when media is playing but tab is hovered */
         .tab-icon-image:not([pinned]) { opacity: 1 !important; }
 
-
         /* Makes the speaker icon to always appear if the tab is playing (not only on hover) */
         .tab-icon-overlay:not([crashed]),
         .tab-icon-overlay[pinned][crashed][selected] {
-
           top: 5px !important;
           z-index: 1 !important;
-
           padding: 1.5px !important;
           inset-inline-end: -8px !important;
           width: 16px !important; height: 16px !important;
-
           border-radius: 10px !important;
-
         }
-
 
         /* style and position speaker icon */
         .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-
           stroke: transparent !important;
           background: transparent !important;
           opacity: 1 !important; fill-opacity: 0.8 !important;
-
           color: currentColor !important;
-
           stroke: var(--toolbar-bgcolor) !important;
           background-color: var(--toolbar-bgcolor) !important;
-
         }
-
 
         /* change the colours of the speaker icon on active tab to match tab colours */
         .tabbrowser-tab[selected] .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-
           stroke: var(--toolbar-bgcolor) !important;
           background-color: var(--toolbar-bgcolor) !important;
-
         }
-
 
         .tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) { margin-inline-end: 9.5px !important; }
 
-
         .tabbrowser-tab:not([image]) .tab-icon-overlay:not([pinned], [sharing], [crashed]) {
-
           top: 0 !important;
-
           padding: 0 !important;
           margin-inline-end: 5.5px !important;
           inset-inline-end: 0 !important;
-
         }
-
 
         .tab-icon-overlay:not([crashed])[soundplaying]:hover,
         .tab-icon-overlay:not([crashed])[muted]:hover,
         .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
-
           color: currentColor !important;
           stroke: var(--toolbar-color) !important;
           background-color: var(--toolbar-color) !important;
           fill-opacity: 0.95 !important;
-
         }
-
 
         .tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[soundplaying]:hover,
         .tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[muted]:hover,
         .tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
-
           color: currentColor !important;
           stroke: var(--toolbar-color) !important;
           background-color: var(--toolbar-color) !important;
           fill-opacity: 0.95 !important;
-
         }
-
 
         /* speaker icon colour fix */
         #TabsToolbar .tab-icon-overlay:not([crashed])[soundplaying],
         #TabsToolbar .tab-icon-overlay:not([crashed])[muted],
         #TabsToolbar .tab-icon-overlay:not([crashed])[activemedia-blocked] { color: var(--toolbar-color) !important; }
-
 
         /* speaker icon colour fix on hover */
         #TabsToolbar .tab-icon-overlay:not([crashed])[soundplaying]:hover,
@@ -780,6 +684,11 @@
 
         toolbox[inFullscreen="true"] {
           display: none;
+        }
+
+        #historySwipeAnimationPreviousArrow,#historySwipeAnimationNextArrow {
+          --swipe-nav-icon-primary-color: #181825 !important;
+          --swipe-nav-icon-accent-color: #cba6f7 !important;
         }
       '';
     };
