@@ -8,6 +8,7 @@
     ./desktop/gtk.nix
     ./desktop/dunst.nix
     ./desktop/sway.nix
+    ./desktop/firefox.nix
   ];
   home.stateVersion = "21.11";
   home.packages = with pkgs;
@@ -20,6 +21,8 @@
       wezterm-git
       wthrr
       fzf
+      nodejs
+      nodePackages.pnpm
     ] ++ lib.optionals pkgs.stdenv.isLinux [ librewolf mpv ]);
   disabledModules = [ "targets/darwin/linkapps.nix" ];
   home.activation = lib.mkIf pkgs.stdenv.isDarwin {

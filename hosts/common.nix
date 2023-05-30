@@ -3,6 +3,7 @@
     config.allowUnfree = true;
     overlays = with inputs; [
       neovim-overlay.overlay
+      nur.overlay
       (final: prev: {
         wezterm-git =
           prev.darwin.apple_sdk_11_0.callPackage ../overlays/wezterm.nix {

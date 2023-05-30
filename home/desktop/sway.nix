@@ -79,8 +79,8 @@ lib.mkIf pkgs.stdenv.isLinux {
         "${mod}+Shift+p" = "exec ${pkgs.fullscreenshot}/bin/fullscreenshot";
         "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
 
-        "${mod}+Return" = "exec ${pkgs.wezterm-git}/bin/wezterm";
-        "${mod}+s" = "exec ${pkgs.librewolf}/bin/librewolf";
+        "${mod}+Return" = "exec wezterm";
+        "${mod}+d" = "exec firefox";
 
         "XF86LaunchA" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%-";
         "XF86Search" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%+";
