@@ -124,6 +124,8 @@
     "a6adc8"
   ];
 
+  fonts.fonts = with pkgs; [ noto-fonts-cjk-sans ];
+
   networking.hostName = "yuki";
   system.stateVersion = "23.05";
 }
