@@ -11,19 +11,19 @@
     ./desktop/firefox.nix
   ];
   home.stateVersion = "21.11";
-  home.packages = with pkgs;
-    ([
-      ripgrep
-      rm-improved
-      wireguard-tools
-      wireguard-go
-      thokr
-      wezterm-git
-      wthrr
-      fzf
-      nodejs
-      nodePackages.pnpm
-    ] ++ lib.optionals pkgs.stdenv.isLinux [ librewolf mpv ]);
+  home.packages = with pkgs; [
+    ripgrep
+    rm-improved
+    wireguard-tools
+    wireguard-go
+    thokr
+    wezterm-git
+    wthrr
+    fzf
+    nodejs
+    nodePackages.pnpm
+  ];
+  programs.mpv.enable = pkgs.stdenv.isLinux;
   disabledModules = [ "targets/darwin/linkapps.nix" ];
   home.activation = lib.mkIf pkgs.stdenv.isDarwin {
     copyApplications = let

@@ -31,12 +31,12 @@ lib.mkIf pkgs.stdenv.isLinux {
           always = false;
         }
         {
-          command = "${pkgs.brightnessctl}/bin/brightnessctl s 66%";
+          command = "${pkgs.brightnessctl}/bin/brightnessctl s 60%";
           always = false;
         }
         {
           command =
-            "${pkgs.brightnessctl}/bin/brightnessctl --device='kbd_backlight' s 40%";
+            "${pkgs.brightnessctl}/bin/brightnessctl --device='kbd_backlight' s 30%";
           always = false;
         }
       ];
