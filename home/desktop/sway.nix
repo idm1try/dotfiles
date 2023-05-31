@@ -149,7 +149,7 @@ lib.mkIf pkgs.stdenv.isLinux {
         };
       };
       output = {
-        "*".bg = "#1e1e2e solid_color";
+        "*".bg = "~/.dotfiles/wallpapers/whs.png fill";
         "eDP-1".scale = "1";
       };
     };
