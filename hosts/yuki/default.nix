@@ -27,7 +27,6 @@
       experimentalGPUInstallMode = "driver";
       withRust = true;
     };
-    bluetooth.enable = true;
     opengl.enable = true;
   };
 
@@ -46,15 +45,6 @@
       XDG_DATA_HOME = "$HOME/.local/share";
       XDG_BIN_HOME = "$HOME/.local/bin";
     };
-    etc."wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
-      bluez_monitor.properties = {
-        ["bluez5.enable-sbc-xq"] = true,
-        ["bluez5.enable-msbc"] = true,
-        ["bluez5.enable-hw-volume"] = true,
-        ["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
-      }
-    '';
-
   };
 
   xdg.portal = {
@@ -74,7 +64,6 @@
       alsa.support32Bit = true;
       alsa.enable = true;
     };
-    blueman.enable = true;
     upower.enable = true;
     fstrim.enable = true;
     timesyncd.enable = true;
