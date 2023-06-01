@@ -4,93 +4,85 @@ local Tab = {}
 
 local function get_process(tab)
 	local process_icons = {
-		["docker"] = {
-			{ Foreground = { Color = colors.blue } },
-			{ Text = wezterm.nerdfonts.linux_docker },
-		},
-		["docker-compose"] = {
-			{ Foreground = { Color = colors.blue } },
-			{ Text = wezterm.nerdfonts.linux_docker },
-		},
 		["nvim"] = {
 			{ Foreground = { Color = colors.green } },
-			{ Text = wezterm.nerdfonts.custom_vim },
+			{ Text = "" },
 		},
 		["vim"] = {
 			{ Foreground = { Color = colors.green } },
-			{ Text = wezterm.nerdfonts.dev_vim },
+			{ Text = "" },
 		},
 		["node"] = {
 			{ Foreground = { Color = colors.green } },
-			{ Text = wezterm.nerdfonts.mdi_hexagon },
+			{ Text = "󰋘" },
 		},
 		["zsh"] = {
 			{ Foreground = { Color = colors.peach } },
-			{ Text = wezterm.nerdfonts.dev_terminal },
+			{ Text = "" },
 		},
 		["fish"] = {
 			{ Foreground = { Color = colors.peach } },
-			{ Text = wezterm.nerdfonts.mdi_fish },
+			{ Text = "󰈺" },
 		},
 		["bash"] = {
 			{ Foreground = { Color = colors.subtext0 } },
-			{ Text = wezterm.nerdfonts.cod_terminal_bash },
+			{ Text = "" },
 		},
 		["htop"] = {
 			{ Foreground = { Color = colors.yellow } },
-			{ Text = wezterm.nerdfonts.mdi_chart_donut_variant },
+			{ Text = "󰞰" },
 		},
 		["cargo"] = {
 			{ Foreground = { Color = colors.peach } },
-			{ Text = wezterm.nerdfonts.dev_rust },
+			{ Text = "" },
 		},
 		["go"] = {
 			{ Foreground = { Color = colors.sapphire } },
-			{ Text = wezterm.nerdfonts.mdi_language_go },
-		},
-		["lazydocker"] = {
-			{ Foreground = { Color = colors.blue } },
-			{ Text = wezterm.nerdfonts.linux_docker },
+			{ Text = "" },
 		},
 		["git"] = {
 			{ Foreground = { Color = colors.peach } },
-			{ Text = wezterm.nerdfonts.dev_git },
+			{ Text = "" },
 		},
 		["lazygit"] = {
 			{ Foreground = { Color = colors.peach } },
-			{ Text = wezterm.nerdfonts.dev_git },
+			{ Text = "" },
 		},
 		["lua"] = {
 			{ Foreground = { Color = colors.blue } },
-			{ Text = wezterm.nerdfonts.seti_lua },
+			{ Text = "" },
 		},
 		["wget"] = {
 			{ Foreground = { Color = colors.yellow } },
-			{ Text = wezterm.nerdfonts.mdi_arrow_down_box },
+			{ Text = "󰛀" },
 		},
 		["curl"] = {
 			{ Foreground = { Color = colors.yellow } },
-			{ Text = wezterm.nerdfonts.mdi_flattr },
+			{ Text = "" },
 		},
 		["gh"] = {
 			{ Foreground = { Color = colors.mauve } },
-			{ Text = wezterm.nerdfonts.dev_github_badge },
+			{ Text = "" },
 		},
-		["btop"] = {
+		["btm"] = {
 			{ Foreground = { Color = colors.yellow } },
-			{ Text = wezterm.nerdfonts.mdi_chart_donut_variant },
+			{ Text = "󰞰" },
 		},
 		["nix"] = {
 			{ Foreground = { Color = colors.blue } },
-			{ Text = wezterm.nerdfonts.linux_nixos },
+			{ Text = "" },
 		},
 		["thokr"] = {
 			{ Foreground = { Color = colors.peach } },
-			{ Text = wezterm.nerdfonts.mdi_keyboard },
+			{ Text = "󰌌" },
 		},
 	}
 
 	local process_name = string.gsub(tab.active_pane.foreground_process_name, "(.*[/\\])(.*)", "%2")
+
+	if process_name == "" then
+		process_name = "fish"
+	end
 
 	return wezterm.format(
 		process_icons[process_name]
@@ -99,17 +91,24 @@ local function get_process(tab)
 end
 
 local function get_current_working_dir(tab)
-	local current_dir = tab.active_pane.current_working_dir
-	local HOME_DIR = string.format("file://%s", os.getenv("HOME"))
+	local cwd_uri = tab.active_pane.current_working_dir
 
-	return current_dir == HOME_DIR and "  ~"
-		or string.format("  %s", string.gsub(current_dir, "(.*[/\\])(.*)", "%2"))
+	cwd_uri = cwd_uri:sub(8)
+
+	local slash = cwd_uri:find("/")
+	local cwd = cwd_uri:sub(slash)
+
+	local HOME_DIR = os.getenv("HOME")
+	if cwd == HOME_DIR then
+		return "  ~"
+	end
+
+	return string.format("  %s", string.match(cwd, "[^/]+$"))
 end
 
 function Tab.setup()
 	wezterm.on("format-tab-title", function(tab)
 		return wezterm.format({
-			{ Attribute = { Intensity = "Half" } },
 			{ Text = string.format("   ") },
 			"ResetAttributes",
 			{ Text = get_process(tab) },
