@@ -80,7 +80,7 @@ lib.mkIf pkgs.stdenv.isLinux {
         "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
 
         "${mod}+Return" = "exec wezterm";
-        "${mod}+d" = "exec firefox";
+        "${mod}+d" = "exec luakit";
 
         "XF86LaunchA" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%-";
         "XF86Search" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%+";

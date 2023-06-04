@@ -21,6 +21,7 @@
     fzf
     nodejs
     nodePackages.pnpm
+    luakit
   ];
   programs.mpv.enable = pkgs.stdenv.isLinux;
   disabledModules = [ "targets/darwin/linkapps.nix" ];
@@ -48,6 +49,12 @@
     source = config.lib.file.mkOutOfStoreSymlink "/${
         if pkgs.stdenv.isDarwin then "Users" else "home"
       }/idm1try/.dotfiles/configs/wezterm";
+    recursive = true;
+  };
+  xdg.configFile."luakit" = {
+    source = config.lib.file.mkOutOfStoreSymlink "/${
+        if pkgs.stdenv.isDarwin then "Users" else "home"
+      }/idm1try/.dotfiles/configs/luakit";
     recursive = true;
   };
 }
