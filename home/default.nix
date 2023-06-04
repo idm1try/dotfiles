@@ -18,7 +18,6 @@
     wireguard-go
     thokr
     wezterm-git
-    wthrr
     fzf
     nodejs
     nodePackages.pnpm
@@ -45,14 +44,6 @@
       done
     '';
   };
-  xdg.configFile."weathercrab/wthrr.ron".text = ''
-    (
-        address: "neftekamsk",
-        gui: (
-            greeting: false,
-        ),
-    )
-  '';
   xdg.configFile."wezterm" = {
     source = config.lib.file.mkOutOfStoreSymlink "/${
         if pkgs.stdenv.isDarwin then "Users" else "home"
