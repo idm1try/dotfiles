@@ -13,6 +13,7 @@ follow.pattern_maker = follow.pattern_styles.match_label
 settings.window.search_engines = {
 	searxng = "https://xo.wtf/search?q=%s",
 	ddg = "https://duckduckgo.com/?q=%s",
+	whg = "https://whoogle.ftw.lol/search?q=%s",
 	github = "https://github.com/search?q=%s",
 	wiki = "https://en.wikipedia.org/wiki/Special:Search?search=%s",
 	invidious = "https://invidious.snopyta.org/search?q=%s",
