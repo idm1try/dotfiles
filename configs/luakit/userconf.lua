@@ -1,6 +1,4 @@
 local select = require("select")
-local webview = require("webview")
-local window = require("window")
 local follow = require("follow")
 local settings = require("settings")
 local modes = require("modes")
@@ -29,14 +27,6 @@ settings.webview.monospace_font_family = "CartographCF Nerd Font"
 settings.webview.pictograph_font_family = "CartographCF Nerd Font"
 settings.webview.serif_font_family = "CartographCF Nerd Font"
 settings.webview.sans_serif_font_family = "CartographCF Nerd Font"
-
-webview.add_signal("init", function(view)
-	view:add_signal("new-window-decision", function(v, uri, reason)
-		local w = window.ancestor(v)
-		w:new_tab(uri)
-		return true
-	end)
-end)
 
 modes.add_binds("normal", {
 	{
