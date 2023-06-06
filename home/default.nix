@@ -1,6 +1,5 @@
 { pkgs, lib, config, ... }: {
   imports = [
-    ./cli/bat.nix
     ./cli/git.nix
     ./cli/fish.nix
     ./cli/neovim.nix

@@ -23,6 +23,7 @@ require("lazy").setup({
   { import = "v.plugins.indent" },
   { import = "v.plugins.lspconfig" },
   { import = "v.plugins.noice" },
+  { import = "v.plugins.neotree" },
   { import = "v.plugins.smart-splits" },
   { import = "v.plugins.surround" },
   { import = "v.plugins.telescope" },

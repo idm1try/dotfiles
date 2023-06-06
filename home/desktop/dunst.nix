@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, colors, ... }: {
   services.dunst = {
     enable = pkgs.stdenv.hostPlatform.isLinux;
     settings = {
@@ -20,7 +20,7 @@
         gap_size = 9;
         font = "CartographCF Nerd Font 12";
         format =
-          "<span size='x-large' font_desc='CartographCF Nerd Font Heavy Italic 9' foreground='#cdd6f4'>%a</span>\\n%s%b";
+          "<span size='x-large' font_desc='CartographCF Nerd Font Heavy Italic 9' foreground='${colors.text}'>%a</span>\\n%s%b";
         show_indicators = false;
         mouse_left_click = "do_action";
         mouse_middle_click = "close_all";
@@ -31,21 +31,21 @@
 
       urgency_low = {
         timeout = 3;
-        background = "#181825";
-        foreground = "#cdd6f4";
-        highlight = "#cba6f7";
+        background = colors.mantle;
+        foreground = colors.text;
+        highlight = colors.mauve;
       };
       urgency_normal = {
         timeout = 6;
-        background = "#181825";
-        foreground = "#cdd6f4";
-        highlight = "#cba6f7";
+        background = colors.mantle;
+        foreground = colors.text;
+        highlight = colors.mauve;
       };
       urgency_critical = {
         timeout = 0;
-        background = "#181825";
-        foreground = "#cdd6f4";
-        highlight = "#cba6f7";
+        background = colors.mantle;
+        foreground = colors.text;
+        highlight = colors.mantle;
       };
     };
   };

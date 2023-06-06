@@ -73,6 +73,7 @@ return {
 	front_end = "OpenGL",
 	disable_default_key_bindings = true,
 	mouse_wheel_scrolls_tabs = false,
+	pane_focus_follows_mouse = true,
 	colors = Theme.colors,
 	keys = Keys,
 	hyperlink_rules = {

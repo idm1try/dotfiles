@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, colors, ... }:
 lib.mkIf pkgs.stdenv.isLinux {
   home = {
     packages = with pkgs; [ grim wf-recorder wl-clipboard slurp ];
@@ -120,36 +120,36 @@ lib.mkIf pkgs.stdenv.isLinux {
       };
       colors = {
         focused = {
-          background = "#1e1e2e";
-          indicator = "#f5e0dc";
-          border = "#11111b";
-          text = "#cdd6f4";
-          childBorder = "#11111b";
+          background = colors.base;
+          indicator = colors.text;
+          border = colors.crust;
+          text = colors.text;
+          childBorder = colors.crust;
         };
         focusedInactive = {
-          background = "#1e1e2e";
-          indicator = "#f5e0dc";
-          border = "#11111b";
-          text = "#cdd6f4";
-          childBorder = "#11111b";
+          background = colors.base;
+          indicator = colors.text;
+          border = colors.crust;
+          text = colors.text;
+          childBorder = colors.crust;
         };
         unfocused = {
-          background = "#1e1e2e";
-          indicator = "#f5e0dc";
-          border = "#11111b";
-          text = "#cdd6f4";
-          childBorder = "#11111b";
+          background = colors.base;
+          indicator = colors.text;
+          border = colors.crust;
+          text = colors.text;
+          childBorder = colors.crust;
         };
         urgent = {
-          background = "#1e1e2e";
-          indicator = "#6c7086";
-          border = "#11111e";
-          text = "#fab387";
-          childBorder = "#11111b";
+          background = colors.base;
+          indicator = colors.text;
+          border = colors.crust;
+          text = colors.text;
+          childBorder = colors.crust;
         };
       };
       output = {
-        "*".bg = "#1e1e2e solid_color";
+        "*".bg = "${colors.base} solid_color";
         "eDP-1".scale = "1";
       };
     };
