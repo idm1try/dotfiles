@@ -176,7 +176,7 @@ let
       };
     };
   };
-  colors = themes.carbon.dark;
+  colors = themes.gruvbox_material.light;
 in {
   nixpkgs = {
     config.allowUnfree = true;

@@ -178,7 +178,7 @@ local themes = {
 	},
 }
 
-local colors = themes.carbon.dark
+local colors = themes.gruvbox_material.light
 
 theme.font = "15px CartographCF Nerd Font"
 theme.fg = colors.text

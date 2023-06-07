@@ -178,7 +178,7 @@ local themes = {
 	},
 }
 
-Theme.palette = themes.carbon.dark
+Theme.palette = themes.gruvbox_material.light
 
 Theme.colors = {
 	split = Theme.palette.base,

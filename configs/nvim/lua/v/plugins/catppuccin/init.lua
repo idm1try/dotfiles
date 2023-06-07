@@ -4,7 +4,7 @@ return {
   lazy = false,
   priority = 100,
   config = function()
-    local THEME_NAME = "carbon"
+    local THEME_NAME = "gruvbox_material"
 
     local colors_overrides = THEME_NAME ~= "catppuccin" and require("v.plugins.catppuccin.themes." .. THEME_NAME) or {}
     require("catppuccin").setup({
