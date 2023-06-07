@@ -29,9 +29,8 @@
       vi = "nvim";
       ll = "${pkgs.exa}/bin/exa --icons --long --sort type -a --git";
       ls = "${pkgs.exa}/bin/exa --icons --sort type -a --git";
-      cat = "${pkgs.bat}/bin/bat";
       cp = "${pkgs.xcp}/bin/xcp -r";
-      top = "${pkgs.bottom}/bin/btm";
+      top = "${pkgs.htop}/bin/htop";
       lg = "${pkgs.lazygit}/bin/lazygit";
       du = "${pkgs.du-dust}/bin/dust";
       rm = "${pkgs.rm-improved}/bin/rip";
