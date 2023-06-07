@@ -4,15 +4,11 @@ return {
   lazy = false,
   priority = 100,
   config = function()
-    local THEME_NAME = "gruvbox_material"
-
-    local colors_overrides = THEME_NAME ~= "catppuccin" and require("v.plugins.catppuccin.themes." .. THEME_NAME) or {}
     require("catppuccin").setup({
       background = {
         light = "latte",
         dark = "mocha",
       },
-      color_overrides = colors_overrides,
       styles = {
         comments = { "italic" },
         conditionals = { "italic" },
@@ -45,7 +41,7 @@ return {
       },
       highlight_overrides = {
         all = function(colors)
-          local base_overrides = {
+          return {
             NormalFloat = { bg = colors.mantle },
             FloatBorder = { bg = colors.mantle, fg = colors.mantle },
             CursorLineNr = { fg = colors.mauve, style = { "bold" } },
@@ -100,23 +96,6 @@ return {
             NeoTreeGitUntracked = { fg = colors.blue },
             NeoTreeGitStaged = { fg = colors.green },
           }
-
-          local carbon_overrides = {
-            Structure = { fg = colors.pink },
-            StorageClass = { fg = colors.pink },
-            Type = { fg = colors.pink, style = { "bold" } },
-            Constant = { fg = colors.text, style = { "bold" } },
-            Number = { fg = colors.text },
-            Float = { fg = colors.text },
-            Boolean = { fg = colors.pink },
-            ["@function.builtin"] = { fg = colors.pink },
-            ["@method"] = { fg = colors.pink },
-            ["@constant"] = { fg = colors.text, style = { "bold" } },
-            ["@variable.builtin"] = { fg = colors.pink },
-            ["@type.builtin"] = { fg = colors.pink, style = { "bold" } },
-          }
-
-          return THEME_NAME == "carbon" and vim.tbl_extend("force", base_overrides, carbon_overrides) or base_overrides
         end,
       },
     })
