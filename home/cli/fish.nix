@@ -9,7 +9,10 @@
     settings = {
       nix_shell.symbol = " ";
       c.symbol = " ";
-      directory.read_only = " ";
+      directory = {
+        style = "cyan bold italic";
+        read_only = " ";
+      };
       docker_context.symbol = " ";
       golang.symbol = " ";
       lua.symbol = " ";
