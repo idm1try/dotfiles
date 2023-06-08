@@ -67,6 +67,7 @@
     0.0.0.0 www.mail.ru
     0.0.0.0 twitter.com
     0.0.0.0 www.twitter.com
+    0.0.0.0 news.ycombinator.com
   '';
   systemd.services.NetworkManager-wait-online.enable = false;
 
@@ -74,7 +75,6 @@
     pipewire = {
       enable = true;
       pulse.enable = true;
-      alsa.support32Bit = true;
       alsa.enable = true;
     };
     upower.enable = true;
@@ -126,7 +126,7 @@
     "a6adc8"
   ];
 
-  fonts.fonts = with pkgs; [ noto-fonts-cjk-sans ];
+  fonts.fonts = with pkgs; [ noto-fonts-cjk-sans noto-fonts-emoji ];
 
   networking.hostName = "yuki";
   system.stateVersion = "23.05";
