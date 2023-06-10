@@ -116,12 +116,6 @@ return {
 
     require("neodev").setup()
     local servers = {
-      bashls = {
-        cmd_env = {
-          GLOB_PATTERN = "*@(.sh|.inc|.bash|.command|.zsh)",
-        },
-        filetypes = { "sh", "zsh" },
-      },
       nil_ls = {},
       eslint = {
         root_dir = lspconfig.util.root_pattern(".eslintrc", ".eslintrc.js", ".eslintrc.json"),
@@ -215,41 +209,18 @@ return {
       }, config))
     end
 
-    local include_root_file = function(...)
-      local files = { ... }
-      return function(utils)
-        return utils.root_has_file(files)
-      end
-    end
-
-    local exclude_root_file = function(...)
-      local files = { ... }
-      return function(utils)
-        return not utils.root_has_file(files)
-      end
-    end
-
     local null_ls = require("null-ls")
 
     local _formatting = null_ls.builtins.formatting
-    local _diagnostics = null_ls.builtins.diagnostics
     local _code_actions = null_ls.builtins.code_actions
 
     null_ls.setup({
       save_after_format = true,
       sources = {
-        _formatting.prettier.with({
-          condition = exclude_root_file({ "dprint.json", ".dprint.json" }),
-        }),
-        _formatting.dprint.with({
-          condition = include_root_file({ "dprint.json", ".dprint.json" }),
-        }),
+        _formatting.dprint,
         _formatting.stylua,
         _formatting.taplo,
         _formatting.nixfmt,
-        _formatting.shfmt.with({
-          filetypes = { "sh", "bash", "zsh" },
-        }),
 
         _code_actions.gitsigns,
       },

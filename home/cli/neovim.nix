@@ -11,7 +11,6 @@
       lua-language-server
 
       nodePackages."@tailwindcss/language-server"
-      nodePackages.bash-language-server
       nodePackages.typescript
       nodePackages.typescript-language-server
       nodePackages.vscode-langservers-extracted
@@ -23,11 +22,9 @@
       rustc
       rustfmt
 
-      nodePackages.prettier
       dprint
       nil
       nixfmt
-      shfmt
       tree-sitter
 
       gcc
