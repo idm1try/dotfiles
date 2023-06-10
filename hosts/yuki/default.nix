@@ -107,23 +107,23 @@
   };
 
   console.colors = [
-    "1e1e2e"
-    "f38ba8"
-    "a6e3a1"
-    "f9e2af"
-    "89b4fa"
-    "f5c2e7"
-    "94e2d5"
-    "bac2de"
+    "fbf1c7"
+    "c14a4a"
+    "6c782e"
+    "a96b2c"
+    "45707a"
+    "945e80"
+    "4c7a5d"
+    "654735"
 
-    "585b70"
-    "f38ba8"
-    "a6e3a1"
-    "f9e2af"
-    "89b4fa"
-    "f5c2e7"
-    "94e2d5"
-    "a6adc8"
+    "A79C86"
+    "c14a4a"
+    "6c782e"
+    "a96b2c"
+    "45707a"
+    "945e80"
+    "4c7a5d"
+    "c9aa8c"
   ];
 
   fonts.fonts = with pkgs; [ noto-fonts-cjk-sans noto-fonts-emoji ];
