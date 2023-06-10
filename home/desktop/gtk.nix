@@ -27,8 +27,8 @@ lib.mkIf pkgs.stdenv.isLinux {
     }
   '';
   home.pointerCursor = {
-    name = "phinger-cursors";
-    package = pkgs.phinger-cursors;
+    name = "Catppuccin-Mocha-Dark-Cursors";
+    package = pkgs.catppuccin-cursors.mochaDark;
     gtk.enable = true;
     size = 24;
   };

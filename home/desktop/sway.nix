@@ -25,21 +25,6 @@ lib.mkIf pkgs.stdenv.isLinux {
     '';
     wrapperFeatures.gtk = true;
     config = {
-      startup = [
-        {
-          command = "${pkgs.pamixer}/bin/pamixer --set-volume 30";
-          always = false;
-        }
-        {
-          command = "${pkgs.brightnessctl}/bin/brightnessctl s 60%";
-          always = false;
-        }
-        {
-          command =
-            "${pkgs.brightnessctl}/bin/brightnessctl --device='kbd_backlight' s 30%";
-          always = false;
-        }
-      ];
       window = {
         titlebar = false;
         border = 0;
