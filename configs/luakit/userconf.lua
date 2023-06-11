@@ -2,6 +2,7 @@ local select = require("select")
 local follow = require("follow")
 local settings = require("settings")
 local modes = require("modes")
+require("lousy.widget.tablist")
 
 select.label_maker = function(s)
 	return s.sort(s.reverse(s.charset("etovxqpdygfblzhckisuran")))
@@ -27,6 +28,7 @@ settings.webview.monospace_font_family = "CartographCF Nerd Font"
 settings.webview.pictograph_font_family = "CartographCF Nerd Font"
 settings.webview.serif_font_family = "CartographCF Nerd Font"
 settings.webview.sans_serif_font_family = "CartographCF Nerd Font"
+settings.tablist.visibility = "never"
 
 modes.add_binds("normal", {
 	{

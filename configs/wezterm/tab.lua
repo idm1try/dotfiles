@@ -64,10 +64,6 @@ local function get_process(tab)
 			{ Foreground = { Color = colors.mauve } },
 			{ Text = "" },
 		},
-		["btm"] = {
-			{ Foreground = { Color = colors.yellow } },
-			{ Text = "󰞰" },
-		},
 		["nix"] = {
 			{ Foreground = { Color = colors.blue } },
 			{ Text = "" },
