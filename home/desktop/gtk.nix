@@ -2,14 +2,6 @@
 lib.mkIf pkgs.stdenv.isLinux {
   gtk = {
     enable = true;
-    theme = {
-      name = "Catppuccin-Mocha-Standard-Mauve-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "mauve" ];
-        variant = "mocha";
-        tweaks = [ "rimless" ];
-      };
-    };
     font = {
       name = "CartographCF Nerd Font";
       size = 12;
@@ -27,8 +19,8 @@ lib.mkIf pkgs.stdenv.isLinux {
     }
   '';
   home.pointerCursor = {
-    name = "Catppuccin-Mocha-Dark-Cursors";
-    package = pkgs.catppuccin-cursors.mochaDark;
+    name = "volantes_cursors";
+    package = pkgs.volantes-cursors;
     gtk.enable = true;
     size = 24;
   };
