@@ -1,4 +1,5 @@
 final: prev: {
+  mesa = final.mesa-asahi-edge;
   asahi-alsa-utils = prev.alsa-utils.override {
     alsa-lib = prev.alsa-lib.override {
       alsa-ucm-conf = prev.alsa-ucm-conf.overrideAttrs (_: rec {

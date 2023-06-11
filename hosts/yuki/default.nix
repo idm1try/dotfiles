@@ -6,9 +6,6 @@
 
   nixpkgs.overlays = [
     inputs.nixos-apple-silicon.overlays.apple-silicon-overlay
-    (final: prev: {
-      mesa = final.mesa-asahi-edge;
-    })
     (import ../../overlays/binscripts.nix)
     (import ../../overlays/asahi.nix)
   ];
@@ -77,7 +74,6 @@
   services = {
     pipewire = {
       enable = true;
-      pulse.enable = true;
       alsa.enable = true;
     };
     upower.enable = true;

@@ -8,10 +8,11 @@ final: prev: {
   volume = prev.writeShellScriptBin "volume" ''
     #!/bin/sh
 
-    ${prev.pamixer}/bin/pamixer "$@"
-    volume="$(${prev.pamixer}/bin/pamixer --get-volume-human)"
+    amixer "$@"
+    volume="$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))"
+    state="$(awk -F"[][]" '/Left:/ { print $4 }' <(amixer sget Master))"
 
-    if [ $volume = "muted" ]; then
+    if [ $state = "off" ]; then
         ${prev.libnotify}/bin/notify-send -r 69 \
             -a "Volume" \
             "Muted" \

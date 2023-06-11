@@ -70,9 +70,11 @@ lib.mkIf pkgs.stdenv.isLinux {
         "XF86LaunchA" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%-";
         "XF86Search" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%+";
 
-        "XF86AudioMute" = "exec ${pkgs.volume}/bin/volume -t";
-        "XF86AudioRaiseVolume" = "exec ${pkgs.volume}/bin/volume -i 5";
-        "XF86AudioLowerVolume" = "exec ${pkgs.volume}/bin/volume -d 5";
+        "XF86AudioMute" = "exec ${pkgs.volume}/bin/volume sset Master toggle";
+        "XF86AudioRaiseVolume" =
+          "exec ${pkgs.volume}/bin/volume sset Master 5%+";
+        "XF86AudioLowerVolume" =
+          "exec ${pkgs.volume}/bin/volume sset Master 5%-";
 
         "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
         "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";

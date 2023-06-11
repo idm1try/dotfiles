@@ -20,7 +20,7 @@ require("lazy").setup({
   { import = "v.plugins.devicons" },
   { import = "v.plugins.gitsigns" },
   { import = "v.plugins.heirline" },
-  { import = "v.plugins.indent" },
+  -- { import = "v.plugins.indent" },
   { import = "v.plugins.lspconfig" },
   { import = "v.plugins.noice" },
   { import = "v.plugins.neotree" },
