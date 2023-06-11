@@ -30,7 +30,6 @@ require("lazy").setup({
   { import = "v.plugins.treesitter" },
   { import = "v.plugins.treesj" },
   { import = "v.plugins.which_key" },
-  { import = "v.plugins.spectre" },
   { import = "v.plugins.hop" },
 }, {
   defaults = {

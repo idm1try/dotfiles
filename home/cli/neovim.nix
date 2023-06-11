@@ -27,12 +27,10 @@
       nixfmt
       tree-sitter
 
+      fzf
       gcc
       gnumake
       unzip
-
-      gnused
-      (writeShellScriptBin "gsed" "exec ${gnused}/bin/sed")
     ];
   };
 

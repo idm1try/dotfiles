@@ -6,6 +6,9 @@
 
   nixpkgs.overlays = [
     inputs.nixos-apple-silicon.overlays.apple-silicon-overlay
+    (final: prev: {
+      mesa = final.mesa-asahi-edge;
+    })
     (import ../../overlays/binscripts.nix)
     (import ../../overlays/asahi.nix)
   ];
@@ -125,8 +128,6 @@
     "4c7a5d"
     "c9aa8c"
   ];
-
-  fonts.fonts = with pkgs; [ noto-fonts-cjk-sans noto-fonts-emoji ];
 
   networking.hostName = "yuki";
   system.stateVersion = "23.05";

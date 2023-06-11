@@ -11,17 +11,14 @@
   home.stateVersion = "21.11";
   home.packages = with pkgs; [
     ripgrep
-    rm-improved
     wireguard-tools
     wireguard-go
     thokr
     wezterm-git
-    fzf
     nodejs
     nodePackages.pnpm
     luakit
   ];
-  programs.mpv.enable = pkgs.stdenv.isLinux;
   disabledModules = [ "targets/darwin/linkapps.nix" ];
   home.activation = lib.mkIf pkgs.stdenv.isDarwin {
     copyApplications = let

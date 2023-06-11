@@ -90,7 +90,7 @@
     fish_color_option 6c782e
     fish_color_operator 945e80
     fish_color_escape c35e0a
-    fish_color_autosuggestion c9aa8c
+    fish_color_autosuggestion c9aa8c -i
     fish_color_cancel c14a4a
     fish_color_cwd a96b2c
     fish_color_user 4c7a5d

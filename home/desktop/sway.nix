@@ -19,7 +19,7 @@ lib.mkIf pkgs.stdenv.isLinux {
   };
   wayland.windowManager.sway = {
     enable = true;
-    systemdIntegration = true;
+    systemd.enable = true;
     extraSessionCommands = ''
       export XDG_CURRENT_DESKTOP=sway;
     '';
@@ -134,7 +134,7 @@ lib.mkIf pkgs.stdenv.isLinux {
         };
       };
       output = {
-        "*".bg = "${colors.base} solid_color";
+        "*".bg = "${colors.mantle} solid_color";
         "eDP-1".scale = "1";
       };
     };
