@@ -31,11 +31,6 @@
   };
 
   environment = {
-    variables = {
-      MESA_GL_VERSION_OVERRIDE = "3.3";
-      MESA_GLES_VERSION_OVERRIDE = "3.1";
-      MESA_GLSL_VERSION_OVERRIDE = "330";
-    };
     sessionVariables = {
       EDITOR = "nvim";
       BROWSER = "firefox";

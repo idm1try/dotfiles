@@ -26,26 +26,6 @@ final: prev: {
             -u low
     fi
   '';
-  microphone = prev.writeShellScriptBin "microphone" ''
-    #!/bin/sh
-
-    ${prev.pamixer}/bin/pamixer --default-source "$@"
-    mic="$(${prev.pamixer}/bin/pamixer --default-source --get-volume-human)"
-
-    if [ "$mic" = "muted" ]; then
-        ${prev.libnotify}/bin/notify-send -r 69 \
-            -a "Microphone" \
-            "Muted" \
-            -t 888 \
-            -u low
-    else
-      ${prev.libnotify}/bin/notify-send -r 69 \
-            -a "Microphone" "Currently at $mic" \
-            -h int:value:"$mic" \
-            -t 888 \
-            -u low
-    fi
-  '';
   brightness = let brightnessctl = prev.brightnessctl + "/bin/brightnessctl";
   in prev.writeShellScriptBin "brightness" ''
     #!/bin/sh
