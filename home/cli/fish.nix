@@ -29,7 +29,6 @@
     enable = true;
     shellAliases = {
       vim = "nvim";
-      vi = "nvim";
       ll = "${pkgs.exa}/bin/exa --icons --long --sort type -a --git";
       ls = "${pkgs.exa}/bin/exa --icons --sort type -a --git";
       top = "${pkgs.htop}/bin/htop";
@@ -45,8 +44,6 @@
       c = "clear";
       wgdn = "wg-quick down wg0";
       wgup = "wg-quick up wg0";
-      ip = "curl https://ipinfo.io/ip";
-      ports = "lsof -i -P -n | grep LISTEN";
       gl =
         "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
     };

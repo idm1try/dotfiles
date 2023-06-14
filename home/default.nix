@@ -13,7 +13,6 @@
     ripgrep
     wireguard-tools
     wireguard-go
-    thokr
     wezterm-git
     nodejs
     nodePackages.pnpm
