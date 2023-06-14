@@ -83,30 +83,30 @@ return {
       end
     end
 
-    vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "[LSP] Line Diagnostic" })
-    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "[LSP] Previous Diagnostic" })
-    vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "[LSP] Next Diagnostic" })
+    vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "[lsp] line diagnostic" })
+    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "[lsp] previous diagnostic" })
+    vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "[lsp] next diagnostic" })
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(ev)
-        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = ev.buf, desc = "[LSP] Goto Declaration" })
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf, desc = "[LSP] Goto Definition" })
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, desc = "[LSP] Hover" })
-        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = ev.buf, desc = "[LSP] Goto Implementation" })
-        vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "[LSP] Signature Help" })
+        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = ev.buf, desc = "[lsp] goto declaration" })
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf, desc = "[lsp] goto definition" })
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, desc = "[lsp] hover" })
+        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = ev.buf, desc = "[lsp] goto implementation" })
+        vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "[lsp] signature help" })
         vim.keymap.set(
           "n",
           "<space>D",
           vim.lsp.buf.type_definition,
-          { buffer = ev.buf, desc = "[LSP] Show Type Definition" }
+          { buffer = ev.buf, desc = "[lsp] show type definition" }
         )
-        vim.keymap.set("n", "<space>lr", vim.lsp.buf.rename, { buffer = ev.buf, desc = "[LSP] Rename" })
-        vim.keymap.set("n", "<space>lc", vim.lsp.buf.code_action, { buffer = ev.buf, desc = "[LSP] Code Actions" })
-        vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "[LSP] References" })
+        vim.keymap.set("n", "<space>lr", vim.lsp.buf.rename, { buffer = ev.buf, desc = "[lsp] rename" })
+        vim.keymap.set("n", "<space>lc", vim.lsp.buf.code_action, { buffer = ev.buf, desc = "[lsp] code actions" })
+        vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "[lsp] references" })
         vim.keymap.set("n", "<space>lf", function()
           vim.lsp.buf.format({ async = true })
-        end, { buffer = ev.buf, desc = "[LSP] Format" })
+        end, { buffer = ev.buf, desc = "[lsp] format" })
       end,
     })
 
@@ -184,10 +184,10 @@ return {
               vim.lsp.buf.execute_command({
                 command = "_typescript.organizeImports",
                 arguments = { vim.api.nvim_buf_get_name(0) },
-                title = "Organize Imports",
+                title = "organize imports",
               })
             end,
-            description = "Organize Imports",
+            description = "organize imports",
           },
         },
       },

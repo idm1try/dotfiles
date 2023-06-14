@@ -14,13 +14,13 @@ final: prev: {
 
     if [ $state = "off" ]; then
         ${prev.libnotify}/bin/notify-send -r 69 \
-            -a "Volume" \
+            -a "volume" \
             "Muted" \
             -t 888 \
             -u low
     else
         ${prev.libnotify}/bin/notify-send -r 69 \
-            -a "Volume" "Currently at $volume" \
+            -a "volume" "currently at $volume" \
             -h int:value:"$volume" \
             -t 888 \
             -u low
@@ -34,7 +34,7 @@ final: prev: {
     brightness=$(echo $(($(${brightnessctl} g) * 100 / $(${brightnessctl} m))))
 
     ${prev.libnotify}/bin/notify-send -r 69 \
-        -a "Brightness" "Currently at $brightness%" \
+        -a "brightness" "currently at $brightness%" \
         -h int:value:"$brightness" \
         -t 888 \
         -u low
@@ -47,7 +47,7 @@ final: prev: {
     brightness=$(echo $(($(${brightnessctl} --device='kbd_backlight' g) * 100 / $(${brightnessctl} --device='kbd_backlight' m))))
 
     ${prev.libnotify}/bin/notify-send -r 69 \
-        -a "Keyboard Brightness" "Currently at $brightness%" \
+        -a "keyboard brightness" "currently at $brightness%" \
         -h int:value:"$brightness" \
         -t 888 \
         -u low
@@ -57,11 +57,12 @@ final: prev: {
 
     battery=$(echo "$(cat /sys/class/power_supply/macsmc-battery/capacity)%")
     if [ $(cat /sys/class/power_supply/macsmc-battery/status) = 'Charging' ]; then
-      battery_status='(Charging)'
+      battery_status='(charging)'
     fi
+    date=$(date +'%A, %#d %B %H:%M')
 
     ${prev.libnotify}/bin/notify-send -r 69 \
-        -a "$(date +'%A, %d %B %H:%M')" "Battery at $battery $battery_status" \
+        -a "''${date,,}" "battery at $battery $battery_status" \
         -h int:value:"$battery" \
         -t 888 \
         -u low

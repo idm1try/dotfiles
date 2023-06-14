@@ -4,7 +4,7 @@ return {
     {
       "f",
       ":HopWord<cr>",
-      desc = "[HOP] Word",
+      desc = "[hop]",
     },
   },
   config = true,

@@ -179,28 +179,6 @@ return {
       hl = { bg = colors.mantle, fg = colors.surface2 },
     }
 
-    local LSPActive = {
-      condition = function()
-        return conditions.hide_in_width(120) and conditions.lsp_attached()
-      end,
-      update = { "LspAttach", "LspDetach" },
-      provider = function()
-        local names = {}
-        for _, server in pairs(vim.lsp.get_active_clients()) do
-          if server.name ~= "null-ls" then
-            table.insert(names, server.name)
-          end
-        end
-
-        if #names == 0 then
-          return ""
-        end
-
-        return ("   %s "):format((table.concat(names, " ")):upper())
-      end,
-      hl = { bg = colors.mantle, fg = colors.subtext1, bold = true, italic = false },
-    }
-
     local Diagnostics = {
       condition = function()
         return conditions.buffer_not_empty() and conditions.has_diagnostics()
@@ -433,7 +411,6 @@ return {
         FileNameBlock,
         Ruler,
         Align,
-        LSPActive,
         Diagnostics,
         Git,
         ViModeSepRight,

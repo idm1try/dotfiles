@@ -6,56 +6,56 @@ return {
       function()
         require("smart-splits").move_cursor_left()
       end,
-      desc = "Navigator Left",
+      desc = "navigator left",
     },
     {
       "<A-l>",
       function()
         require("smart-splits").move_cursor_right()
       end,
-      desc = "Navigator Right",
+      desc = "navigator right",
     },
     {
       "<A-k>",
       function()
         require("smart-splits").move_cursor_up()
       end,
-      desc = "Navigator Up",
+      desc = "navigator up",
     },
     {
       "<A-j>",
       function()
         require("smart-splits").move_cursor_down()
       end,
-      desc = "Navigator Down",
+      desc = "navigator down",
     },
     {
       "<A-H>",
       function()
         require("smart-splits").resize_left()
       end,
-      desc = "Resize Left",
+      desc = "resize left",
     },
     {
       "<A-L>",
       function()
         require("smart-splits").resize_right()
       end,
-      desc = "Resize Right",
+      desc = "resize right",
     },
     {
       "<A-K>",
       function()
         require("smart-splits").resize_up()
       end,
-      desc = "Resize Up",
+      desc = "resize up",
     },
     {
       "<A-J>",
       function()
         require("smart-splits").resize_down()
       end,
-      desc = "Resize Down",
+      desc = "resize down",
     },
   },
   config = true,

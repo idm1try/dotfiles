@@ -34,7 +34,7 @@ return {
           gs.next_hunk()
         end)
         return "<Ignore>"
-      end, { expr = true, desc = "[GIT] Next Hunk" })
+      end, { expr = true, desc = "[git] next hunk" })
       map("n", "[g", function()
         if vim.wo.diff then
           return "[c"
@@ -43,12 +43,12 @@ return {
           gs.prev_hunk()
         end)
         return "<Ignore>"
-      end, { expr = true, desc = "[GIT] Previous Hunk" })
-      map({ "n", "v" }, "<leader>gr", "<CMD>Gitsigns reset_hunk<CR>", { desc = "[GIT] Reset Hunk" })
-      map("n", "<leader>gR", "<CMD>Gitsigns reset_buffer<CR>", { desc = "[GIT] Reset Buffer" })
-      map("n", "<leader>gu", gs.undo_stage_hunk, { desc = "[GIT] Undo Stage Hunk" })
-      map("n", "<leader>gh", gs.preview_hunk, { desc = "[GIT] Preview Hunk" })
-      map("n", "<leader>gd", gs.diffthis, { desc = "[GIT] Diff" })
+      end, { expr = true, desc = "[git] previous hunk" })
+      map({ "n", "v" }, "<leader>gr", "<CMD>Gitsigns reset_hunk<CR>", { desc = "[git] reset hunk" })
+      map("n", "<leader>gR", "<CMD>Gitsigns reset_buffer<CR>", { desc = "[git] reset buffer" })
+      map("n", "<leader>gu", gs.undo_stage_hunk, { desc = "[git] undo stage hunk" })
+      map("n", "<leader>gh", gs.preview_hunk, { desc = "[git] preview hunk" })
+      map("n", "<leader>gd", gs.diffthis, { desc = "[git] diff" })
     end,
   },
 }

@@ -9,7 +9,7 @@ return {
     {
       "<leader>n",
       "<CMD>NeoTreeFloatToggle<CR>",
-      desc = "[NEOTREE] Float Toggle",
+      desc = "[tree] float",
     },
   },
   opts = {
