@@ -44,10 +44,6 @@ local function get_process(tab)
 			{ Foreground = { Color = colors.peach } },
 			{ Text = "" },
 		},
-		["lazygit"] = {
-			{ Foreground = { Color = colors.peach } },
-			{ Text = "" },
-		},
 		["lua"] = {
 			{ Foreground = { Color = colors.blue } },
 			{ Text = "" },

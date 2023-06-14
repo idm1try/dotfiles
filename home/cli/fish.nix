@@ -33,7 +33,6 @@
       ll = "${pkgs.exa}/bin/exa --icons --long --sort type -a --git";
       ls = "${pkgs.exa}/bin/exa --icons --sort type -a --git";
       top = "${pkgs.htop}/bin/htop";
-      lg = "${pkgs.lazygit}/bin/lazygit";
       cp = "cp -r";
       rm = "rm -r";
       g = "git";
