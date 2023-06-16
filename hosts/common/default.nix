@@ -36,7 +36,7 @@ in {
       nur.overlay
       (final: prev: {
         wezterm-git =
-          prev.darwin.apple_sdk_11_0.callPackage ../overlays/wezterm.nix {
+          prev.darwin.apple_sdk_11_0.callPackage ../../overlays/wezterm.nix {
             inherit (prev.darwin.apple_sdk_11_0.frameworks)
               Cocoa CoreGraphics Foundation UserNotifications;
 
@@ -50,7 +50,7 @@ in {
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs colors; };
-    users.idm1try.imports = [ ../home ];
+    users.idm1try.imports = [ ../../home ];
   };
   nix = {
     gc = {

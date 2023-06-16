@@ -38,18 +38,15 @@
     nixosConfigurations."yuki" = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
       specialArgs = { inherit inputs; };
-      modules = [
-        ./hosts/yuki
-        ./hosts/common.nix
-        home-manager.nixosModules.home-manager
-      ];
+      modules =
+        [ ./hosts/yuki ./hosts/common home-manager.nixosModules.home-manager ];
     };
     darwinConfigurations."tishka" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/tishka.nix
-        ./hosts/common.nix
+        ./hosts/common
         home-manager.darwinModules.home-manager
       ];
     };
