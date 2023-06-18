@@ -70,7 +70,7 @@
     '';
   };
 
-  xdg.configFile."fish/themes/theme.theme".text = ''
+  xdg.configFile."fish/themes/light.theme".text = ''
     fish_color_normal 654735
     fish_color_command 45707a
     fish_color_param 945e80
@@ -97,5 +97,33 @@
     fish_pager_color_prefix 945e80
     fish_pager_color_completion 654735
     fish_pager_color_description c9aa8c
+  '';
+  xdg.configFile."fish/themes/dark.theme".text = ''
+    fish_color_normal D4BE98
+    fish_color_command 7DAEA3
+    fish_color_param D3869B
+    fish_color_keyword EA6962
+    fish_color_quote A9B665
+    fish_color_redirection D3869B
+    fish_color_end BD6F3E
+    fish_color_comment 5F6365
+    fish_color_error EA6962
+    fish_color_gray 5F6365
+    fish_color_selection --background=2d2f30
+    fish_color_search_match --background=2d2f30
+    fish_color_option A9B665
+    fish_color_operator D3869B
+    fish_color_escape BD6F3E
+    fish_color_autosuggestion 5F6365 -i
+    fish_color_cancel EA6962
+    fish_color_cwd D8A657
+    fish_color_user 89B482
+    fish_color_host 7DAEA3
+    fish_color_host_remote A9B665
+    fish_color_status EA6962
+    fish_pager_color_progress 5F6365
+    fish_pager_color_prefix D3869B
+    fish_pager_color_completion D4BE98
+    fish_pager_color_description 5F6365
   '';
 }

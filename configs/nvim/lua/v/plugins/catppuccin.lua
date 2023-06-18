@@ -5,7 +5,10 @@ return {
   priority = 100,
   config = function()
     require("catppuccin").setup({
-      flavour = "latte",
+      background = {
+        dark = "mocha",
+        light = "latte",
+      },
       color_overrides = {
         latte = {
           rosewater = "#c14a4a",
@@ -34,6 +37,34 @@ return {
           base = "#fbf1c7",
           mantle = "#F3EAC1",
           crust = "#E7DEB7",
+        },
+        mocha = {
+          rosewater = "#EA6962",
+          flamingo = "#EA6962",
+          pink = "#D3869B",
+          mauve = "#D3869B",
+          red = "#EA6962",
+          maroon = "#EA6962",
+          peach = "#BD6F3E",
+          yellow = "#D8A657",
+          green = "#A9B665",
+          teal = "#89B482",
+          sky = "#89B482",
+          sapphire = "#89B482",
+          blue = "#7DAEA3",
+          lavender = "#7DAEA3",
+          text = "#D4BE98",
+          subtext1 = "#BDAE8B",
+          subtext0 = "#A69372",
+          overlay2 = "#5A5E60",
+          overlay1 = "#55595B",
+          overlay0 = "#5F6365",
+          surface2 = "#4B4F51",
+          surface1 = "#3c3f40",
+          surface0 = "#2d2f30",
+          base = "#1D2021",
+          mantle = "#191C1D",
+          crust = "#151819",
         },
       },
       styles = {
