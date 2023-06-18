@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
-local colors = require("theme").palette
+local colors = require("theme").get_colors()
+
 local Tab = {}
 
 local function get_process(tab)
