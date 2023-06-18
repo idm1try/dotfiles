@@ -1,4 +1,4 @@
-local Theme = {}
+local theme = {}
 
 local themes = {
 	light = {
@@ -59,69 +59,71 @@ local themes = {
 	},
 }
 
-Theme.palette = themes.dark
+theme.palette = themes.dark
 
-Theme.colors = {
-	split = Theme.palette.base,
-	foreground = Theme.palette.text,
-	background = Theme.palette.base,
-	cursor_bg = Theme.palette.overlay0,
-	cursor_border = Theme.palette.overlay0,
-	cursor_fg = Theme.palette.base,
-	selection_bg = Theme.palette.surface2,
-	selection_fg = Theme.palette.text,
-	visual_bell = Theme.palette.surface0,
-	indexed = {
-		[16] = Theme.palette.peach,
-		[17] = Theme.palette.rosewater,
-	},
-	scrollbar_thumb = Theme.palette.surface2,
-	compose_cursor = Theme.palette.flamingo,
-	ansi = {
-		Theme.palette.surface0,
-		Theme.palette.red,
-		Theme.palette.green,
-		Theme.palette.yellow,
-		Theme.palette.blue,
-		Theme.palette.mauve,
-		Theme.palette.teal,
-		Theme.palette.text,
-	},
-	brights = {
-		Theme.palette.surface2,
-		Theme.palette.red,
-		Theme.palette.green,
-		Theme.palette.yellow,
-		Theme.palette.blue,
-		Theme.palette.mauve,
-		Theme.palette.teal,
-		Theme.palette.surface2,
-	},
-	tab_bar = {
-		background = Theme.palette.mantle,
-		active_tab = {
-			bg_color = "none",
-			fg_color = Theme.palette.subtext1,
-			intensity = "Bold",
-			italic = true,
+function theme.setup(config)
+	config.colors = {
+		split = theme.palette.base,
+		foreground = theme.palette.text,
+		background = theme.palette.base,
+		cursor_bg = theme.palette.overlay0,
+		cursor_border = theme.palette.overlay0,
+		cursor_fg = theme.palette.base,
+		selection_bg = theme.palette.surface2,
+		selection_fg = theme.palette.text,
+		visual_bell = theme.palette.surface0,
+		indexed = {
+			[16] = theme.palette.peach,
+			[17] = theme.palette.rosewater,
 		},
-		inactive_tab = {
-			bg_color = Theme.palette.mantle,
-			fg_color = Theme.palette.surface2,
+		scrollbar_thumb = theme.palette.surface2,
+		compose_cursor = theme.palette.flamingo,
+		ansi = {
+			theme.palette.surface0,
+			theme.palette.red,
+			theme.palette.green,
+			theme.palette.yellow,
+			theme.palette.blue,
+			theme.palette.mauve,
+			theme.palette.teal,
+			theme.palette.text,
 		},
-		inactive_tab_hover = {
-			bg_color = Theme.palette.mantle,
-			fg_color = Theme.palette.surface2,
+		brights = {
+			theme.palette.surface2,
+			theme.palette.red,
+			theme.palette.green,
+			theme.palette.yellow,
+			theme.palette.blue,
+			theme.palette.mauve,
+			theme.palette.teal,
+			theme.palette.surface2,
 		},
-		new_tab = {
-			bg_color = Theme.palette.mantle,
-			fg_color = Theme.palette.subtext0,
+		tab_bar = {
+			background = theme.palette.mantle,
+			active_tab = {
+				bg_color = "none",
+				fg_color = theme.palette.subtext1,
+				intensity = "Bold",
+				italic = true,
+			},
+			inactive_tab = {
+				bg_color = theme.palette.mantle,
+				fg_color = theme.palette.surface2,
+			},
+			inactive_tab_hover = {
+				bg_color = theme.palette.mantle,
+				fg_color = theme.palette.surface2,
+			},
+			new_tab = {
+				bg_color = theme.palette.mantle,
+				fg_color = theme.palette.subtext0,
+			},
+			new_tab_hover = {
+				bg_color = theme.palette.mantle,
+				fg_color = theme.palette.surface2,
+			},
 		},
-		new_tab_hover = {
-			bg_color = Theme.palette.mantle,
-			fg_color = Theme.palette.surface2,
-		},
-	},
-}
+	}
+end
 
-return Theme
+return theme
