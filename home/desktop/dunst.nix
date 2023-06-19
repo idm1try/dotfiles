@@ -1,5 +1,12 @@
 { pkgs, colors, ... }: {
-  services.dunst = {
+  services.dunst = let
+    style = {
+      timeout = 8;
+      background = "#${colors.mantle}";
+      foreground = "#${colors.text}";
+      highlight = "#${colors.mauve}";
+    };
+  in {
     enable = pkgs.stdenv.hostPlatform.isLinux;
     settings = {
       global = {
@@ -20,7 +27,7 @@
         gap_size = 9;
         font = "CartographCF Nerd Font 12";
         format =
-          "<span size='x-large' font_desc='CartographCF Nerd Font Heavy Italic 9' foreground='${colors.text}'>%a</span>\\n%s%b";
+          "<span size='x-large' font_desc='CartographCF Nerd Font Heavy Italic 9' foreground='#${colors.text}'>%a</span>\\n%s%b";
         show_indicators = false;
         mouse_left_click = "do_action";
         mouse_middle_click = "close_all";
@@ -29,24 +36,9 @@
         markup = "full";
       };
 
-      urgency_low = {
-        timeout = 3;
-        background = colors.mantle;
-        foreground = colors.text;
-        highlight = colors.mauve;
-      };
-      urgency_normal = {
-        timeout = 6;
-        background = colors.mantle;
-        foreground = colors.text;
-        highlight = colors.mauve;
-      };
-      urgency_critical = {
-        timeout = 0;
-        background = colors.mantle;
-        foreground = colors.text;
-        highlight = colors.mantle;
-      };
+      urgency_low = style;
+      urgency_normal = style;
+      urgency_critical = style;
     };
   };
 }

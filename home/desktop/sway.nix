@@ -105,38 +105,22 @@ lib.mkIf pkgs.stdenv.isLinux {
         "${mod}+Shift+c" = "reload";
         "${mod}+Shift+q" = "exit";
       };
-      colors = {
-        focused = {
-          background = colors.base;
-          indicator = colors.text;
-          border = colors.crust;
-          text = colors.text;
-          childBorder = colors.crust;
+      colors = let
+        style = {
+          background = "#${colors.base}";
+          indicator = "#${colors.text}";
+          border = "#${colors.crust}";
+          text = "#${colors.text}";
+          childBorder = "#${colors.crust}";
         };
-        focusedInactive = {
-          background = colors.base;
-          indicator = colors.text;
-          border = colors.crust;
-          text = colors.text;
-          childBorder = colors.crust;
-        };
-        unfocused = {
-          background = colors.base;
-          indicator = colors.text;
-          border = colors.crust;
-          text = colors.text;
-          childBorder = colors.crust;
-        };
-        urgent = {
-          background = colors.base;
-          indicator = colors.text;
-          border = colors.crust;
-          text = colors.text;
-          childBorder = colors.crust;
-        };
+      in {
+        focused = style;
+        focusedInactive = style;
+        unfocused = style;
+        urgent = style;
       };
       output = {
-        "*".bg = "${colors.mantle} solid_color";
+        "*".bg = "#${colors.mantle} solid_color";
         "eDP-1".scale = "1";
       };
     };

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ colors, pkgs, ... }: {
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
@@ -50,6 +50,7 @@
     shellInit = ''
       set TTY1 (tty)
       [ "$TTY1" = "/dev/tty1" ] && exec sway
+      fish_config theme choose theme
 
       set fish_greeting
       set -gx EDITOR (which nvim)
@@ -70,60 +71,32 @@
     '';
   };
 
-  xdg.configFile."fish/themes/light.theme".text = ''
-    fish_color_normal 654735
-    fish_color_command 45707a
-    fish_color_param 945e80
-    fish_color_keyword c14a4a
-    fish_color_quote 6c782e
-    fish_color_redirection 945e80
-    fish_color_end c35e0a
-    fish_color_comment c9aa8c
-    fish_color_error c14a4a
-    fish_color_gray c9aa8c
-    fish_color_selection --background=dfd6b1
-    fish_color_search_match --background=dfd6b1
-    fish_color_option 6c782e
-    fish_color_operator 945e80
-    fish_color_escape c35e0a
-    fish_color_autosuggestion c9aa8c -i
-    fish_color_cancel c14a4a
-    fish_color_cwd a96b2c
-    fish_color_user 4c7a5d
-    fish_color_host 45707a
-    fish_color_host_remote 6c782e
-    fish_color_status c14a4a
-    fish_pager_color_progress c9aa8c
-    fish_pager_color_prefix 945e80
+  xdg.configFile."fish/themes/theme.theme".text = ''
+    fish_color_normal ${colors.text}
+    fish_color_command ${colors.blue}
+    fish_color_param ${colors.pink}
+    fish_color_keyword ${colors.flamingo}
+    fish_color_quote ${colors.blue}
+    fish_color_redirection ${colors.mauve}
+    fish_color_end ${colors.peach}
+    fish_color_comment ${colors.overlay0}
+    fish_color_error ${colors.red}
+    fish_color_gray ${colors.overlay0}
+    fish_color_selection --background=${colors.surface0}
+    fish_color_search_match --background=${colors.surface0}
+    fish_color_option ${colors.green}
+    fish_color_operator ${colors.pink}
+    fish_color_escape ${colors.peach}
+    fish_color_autosuggestion ${colors.overlay0} -i
+    fish_color_cancel ${colors.red}
+    fish_color_cwd ${colors.yellow}
+    fish_color_user ${colors.teal}
+    fish_color_host ${colors.lavender}
+    fish_color_host_remote ${colors.green}
+    fish_color_status ${colors.maroon}
+    fish_pager_color_progress ${colors.overlay0}
+    fish_pager_color_prefix ${colors.mauve}
     fish_pager_color_completion 654735
-    fish_pager_color_description c9aa8c
-  '';
-  xdg.configFile."fish/themes/dark.theme".text = ''
-    fish_color_normal D4BE98
-    fish_color_command 7DAEA3
-    fish_color_param D3869B
-    fish_color_keyword EA6962
-    fish_color_quote A9B665
-    fish_color_redirection D3869B
-    fish_color_end BD6F3E
-    fish_color_comment 5F6365
-    fish_color_error EA6962
-    fish_color_gray 5F6365
-    fish_color_selection --background=2d2f30
-    fish_color_search_match --background=2d2f30
-    fish_color_option A9B665
-    fish_color_operator D3869B
-    fish_color_escape BD6F3E
-    fish_color_autosuggestion 5F6365 -i
-    fish_color_cancel EA6962
-    fish_color_cwd D8A657
-    fish_color_user 89B482
-    fish_color_host 7DAEA3
-    fish_color_host_remote A9B665
-    fish_color_status EA6962
-    fish_pager_color_progress 5F6365
-    fish_pager_color_prefix D3869B
-    fish_pager_color_completion D4BE98
-    fish_pager_color_description 5F6365
+    fish_pager_color_description ${colors.overlay0}
   '';
 }
