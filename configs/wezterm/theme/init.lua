@@ -1,7 +1,7 @@
 local theme = {}
 
 function theme.get_colors()
-	local THEME_NAME = "gruvbox_material"
+	local THEME_NAME = "carbon"
 	local palettes = require("theme.palettes." .. THEME_NAME)
 
 	return palettes.mocha

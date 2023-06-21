@@ -213,7 +213,7 @@
           };
         };
       };
-      colors = themes.gruvbox_material.mocha;
+      colors = themes.carbon.mocha;
     in {
       nixosConfigurations."yuki" = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
