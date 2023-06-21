@@ -23,11 +23,3 @@ autocmd({ "VimResized" }, {
     vim.cmd("tabdo wincmd =")
   end,
 })
-
-autocmd({ "BufNewFile", "BufEnter" }, {
-  pattern = { ".env", ".env.*", "*.env" },
-  callback = function()
-    vim.opt_local.filetype = "sh"
-    vim.diagnostic.disable(0)
-  end,
-})

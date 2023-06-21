@@ -96,7 +96,7 @@
     fish_color_status ${colors.maroon}
     fish_pager_color_progress ${colors.overlay0}
     fish_pager_color_prefix ${colors.mauve}
-    fish_pager_color_completion 654735
+    fish_pager_color_completion ${colors.text}
     fish_pager_color_description ${colors.overlay0}
   '';
 }
