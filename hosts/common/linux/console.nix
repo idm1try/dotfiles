@@ -16,6 +16,6 @@
     colors.blue
     colors.mauve
     colors.teal
-    colors.text
+    colors.mauve
   ];
 }

@@ -29,6 +29,7 @@ settings.webview.pictograph_font_family = "CartographCF Nerd Font"
 settings.webview.serif_font_family = "CartographCF Nerd Font"
 settings.webview.sans_serif_font_family = "CartographCF Nerd Font"
 settings.tablist.visibility = "never"
+settings.application.prefer_dark_mode = true
 
 modes.add_binds("normal", {
 	{
