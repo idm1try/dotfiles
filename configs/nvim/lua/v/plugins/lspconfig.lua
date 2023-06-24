@@ -46,7 +46,7 @@ return {
         format = function(diagnostic)
           return string.format(
             "%s%s ",
-            diagnostic.source and string.format("[%s]: ", string.upper(diagnostic.source)) or "",
+            diagnostic.source and string.format("[%s]: ", diagnostic.source) or "",
             diagnostic.message
           )
         end,
