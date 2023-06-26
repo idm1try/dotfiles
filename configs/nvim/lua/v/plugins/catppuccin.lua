@@ -4,17 +4,38 @@ return {
   lazy = false,
   priority = 100,
   config = function()
-    local THEME_NAME = "carbon"
-
-    local colors_overrides = THEME_NAME ~= "catppuccin" and require("v.plugins.catppuccin.palettes." .. THEME_NAME)
-      or {}
-
     require("catppuccin").setup({
-      background = {
-        dark = "mocha",
-        light = "latte",
+      flavour = "mocha",
+      color_overrides = {
+        mocha = {
+          rosewater = "#ff8389",
+          flamingo = "#ff8389",
+          red = "#ff8389",
+          maroon = "#ff8389",
+          pink = "#ff7eb6",
+          mauve = "#be95ff",
+          peach = "#d44a1c",
+          yellow = "#ab8600",
+          green = "#08bdba",
+          teal = "#33b1ff",
+          sky = "#33b1ff",
+          sapphire = "#33b1ff",
+          blue = "#78a9ff",
+          lavender = "#78a9ff",
+          text = "#ffffff",
+          subtext1 = "#f4f4f4",
+          subtext0 = "#e0e0e0",
+          overlay2 = "#adadad",
+          overlay1 = "#949494",
+          overlay0 = "#7a7a7a",
+          surface2 = "#4f4f4f",
+          surface1 = "#383838",
+          surface0 = "#2e2e2e",
+          base = "#161616",
+          mantle = "#0d0d0d",
+          crust = "#000000",
+        },
       },
-      color_overrides = colors_overrides,
       styles = {
         comments = { "italic" },
         conditionals = { "italic" },
@@ -47,7 +68,7 @@ return {
       },
       highlight_overrides = {
         all = function(colors)
-          local base_overrides = {
+          return {
             NormalFloat = { bg = colors.mantle },
             FloatBorder = { bg = colors.mantle, fg = colors.mantle },
             CursorLineNr = { fg = colors.mauve, style = { "bold" } },
@@ -101,9 +122,7 @@ return {
             NeoTreeGitUnstaged = { fg = colors.red },
             NeoTreeGitUntracked = { fg = colors.blue },
             NeoTreeGitStaged = { fg = colors.green },
-          }
-
-          local carbon_overrides = {
+            -- carbon
             Structure = { fg = colors.pink },
             StorageClass = { fg = colors.pink },
             Type = { fg = colors.pink, style = { "bold" } },
@@ -117,12 +136,6 @@ return {
             ["@variable.builtin"] = { fg = colors.pink },
             ["@type.builtin"] = { fg = colors.pink, style = { "bold" } },
           }
-
-          if THEME_NAME == "carbon" then
-            return vim.tbl_extend("force", base_overrides, carbon_overrides)
-          end
-
-          return base_overrides
         end,
       },
     })

@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-local colors = require("theme").get_colors()
+local colors = require("theme").colors
 
 local Tab = {}
 
