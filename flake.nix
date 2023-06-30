@@ -13,25 +13,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    crane = {
-      url = "github:ipetkov/crane";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    wezterm-src = {
-      type = "git";
-      url = "https://github.com/wez/wezterm.git";
-      ref = "main";
-      submodules = true;
-      flake = false;
     };
   };
   outputs = { nixpkgs, darwin, home-manager, ... }@inputs:

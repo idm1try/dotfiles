@@ -1,21 +1,5 @@
 { pkgs, inputs, colors, ... }: {
-  nixpkgs = {
-    config.allowUnfree = true;
-    overlays = with inputs; [
-      neovim-overlay.overlay
-      nur.overlay
-      (final: prev: {
-        wezterm-git =
-          prev.darwin.apple_sdk_11_0.callPackage ../../overlays/wezterm.nix {
-            inherit (prev.darwin.apple_sdk_11_0.frameworks)
-              Cocoa CoreGraphics Foundation UserNotifications;
-
-            src = inputs.wezterm-src;
-            crane-lib = crane.lib."${prev.system}";
-          };
-      })
-    ];
-  };
+  nixpkgs.config.allowUnfree = true;
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;

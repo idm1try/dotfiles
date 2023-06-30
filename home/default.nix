@@ -13,7 +13,7 @@
     ripgrep
     wireguard-tools
     wireguard-go
-    wezterm-git
+    wezterm
     nodejs
     nodePackages.pnpm
     luakit
