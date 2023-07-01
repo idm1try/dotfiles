@@ -35,9 +35,9 @@ return {
         expander_highlight = "IndentBlanklineContextChar",
       },
       icon = {
-        folder_closed = "",
-        folder_open = "",
-        folder_empty = "",
+        folder_closed = "",
+        folder_open = "",
+        folder_empty = "",
       },
       modified = {
         symbol = "●",
