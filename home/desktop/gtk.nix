@@ -21,8 +21,8 @@ lib.mkIf pkgs.stdenv.isLinux {
     }
   '';
   home.pointerCursor = {
-    name = "volantes_cursors";
-    package = pkgs.volantes-cursors;
+    name = "phinger-cursors";
+    package = pkgs.phinger-cursors;
     gtk.enable = true;
     size = 24;
   };
