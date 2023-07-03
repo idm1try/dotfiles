@@ -11,12 +11,12 @@
   home.stateVersion = "21.11";
   home.packages = with pkgs; [
     ripgrep
+    thokr
     wireguard-tools
     wireguard-go
     wezterm
     nodejs
     nodePackages.pnpm
-    luakit
   ];
   disabledModules = [ "targets/darwin/linkapps.nix" ];
   home.activation = lib.mkIf pkgs.stdenv.isDarwin {

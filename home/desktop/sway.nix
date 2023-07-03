@@ -1,7 +1,7 @@
 { pkgs, lib, colors, ... }:
 lib.mkIf pkgs.stdenv.isLinux {
   home = {
-    packages = with pkgs; [ grim wf-recorder wl-clipboard slurp ];
+    packages = with pkgs; [ grim wf-recorder wl-clipboard slurp luakit ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       DISABLE_QT5_COMPAT = "0";

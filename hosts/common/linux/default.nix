@@ -16,7 +16,10 @@
 
   boot.loader.systemd-boot.enable = true;
 
-  zramSwap.enable = true;
+  zramSwap = {
+    enable = true;
+    memoryPercent = 100;
+  };
 
   programs.dconf.enable = true;
 

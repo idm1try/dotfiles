@@ -7,11 +7,7 @@
     users.idm1try.imports = [ ../../home ];
   };
   nix = {
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
+    gc.automatic = true;
     settings = {
       warn-dirty = false;
       experimental-features = [ "nix-command" "flakes" "repl-flake" ];
