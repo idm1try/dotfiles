@@ -34,8 +34,6 @@
       top = "${pkgs.htop}/bin/htop";
       cp = "cp -r";
       rm = "rm -r";
-      g = "git";
-      p = "pnpm";
       ":q" = "exit";
       ":h" = "man";
       mkdir = "mkdir -p";
