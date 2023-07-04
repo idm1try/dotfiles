@@ -67,9 +67,6 @@ lib.mkIf pkgs.stdenv.isLinux {
         "${mod}+Return" = "exec wezterm";
         "${mod}+d" = "exec luakit";
 
-        "XF86LaunchA" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%-";
-        "XF86Search" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%+";
-
         "XF86AudioMute" = "exec ${pkgs.volume}/bin/volume sset Master toggle";
         "XF86AudioRaiseVolume" =
           "exec ${pkgs.volume}/bin/volume sset Master 5%+";
@@ -84,6 +81,11 @@ lib.mkIf pkgs.stdenv.isLinux {
           "exec ${pkgs.brightness}/bin/brightness set 5%-";
         "XF86MonBrightnessUp" =
           "exec ${pkgs.brightness}/bin/brightness set 5%+";
+
+        "${mod}+XF86MonBrightnessDown" =
+          "exec ${pkgs.brightness}/bin/brightness set 1%-";
+        "${mod}+XF86MonBrightnessUp" =
+          "exec ${pkgs.brightness}/bin/brightness set 1%+";
 
         "${mod}+q" = "kill";
         "${mod}+r" = ''mode "resize"'';
