@@ -7,6 +7,7 @@
   '';
 
   services.nix-daemon.enable = true;
+  users.users.idm1try.home = "/Users/idm1try";
 
   system.stateVersion = 4;
 }
