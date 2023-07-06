@@ -9,6 +9,10 @@
     inputs.nixos-apple-silicon.overlays.apple-silicon-overlay
     (import ../../overlays/binscripts.nix)
     (import ../../overlays/asahi.nix)
+    (final: prev: {
+      phocus-oxocarbon =
+        prev.callPackage ../../overlays/phocus-oxocarbon.nix { };
+    })
   ];
 
   environment.systemPackages = [ pkgs.asahi-alsa-utils ];
