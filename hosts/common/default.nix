@@ -1,5 +1,6 @@
 { pkgs, inputs, colors, ... }: {
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.overlays = with inputs; [ nur.overlay ];
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;

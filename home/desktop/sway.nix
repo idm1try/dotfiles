@@ -1,7 +1,7 @@
 { pkgs, lib, colors, ... }:
 lib.mkIf pkgs.stdenv.isLinux {
   home = {
-    packages = with pkgs; [ grim wf-recorder wl-clipboard slurp luakit ];
+    packages = with pkgs; [ grim wf-recorder wl-clipboard slurp ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       DISABLE_QT5_COMPAT = "0";
@@ -65,7 +65,7 @@ lib.mkIf pkgs.stdenv.isLinux {
         "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
 
         "${mod}+Return" = "exec wezterm";
-        "${mod}+d" = "exec luakit";
+        "${mod}+d" = "exec firefox";
 
         "XF86AudioMute" = "exec ${pkgs.volume}/bin/volume sset Master toggle";
         "XF86AudioRaiseVolume" =

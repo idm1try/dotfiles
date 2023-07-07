@@ -7,6 +7,7 @@
     ./desktop/gtk.nix
     ./desktop/dunst.nix
     ./desktop/sway.nix
+    ./desktop/firefox.nix
   ];
   home.stateVersion = "21.11";
   home.packages = with pkgs; [
@@ -43,12 +44,6 @@
     source = config.lib.file.mkOutOfStoreSymlink "/${
         if pkgs.stdenv.isDarwin then "Users" else "home"
       }/idm1try/.dotfiles/configs/wezterm";
-    recursive = true;
-  };
-  xdg.configFile."luakit" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/${
-        if pkgs.stdenv.isDarwin then "Users" else "home"
-      }/idm1try/.dotfiles/configs/luakit";
     recursive = true;
   };
 }
