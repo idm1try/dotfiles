@@ -351,7 +351,6 @@ lib.mkIf pkgs.stdenv.isLinux {
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         amp2html
         ublock-origin
-        umatrix
       ];
     };
   };
