@@ -182,7 +182,6 @@ lib.mkIf pkgs.stdenv.isLinux {
     userContent = ''
       :root {
         scrollbar-width: none !important;
-        background-color: #${colors.base} !important;
       }
       @-moz-document url(about:privatebrowsing) {
         :root {
