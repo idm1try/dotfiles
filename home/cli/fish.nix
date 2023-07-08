@@ -28,7 +28,6 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      vim = "nvim";
       ll = "${pkgs.exa}/bin/exa --icons --long --sort type -a --git";
       ls = "${pkgs.exa}/bin/exa --icons --sort type -a --git";
       top = "${pkgs.htop}/bin/htop";
