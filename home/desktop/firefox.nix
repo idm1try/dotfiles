@@ -178,6 +178,11 @@ lib.mkIf pkgs.stdenv.isLinux {
         display: none !important;
       }
       #alltabs-button { display: none !important; }
+      #unified-extensions-button { color: var(--srf-secondary) !important; }
+      #historySwipeAnimationPreviousArrow,#historySwipeAnimationNextArrow {
+        --swipe-nav-icon-primary-color: var(--srf-secondary) !important;
+        --swipe-nav-icon-accent-color: var(--srf-accent) !important;
+      }
     '';
     userContent = ''
       :root {
@@ -351,6 +356,7 @@ lib.mkIf pkgs.stdenv.isLinux {
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         amp2html
         ublock-origin
+        stylus
       ];
     };
   };
