@@ -1,7 +1,12 @@
 { pkgs, lib, colors, ... }:
 lib.mkIf pkgs.stdenv.isLinux {
   home = {
-    packages = with pkgs; [ grim wf-recorder wl-clipboard slurp ];
+    packages = with pkgs; [
+      sway-contrib.grimshot
+      wf-recorder
+      wl-clipboard
+      slurp
+    ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       DISABLE_QT5_COMPAT = "0";
@@ -60,8 +65,8 @@ lib.mkIf pkgs.stdenv.isLinux {
         }) (lib.range 0 9));
       in tagBinds // {
         "${mod}+o" = "exec ${pkgs.hyprpicker}/bin/hyprpicker -a -n";
-        "${mod}+p" = "exec ${pkgs.screenshot}/bin/screenshot";
-        "${mod}+Shift+p" = "exec ${pkgs.fullscreenshot}/bin/fullscreenshot";
+        "${mod}+p" = "exec grimshot copy area";
+        "${mod}+Shift+p" = "exec grimshot copy screen";
         "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
 
         "${mod}+Return" = "exec wezterm";

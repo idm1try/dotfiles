@@ -1,10 +1,4 @@
 final: prev: {
-  screenshot = prev.writeShellScriptBin "screenshot" ''
-    ${prev.grim}/bin/grim -g "$(${prev.slurp}/bin/slurp -b '#0b0b0b80' -c '#00000000' -w 1)" - -t png | ${prev.wl-clipboard}/bin/wl-copy -t image/png && ${prev.libnotify}/bin/notify-send -a "Screenshot Captured" "Copied to clipboard" -t 888
-  '';
-  fullscreenshot = prev.writeShellScriptBin "fullscreenshot" ''
-    ${prev.grim}/bin/grim - -t png | ${prev.wl-clipboard}/bin/wl-copy -t image/png && ${prev.libnotify}/bin/notify-send -a "Full Screen Captured" "Copied to clipboard" -t 888
-  '';
   volume = prev.writeShellScriptBin "volume" ''
     #!/bin/sh
 
