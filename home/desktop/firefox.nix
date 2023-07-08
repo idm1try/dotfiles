@@ -162,6 +162,7 @@ lib.mkIf pkgs.stdenv.isLinux {
       #urlbar-input-container {
         background-color: var(--srf-secondary) !important;
         border: 1px solid rgba(0, 0, 0, 0) !important;
+        border-radius: 0!important;
       }
       #urlbar-container {
         margin-left: 8px !important;
