@@ -36,8 +36,8 @@ lib.mkIf pkgs.stdenv.isLinux {
       };
       input = {
         "type:keyboard" = {
-          xkb_layout = "us";
-          xkb_options = "caps:escape";
+          xkb_layout = "us,ru";
+          xkb_options = "caps:escape,grp:alt_space_toggle";
           repeat_delay = "200";
           repeat_rate = "30";
         };
