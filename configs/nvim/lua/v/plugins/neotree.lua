@@ -8,7 +8,7 @@ return {
   keys = {
     {
       "<leader>n",
-      "<CMD>NeoTreeFloatToggle<CR>",
+      "<CMD>Neotree float<CR>",
       desc = "[tree] float",
     },
   },
@@ -78,7 +78,9 @@ return {
         hide_dotfiles = false,
         hide_gitignored = false,
       },
-      follow_current_file = true,
+      follow_current_file = {
+        enabled = true,
+      },
       use_libuv_file_watcher = true,
       components = {
         name = function(config, node, state)
