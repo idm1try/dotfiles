@@ -34,7 +34,15 @@
     };
     opengl.enable = true;
   };
-  boot.kernelParams = [ "apple_dcp.show_notch=1" ];
+  boot.initrd.verbose = false;
+  boot.consoleLogLevel = 0;
+  boot.kernel.sysctl."printk" = "3 3 3 3";
+  boot.kernelParams = [
+    "quiet"
+    "udev.log_priority=3"
+    "rd.systemd.show_status=auto"
+    "apple_dcp.show_notch=1"
+  ];
 
   networking.hostName = "fuku";
   system.stateVersion = "23.05";

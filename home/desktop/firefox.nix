@@ -1,5 +1,4 @@
-{ pkgs, colors, lib, ... }:
-lib.mkIf pkgs.stdenv.isLinux {
+{ pkgs, colors, ... }: {
   programs.firefox = {
     enable = true;
     package = pkgs.firefox;

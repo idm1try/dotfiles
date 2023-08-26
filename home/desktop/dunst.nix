@@ -1,4 +1,4 @@
-{ pkgs, colors, ... }: {
+{ colors, ... }: {
   services.dunst = let
     style = {
       timeout = 8;
@@ -7,7 +7,7 @@
       highlight = "#${colors.mauve}";
     };
   in {
-    enable = pkgs.stdenv.hostPlatform.isLinux;
+    enable = true;
     settings = {
       global = {
         follow = "mouse";

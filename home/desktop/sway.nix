@@ -1,5 +1,4 @@
-{ pkgs, lib, colors, ... }:
-lib.mkIf pkgs.stdenv.isLinux {
+{ pkgs, lib, colors, ... }: {
   home = {
     packages = with pkgs; [
       sway-contrib.grimshot
@@ -37,7 +36,7 @@ lib.mkIf pkgs.stdenv.isLinux {
       input = {
         "type:keyboard" = {
           xkb_layout = "us,ru";
-          xkb_options = "caps:ctrl,grp:alt_space_toggle";
+          xkb_options = "ctrl:nocaps,grp:alt_space_toggle";
           repeat_delay = "200";
           repeat_rate = "30";
         };

@@ -1,5 +1,4 @@
-{ pkgs, lib, ... }:
-lib.mkIf pkgs.stdenv.isLinux {
+{ pkgs, ... }: {
   gtk = {
     enable = true;
     font = {
