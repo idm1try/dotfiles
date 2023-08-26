@@ -34,9 +34,7 @@
   };
 
   xdg.configFile."nvim" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/${
-        if pkgs.stdenv.hostPlatform.isDarwin then "Users" else "home"
-      }/idm1try/.dotfiles/configs/nvim";
+    source = config.lib.file.mkOutOfStoreSymlink "/home/idm1try/.dotfiles/configs/nvim";
     recursive = true;
   };
 }

@@ -36,8 +36,7 @@
       ":q" = "exit";
       ":h" = "man";
       mkdir = "mkdir -p";
-      dr = "darwin-rebuild switch --flake ~/.dotfiles#tishka";
-      nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#yuki";
+      nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#fuku";
       c = "clear";
       wgdn = "wg-quick down wg0";
       wgup = "wg-quick up wg0";

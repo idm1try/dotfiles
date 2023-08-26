@@ -13,12 +13,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    darwin = {
-      url = "github:LnL7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
-  outputs = { nixpkgs, darwin, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
     let
       colors = {
         rosewater = "ff8389";
@@ -49,22 +45,13 @@
         crust = "000000";
       };
     in {
-      nixosConfigurations."yuki" = nixpkgs.lib.nixosSystem {
+      nixosConfigurations."fuku" = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         specialArgs = { inherit inputs colors; };
         modules = [
-          ./hosts/yuki
+          ./hosts/fuku
           ./hosts/common
           home-manager.nixosModules.home-manager
-        ];
-      };
-      darwinConfigurations."tishka" = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        specialArgs = { inherit inputs colors; };
-        modules = [
-          ./hosts/tishka.nix
-          ./hosts/common
-          home-manager.darwinModules.home-manager
         ];
       };
     };

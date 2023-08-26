@@ -1,4 +1,13 @@
 { pkgs, inputs, colors, ... }: {
+  imports = [
+    ./sound.nix
+    ./console.nix
+    ./networking.nix
+    ./users.nix
+    ./locale.nix
+    ./environment.nix
+  ];
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = with inputs; [ nur.overlay ];
   home-manager = {
@@ -19,5 +28,26 @@
       ];
       tarball-ttl = 604800;
     };
+  };
+
+  services = {
+    upower.enable = true;
+    fstrim.enable = true;
+    timesyncd.enable = true;
+  };
+
+  boot.loader.systemd-boot.enable = true;
+
+  zramSwap = {
+    enable = true;
+    memoryPercent = 100;
+  };
+
+  programs.dconf.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 }

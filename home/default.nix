@@ -41,9 +41,7 @@
     '';
   };
   xdg.configFile."wezterm" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/${
-        if pkgs.stdenv.isDarwin then "Users" else "home"
-      }/idm1try/.dotfiles/configs/wezterm";
+    source = config.lib.file.mkOutOfStoreSymlink "/home/idm1try/.dotfiles/configs/wezterm";
     recursive = true;
   };
 }
