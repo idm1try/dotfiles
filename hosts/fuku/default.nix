@@ -43,6 +43,8 @@
     "rd.systemd.show_status=auto"
     "apple_dcp.show_notch=1"
   ];
+  boot.initrd.services.udev.rules = ''
+    SUBSYSTEM=="power_supply", KERNEL=="macsmc-battery", ATTR{charge_control_end_threshold}="80"'';
 
   networking.hostName = "fuku";
   system.stateVersion = "23.05";

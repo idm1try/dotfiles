@@ -3,6 +3,7 @@
     ./cli/git.nix
     ./cli/fish.nix
     ./cli/neovim.nix
+    ./cli/gpg.nix
 
     ./desktop/gtk.nix
     ./desktop/dunst.nix
