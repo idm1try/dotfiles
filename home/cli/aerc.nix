@@ -24,6 +24,7 @@
         msglist_unread.fg=#${colors.mauve}
         msglist_unread.bold=true
         msglist_marked.bg=#${colors.blue}
+        msglist.selected.bold=true
         dirlist_unread.fg=#${colors.mauve}
         *.selected.reverse="toggle"
         tab.fg=#${colors.overlay0}
@@ -33,6 +34,7 @@
         tab.selected.italic=true
         dirlist_*.selected.bold=true
         statusline_default.fg=#${colors.overlay0}
+        statusline_default.italic=true
 
         [viewer]
         url.fg=#${colors.mauve}
