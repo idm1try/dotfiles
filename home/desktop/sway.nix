@@ -53,6 +53,7 @@
         };
       };
       bars = lib.mkForce [ ];
+      gaps.top = 75;
       defaultWorkspace = "workspace 1";
       keybindings = let
         mod = "Mod4";

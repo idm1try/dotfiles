@@ -34,16 +34,20 @@
     };
     opengl.enable = true;
   };
-  boot.initrd.verbose = false;
-  boot.consoleLogLevel = 0;
-  boot.kernel.sysctl."printk" = "3 3 3 3";
-  boot.kernelParams = [
-    "quiet"
-    "udev.log_priority=3"
-    "rd.systemd.show_status=auto"
-    "apple_dcp.show_notch=1"
-  ];
-  boot.initrd.services.udev.rules = ''
+
+  boot = {
+    initrd.verbose = false;
+    consoleLogLevel = 0;
+    kernel.sysctl."printk" = "3 3 3 3";
+    kernelParams = [
+      "quiet"
+      "udev.log_priority=3"
+      "rd.systemd.show_status=auto"
+      "apple_dcp.show_notch=1"
+    ];
+  };
+
+  services.udev.extraRules = ''
     SUBSYSTEM=="power_supply", KERNEL=="macsmc-battery", ATTR{charge_control_end_threshold}="80"'';
 
   networking.hostName = "fuku";
