@@ -10,6 +10,7 @@
     ./desktop/dunst.nix
     ./desktop/sway.nix
     ./desktop/firefox.nix
+    ./desktop/waybar.nix
   ];
   home.stateVersion = "21.11";
   home.packages = with pkgs; [

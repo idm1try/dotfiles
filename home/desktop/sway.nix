@@ -52,8 +52,10 @@
           pointer_accel = "0.27";
         };
       };
-      bars = lib.mkForce [ ];
-      gaps.top = 75;
+      bars = [{
+        position = "top";
+        command = "${pkgs.waybar}/bin/waybar";
+      }];
       defaultWorkspace = "workspace 1";
       keybindings = let
         mod = "Mod4";
