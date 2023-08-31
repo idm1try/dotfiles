@@ -69,7 +69,6 @@
         "${mod}+o" = "exec ${pkgs.hyprpicker}/bin/hyprpicker -a -n";
         "${mod}+p" = "exec grimshot copy area";
         "${mod}+Shift+p" = "exec grimshot copy screen";
-        "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
 
         "${mod}+Return" = "exec wezterm";
         "${mod}+d" = "exec firefox";
