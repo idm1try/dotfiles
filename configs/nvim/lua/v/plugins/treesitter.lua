@@ -4,12 +4,10 @@ return {
   event = { "BufReadPost", "BufNewFile" },
   dependencies = {
     "windwp/nvim-ts-autotag",
-    "nvim-treesitter/nvim-treesitter-textobjects",
     "JoosepAlviste/nvim-ts-context-commentstring",
-    "mrjones2014/nvim-ts-rainbow",
   },
   config = function()
-    local MAX_FILE_LINES = 3000
+    local MAX_FILE_LINES = 5000
     local MAX_FILE_SIZE = 1048576 -- 1MB
 
     require("nvim-treesitter.configs").setup({
@@ -19,7 +17,54 @@ return {
       indent = {
         enable = true,
       },
-      ensure_installed = "all",
+      auto_install = false,
+      sync_install = true,
+      ignore_install = {},
+      modules = {},
+      ensure_installed = {
+        "bash",
+        "cmake",
+        "comment",
+        "diff",
+        "fennel",
+        "fish",
+        "git_config",
+        "git_rebase",
+        "gitcommit",
+        "gitignore",
+        "go",
+        "gomod",
+        "gosum",
+        "gowork",
+        "gpg",
+        "html",
+        "http",
+        "ini",
+        "javascript",
+        "jq",
+        "jsdoc",
+        "json",
+        "json5",
+        "jsonc",
+        "lua",
+        "luadoc",
+        "luap",
+        "make",
+        "markdown",
+        "markdown_inline",
+        "nix",
+        "regex",
+        "rust",
+        "scss",
+        "svelte",
+        "toml",
+        "tsx",
+        "typescript",
+        "vimdoc",
+        "vim",
+        "yaml",
+        "zig",
+      },
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
@@ -31,11 +76,6 @@ return {
           end
         end,
       },
-      rainbow = {
-        enable = true,
-        extended_mode = false,
-        max_file_lines = MAX_FILE_LINES,
-      },
       incremental_selection = {
         enable = true,
         keymaps = {
@@ -43,42 +83,6 @@ return {
           node_incremental = "<c-space>",
           scope_incremental = "<c-s>",
           node_decremental = "<c-backspace>",
-        },
-      },
-      textobjects = {
-        select = {
-          enable = true,
-          lookahead = true,
-          keymaps = {
-            ["ap"] = "@parameter.outer",
-            ["ip"] = "@parameter.inner",
-            ["ab"] = "@block.outer",
-            ["ib"] = "@block.inner",
-            ["af"] = "@function.outer",
-            ["if"] = "@function.inner",
-            ["ac"] = "@class.outer",
-            ["ic"] = "@class.inner",
-          },
-        },
-        move = {
-          enable = true,
-          set_jumps = true,
-          goto_next_start = {
-            ["]m"] = "@function.outer",
-            ["]]"] = "@class.outer",
-          },
-          goto_next_end = {
-            ["]M"] = "@function.outer",
-            ["]["] = "@class.outer",
-          },
-          goto_previous_start = {
-            ["[m"] = "@function.outer",
-            ["[["] = "@class.outer",
-          },
-          goto_previous_end = {
-            ["[M"] = "@function.outer",
-            ["[]"] = "@class.outer",
-          },
         },
       },
       context_commentstring = {
