@@ -4,6 +4,7 @@
   programs.gpg = {
     enable = true;
     scdaemonSettings."disable-ccid" = true;
+    homedir = "/home/idm1try/.local/share/gnupg";
     settings = {
       personal-cipher-preferences = "AES256 AES192 AES";
       personal-digest-preferences = "SHA512 SHA384 SHA256";
