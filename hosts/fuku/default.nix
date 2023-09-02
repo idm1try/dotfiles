@@ -19,7 +19,7 @@
 
   systemd.user.services.fix-asahi-jack = {
     script = ''
-      ${pkgs.asahi-alsa-utils}/bin/amixer -c 0 set 'Jack Mixer' 100%
+      ${pkgs.asahi-alsa-utils}/bin/amixer -c 0 set 'Jack DAC' 100%
     '';
     wantedBy = [ "default.target" ];
   };
