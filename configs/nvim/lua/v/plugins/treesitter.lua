@@ -56,6 +56,7 @@ return {
         "regex",
         "rust",
         "scss",
+        "css",
         "svelte",
         "toml",
         "tsx",
