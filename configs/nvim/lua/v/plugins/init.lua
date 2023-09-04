@@ -30,7 +30,6 @@ require("lazy").setup({
   { import = "v.plugins.treesj" },
   { import = "v.plugins.which_key" },
   { import = "v.plugins.hop" },
-  { import = "v.plugins.typescript-tools" },
 }, {
   defaults = {
     lazy = true,

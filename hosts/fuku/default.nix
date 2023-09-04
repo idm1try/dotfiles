@@ -7,12 +7,7 @@
 
   nixpkgs.overlays = [
     inputs.nixos-apple-silicon.overlays.apple-silicon-overlay
-    (import ../../overlays/binscripts.nix)
     (import ../../overlays/asahi.nix)
-    (final: prev: {
-      phocus-oxocarbon =
-        prev.callPackage ../../overlays/phocus-oxocarbon.nix { };
-    })
   ];
 
   environment.systemPackages = [ pkgs.asahi-alsa-utils ];
@@ -46,9 +41,6 @@
       "apple_dcp.show_notch=1"
     ];
   };
-
-  services.udev.extraRules = ''
-    SUBSYSTEM=="power_supply", KERNEL=="macsmc-battery", ATTR{charge_control_end_threshold}="80"'';
 
   networking.hostName = "fuku";
   system.stateVersion = "23.05";
