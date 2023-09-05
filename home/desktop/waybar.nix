@@ -38,7 +38,7 @@
       window#waybar {
         font-family: CartographCF Nerd Font;
         font-size: 16px;
-        background-color: #${colors.crust};
+        background-color: #${colors.mantle};
         border-radius: 0px;
         color: #${colors.overlay0};
       }
@@ -54,13 +54,13 @@
       #workspaces button {
         padding: 0 10px;
         color: #${colors.overlay0};
-        background-color: #${colors.crust};
+        background-color: #${colors.mantle};
       }
 
       #workspaces button.focused {
         color: #${colors.mauve};
         font-weight: 900;
-        background-color: #${colors.crust};
+        background-color: #${colors.mantle};
       }
     '';
   };
