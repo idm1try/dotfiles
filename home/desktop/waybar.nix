@@ -6,7 +6,7 @@
       ipc = true;
       layer = "top";
       position = "top";
-      height = 64;
+      height = 68;
       modules-left = [ "sway/workspaces" ];
       modules-center = [ ];
       modules-right = [ "sway/language" "battery" "clock" ];
