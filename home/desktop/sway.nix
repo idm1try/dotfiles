@@ -103,7 +103,6 @@
         "${mod}+Shift+j" = "move down";
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move right";
-        "${mod}+w" = "layout tabbed";
         "${mod}+e" = "layout toggle split";
         "${mod}+f" = "fullscreen";
         "${mod}+space" = "floating toggle";

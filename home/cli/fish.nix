@@ -28,8 +28,8 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ll = "${pkgs.exa}/bin/exa --icons --long --sort type -a --git";
-      ls = "${pkgs.exa}/bin/exa --icons --sort type -a --git";
+      ll = "${pkgs.eza}/bin/eza --icons --long --sort type -a --git";
+      ls = "${pkgs.eza}/bin/eza --icons --sort type -a --git";
       top = "${pkgs.htop}/bin/htop";
       cp = "cp -r";
       rm = "rm -r";
