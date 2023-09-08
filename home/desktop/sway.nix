@@ -127,7 +127,8 @@
         urgent = style;
       };
       output = {
-        "*".bg = "#${colors.mantle} solid_color";
+        # "*".bg = "#${colors.mantle} solid_color";
+        "*".bg = "${../../ibm_room.jpg} fill";
         "eDP-1".scale = "1";
       };
     };
