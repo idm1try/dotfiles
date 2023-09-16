@@ -1,5 +1,5 @@
 { ... }: {
-  networking.networkmanager.enable = true;
+  networking.wireless.iwd.enable = true;
   networking.extraHosts = ''
     0.0.0.0 youtube.com
     0.0.0.0 www.youtube.com
@@ -11,5 +11,4 @@
     0.0.0.0 www.twitter.com
     0.0.0.0 news.ycombinator.com
   '';
-  systemd.services.NetworkManager-wait-online.enable = false;
 }

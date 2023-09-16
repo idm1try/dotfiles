@@ -31,15 +31,8 @@
   };
 
   boot = {
-    initrd.verbose = false;
     consoleLogLevel = 0;
-    kernel.sysctl."printk" = "3 3 3 3";
-    kernelParams = [
-      "quiet"
-      "udev.log_priority=3"
-      "rd.systemd.show_status=auto"
-      "apple_dcp.show_notch=1"
-    ];
+    kernelParams = [ "apple_dcp.show_notch=1" ];
   };
 
   networking.hostName = "fuku";
