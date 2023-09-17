@@ -5,6 +5,7 @@
       wf-recorder
       wl-clipboard
       slurp
+      brightnessctl
     ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
@@ -73,25 +74,23 @@
         "${mod}+Return" = "exec wezterm";
         "${mod}+d" = "exec firefox";
 
-        "XF86AudioMute" = "exec ${pkgs.volume}/bin/volume sset Master toggle";
-        "XF86AudioRaiseVolume" =
-          "exec ${pkgs.volume}/bin/volume sset Master 5%+";
-        "XF86AudioLowerVolume" =
-          "exec ${pkgs.volume}/bin/volume sset Master 5%-";
+        "XF86AudioMute" = "exec amixer sset Master toggle";
+        "XF86AudioRaiseVolume" = "exec amixer sset Master 5%+";
+        "XF86AudioLowerVolume" = "exec amixer sset Master 5%-";
 
         "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
         "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
         "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
 
         "XF86MonBrightnessDown" =
-          "exec ${pkgs.brightness}/bin/brightness set 5%-";
+          "exec ${pkgs.brightnessctl}/bin/brightnessctl s 5%-";
         "XF86MonBrightnessUp" =
-          "exec ${pkgs.brightness}/bin/brightness set 5%+";
+          "exec ${pkgs.brightnessctl}/bin/brightnessctl s 5%+";
 
         "${mod}+XF86MonBrightnessDown" =
-          "exec ${pkgs.brightness}/bin/brightness set 1%-";
+          "exec ${pkgs.brightnessctl}/bin/brightnessctl s 1%-";
         "${mod}+XF86MonBrightnessUp" =
-          "exec ${pkgs.brightness}/bin/brightness set 1%+";
+          "exec ${pkgs.brightnessctl}/bin/brightnessctl s 1%+";
 
         "${mod}+q" = "kill";
         "${mod}+r" = ''mode "resize"'';
@@ -127,8 +126,7 @@
         urgent = style;
       };
       output = {
-        # "*".bg = "#${colors.mantle} solid_color";
-        "*".bg = "${../../ibm_room.jpg} fill";
+        "*".bg = "#${colors.mantle} solid_color";
         "eDP-1".scale = "1";
       };
     };

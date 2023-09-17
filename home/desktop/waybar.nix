@@ -9,7 +9,14 @@
       height = 68;
       modules-left = [ "sway/workspaces" ];
       modules-center = [ ];
-      modules-right = [ "network" "sway/language" "battery" "clock" ];
+      modules-right = [
+        "network"
+        "sway/language"
+        "wireplumber"
+        "backlight"
+        "battery"
+        "clock"
+      ];
       "sway/workspaces" = {
         disable-scroll = true;
         disable-click = true;
@@ -37,6 +44,17 @@
           "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>bat [ac]</span> {capacity}%";
         interval = 5;
         tooltip = false;
+      };
+      wireplumber = {
+        format =
+          "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>vol</span> {volume}%";
+        format-muted =
+          "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>vol</span> muted";
+        tooltip = false;
+      };
+      backlight = {
+        format =
+          "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>bri</span> {percent}%";
       };
       "sway/language" = {
         format =

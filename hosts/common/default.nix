@@ -11,7 +11,6 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = with inputs; [
     nur.overlay
-    (import ../../overlays/binscripts.nix)
     (final: prev: {
       phocus-oxocarbon =
         prev.callPackage ../../overlays/phocus-oxocarbon.nix { };

@@ -3,11 +3,9 @@
     ./cli/git.nix
     ./cli/fish.nix
     ./cli/neovim.nix
-    ./cli/gpg.nix
     ./cli/aerc.nix
 
     ./desktop/gtk.nix
-    ./desktop/dunst.nix
     ./desktop/sway.nix
     ./desktop/firefox.nix
     ./desktop/waybar.nix
