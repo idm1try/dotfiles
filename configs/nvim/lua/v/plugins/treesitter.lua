@@ -23,6 +23,8 @@ return {
       modules = {},
       ensure_installed = {
         "bash",
+        "c",
+        "cpp",
         "cmake",
         "comment",
         "diff",
