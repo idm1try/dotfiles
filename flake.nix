@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/master";
-    nur.url = "github:nix-community/nur";
 
     nixos-apple-silicon = {
       url = "github:tpwrules/nixos-apple-silicon";

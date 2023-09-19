@@ -353,11 +353,6 @@
       inherit settings;
       inherit userChrome;
       inherit userContent;
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        amp2html
-        ublock-origin
-        stylus
-      ];
     };
   };
 }

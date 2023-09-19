@@ -73,27 +73,11 @@
         "type": "github"
       }
     },
-    "nur": {
-      "locked": {
-        "lastModified": 1695123992,
-        "narHash": "sha256-Jd9qlB9Z6c5mJQ0M3IDQX4J/LBTkkPkctlxiGK5Xqo0=",
-        "owner": "nix-community",
-        "repo": "nur",
-        "rev": "d3e2b92cdfcd27e878c647b9f013f2d02d444c75",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "nur",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixos-apple-silicon": "nixos-apple-silicon",
-        "nixpkgs": "nixpkgs",
-        "nur": "nur"
+        "nixpkgs": "nixpkgs"
       }
     },
     "rust-overlay": {
