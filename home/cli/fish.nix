@@ -31,6 +31,7 @@
       ll = "${pkgs.eza}/bin/eza --icons --long --sort type -a --git";
       ls = "${pkgs.eza}/bin/eza --icons --sort type -a --git";
       top = "${pkgs.htop}/bin/htop";
+      hm = "${pkgs.himalaya}/bin/himalaya";
       cp = "cp -r";
       rm = "rm -r";
       ":q" = "exit";

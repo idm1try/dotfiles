@@ -1,4 +1,4 @@
-{ pkgs, inputs, colors, ... }: {
+{ inputs, colors, ... }: {
   imports = [
     ./sound.nix
     ./console.nix
@@ -49,10 +49,4 @@
   };
 
   programs.dconf.enable = true;
-
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
 }

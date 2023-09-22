@@ -3,7 +3,7 @@
     ./cli/git.nix
     ./cli/fish.nix
     ./cli/neovim.nix
-    ./cli/aerc.nix
+    ./cli/himalaya.nix
 
     ./desktop/gtk.nix
     ./desktop/sway.nix
