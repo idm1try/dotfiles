@@ -213,6 +213,19 @@
           display: none !important;
         }
       }
+      body.neterror {
+        background-color: #${colors.base} !important;
+        color: #${colors.text} !important;
+      }
+      body.neterror h1 {
+        color: #${colors.text} !important;
+      }
+      body.neterror #errorLongDesc {
+        display: none;
+      }
+      body.neterror #neterrorTryAgainButton {
+        display: none;
+      }
     '';
 
     settings = {
