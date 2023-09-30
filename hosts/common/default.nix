@@ -9,13 +9,7 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = with inputs; [
-    nur.overlay
-    (final: prev: {
-      phocus-oxocarbon =
-        prev.callPackage ../../overlays/phocus-oxocarbon.nix { };
-    })
-  ];
+  nixpkgs.overlays = with inputs; [ nur.overlay ];
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;

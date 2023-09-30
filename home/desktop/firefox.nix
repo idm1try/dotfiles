@@ -109,6 +109,10 @@
       .tabbrowser-tab:not([pinned]) .tab-icon-image {
         display: none !important;
       }
+      .tabbrowser-tab
+        >.tab-stack
+        > .tab-background { box-shadow: none !important;  }
+
       #navigator-toolbox::after {
         border-bottom: 0px !important;
         border-top: 0px !important;

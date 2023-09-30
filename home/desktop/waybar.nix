@@ -88,7 +88,7 @@
       }
 
       #workspaces button {
-        padding: 0 10px;
+        padding: 0 5px;
         color: #${colors.overlay0};
         background-color: #${colors.mantle};
       }
