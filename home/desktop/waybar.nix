@@ -87,10 +87,22 @@
         margin-right: 30px;
       }
 
+      button {
+          border: none;
+          border-radius: 0;
+
+      }
+      button:hover {
+          box-shadow: inherit;
+          text-shadow: inherit;
+          background: inherit;
+      }
+
       #workspaces button {
-        padding: 0 5px;
+        padding: 0 6px;
         color: #${colors.overlay0};
-        background-color: #${colors.mantle};
+        background-color: transparent;
+        border: none;
       }
 
       #workspaces button.focused {
