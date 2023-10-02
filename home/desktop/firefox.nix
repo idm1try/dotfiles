@@ -213,18 +213,32 @@
           display: none !important;
         }
       }
-      body.neterror {
-        background-color: #${colors.base} !important;
-        color: #${colors.text} !important;
+      @-moz-document url-prefix("about:neterror") {
+        :root {
+          background-color: #${colors.base} !important;
+          color: #${colors.text} !important;
+        }
+        h1 {
+          color: #${colors.text} !important;
+        }
+        #errorLongDesc {
+          display: none;
+        }
+        #neterrorTryAgainButton {
+          display: none;
+        }
+        #learnMoreLink {
+          display: none;
+        }
       }
-      body.neterror h1 {
-        color: #${colors.text} !important;
-      }
-      body.neterror #errorLongDesc {
-        display: none;
-      }
-      body.neterror #neterrorTryAgainButton {
-        display: none;
+      @-moz-document url-prefix("about:httpsonlyerror") {
+        :root {
+          background-color: #${colors.base} !important;
+          color: #${colors.text} !important;
+        }
+        ul, p, b {
+          display: none
+        }
       }
     '';
 
