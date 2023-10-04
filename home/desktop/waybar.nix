@@ -9,14 +9,8 @@
       height = 68;
       modules-left = [ "sway/workspaces" ];
       modules-center = [ ];
-      modules-right = [
-        "network"
-        "sway/language"
-        "wireplumber"
-        "backlight"
-        "battery"
-        "clock"
-      ];
+      modules-right =
+        [ "sway/language" "wireplumber" "backlight" "battery" "clock" ];
       "sway/workspaces" = {
         disable-scroll = true;
         disable-click = true;
@@ -40,8 +34,11 @@
       battery = {
         format =
           "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>bat</span> {capacity}%";
+        format-critical =
+          "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.red}'>bat</span> {capacity}%";
         format-charging =
           "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>bat [ac]</span> {capacity}%";
+        states = { critical = 15; };
         interval = 5;
         tooltip = false;
       };
@@ -60,13 +57,6 @@
         format =
           "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>{}</span>";
         tooltip = false;
-      };
-      network = {
-        tooltip = false;
-        format = "";
-        format-disconnected =
-          "<span font_desc='CartographCF Nerd Font Heavy' color='#${colors.red}'>!</span>";
-        interval = 5;
       };
       spacing = 30;
     }];
