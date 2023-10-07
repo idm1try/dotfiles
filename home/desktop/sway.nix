@@ -1,12 +1,6 @@
 { pkgs, lib, colors, ... }: {
   home = {
-    packages = with pkgs; [
-      sway-contrib.grimshot
-      wf-recorder
-      wl-clipboard
-      slurp
-      brightnessctl
-    ];
+    packages = with pkgs; [ wf-recorder wl-clipboard slurp grim brightnessctl ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       DISABLE_QT5_COMPAT = "0";
@@ -68,8 +62,8 @@
         }) (lib.range 0 9));
       in tagBinds // {
         "${mod}+o" = "exec ${pkgs.hyprpicker}/bin/hyprpicker -a -n";
-        "${mod}+p" = "exec grimshot copy area";
-        "${mod}+Shift+p" = "exec grimshot copy screen";
+        "${mod}+p" = ''exec grim -g "$(slurp)" -| wl-copy -t image/png'';
+        "${mod}+Shift+p" = "exec grim -c - | wl-copy -t image/png";
 
         "${mod}+Return" = "exec wezterm";
         "${mod}+d" = "exec firefox";
