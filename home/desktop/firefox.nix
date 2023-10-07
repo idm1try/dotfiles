@@ -240,6 +240,15 @@
           display: none
         }
       }
+      @-moz-document url-prefix("about:sessionrestore") {
+        :root {
+          background-color: #${colors.base} !important;
+          color: #${colors.text} !important;
+        }
+        .description {
+          display: none;
+        }
+      }
     '';
 
     settings = {

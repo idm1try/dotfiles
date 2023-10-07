@@ -191,6 +191,7 @@ return {
           },
         },
       },
+      rust_analyzer = {},
       yamlls = {
         settings = {
           yaml = {
@@ -211,18 +212,19 @@ return {
 
     local null_ls = require("null-ls")
 
-    local _formatting = null_ls.builtins.formatting
-    local _code_actions = null_ls.builtins.code_actions
+    local formatting = null_ls.builtins.formatting
+    local code_actions = null_ls.builtins.code_actions
 
     null_ls.setup({
       save_after_format = true,
       sources = {
-        _formatting.dprint,
-        _formatting.stylua,
-        _formatting.taplo,
-        _formatting.nixfmt,
+        formatting.dprint,
+        formatting.stylua,
+        formatting.taplo,
+        formatting.nixfmt,
+        formatting.rustfmt,
 
-        _code_actions.gitsigns,
+        code_actions.gitsigns,
       },
       on_attach = on_attach,
     })
