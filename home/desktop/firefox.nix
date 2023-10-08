@@ -245,13 +245,8 @@
         .description {
           display: none;
         }
-        #tabList {
-          background-color: #${colors.mantle} !important;
-          border: none !important;
-          border-radius: none !important;
-        }
         #tabsToggle {
-          color: #${colors.mauve} !important;
+          display: none;
         }
         button.primary {
           background-color: #${colors.mauve} !important;
