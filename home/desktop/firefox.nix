@@ -245,6 +245,11 @@
         .description {
           display: none;
         }
+        #tabList {
+          background-color: #${colors.mantle} !important;
+          border: none !important;
+          border-radius: none !important;
+        }
       }
     '';
 
