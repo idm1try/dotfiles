@@ -250,6 +250,12 @@
           border: none !important;
           border-radius: none !important;
         }
+        #tabsToggle {
+          color: #${colors.mauve} !important;
+        }
+        button.primary {
+          background-color: #${colors.mauve} !important;
+        }
       }
     '';
 
