@@ -10,8 +10,3 @@ Follow [nixos-apple-silicon guide](https://github.com/tpwrules/nixos-apple-silic
 sudo nixos-rebuild boot --flake .#yuki
 reboot
 ```
-
-## Thanks
-
-- [thanhvule0310/dotfiles](https://github.com/thanhvule0310/dotfiles)
-- [shaunsingh/nix-darwin-dotfiles](https://github.com/shaunsingh/nix-darwin-dotfiles)

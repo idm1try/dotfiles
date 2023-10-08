@@ -17,6 +17,7 @@
     wireguard-go
     wezterm
     nodejs
+    hyfetch
     nodePackages.pnpm
     cargo
   ];
