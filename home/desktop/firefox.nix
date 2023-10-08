@@ -197,12 +197,6 @@
         body {
           background-color: #${colors.base} !important;
         }
-        .search-wrapper .logo-and-wordmark .logo {
-          background-image: url("https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nixos-white.png") !important;
-          background-size: 100% !important;
-          height: 250px !important;
-          width: 500px !important;
-        }
         .icon-settings,
         .body-wrapper,
         .SnippetBaseContainer,
@@ -236,8 +230,11 @@
           background-color: #${colors.base} !important;
           color: #${colors.text} !important;
         }
-        ul, p, b {
-          display: none
+        .title {
+          background-image: none !important;
+        }
+        ul, p, b, h2, #goBack {
+          display: none !important;
         }
       }
       @-moz-document url-prefix("about:sessionrestore") {
@@ -380,6 +377,7 @@
       "browser.search.hiddenOneOffs" = "Google,Amazon.com,Bing";
       "browser.gesture.swipe.right" = "";
       "browser.gesture.swipe.left" = "";
+      "full-screen-api.warning.timeout" = 0;
     };
   in {
     home = {
