@@ -13,11 +13,9 @@
   home.stateVersion = "21.11";
   home.packages = with pkgs; [
     ripgrep
-    wireguard-tools
-    wireguard-go
     wezterm
+    fd
     nodejs
-    hyfetch
     nodePackages.pnpm
     cargo
   ];

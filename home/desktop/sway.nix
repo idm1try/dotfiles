@@ -62,7 +62,8 @@
         }) (lib.range 0 9));
       in tagBinds // {
         "${mod}+o" = "exec ${pkgs.hyprpicker}/bin/hyprpicker -a -n";
-        "${mod}+p" = ''exec grim -g "$(slurp)" -| wl-copy -t image/png'';
+        "${mod}+p" = ''
+          exec grim -g "$(slurp -b ${colors.mantle}80 -c 00000000)" -| wl-copy -t image/png'';
         "${mod}+Shift+p" = "exec grim -c - | wl-copy -t image/png";
 
         "${mod}+Return" = "exec wezterm";

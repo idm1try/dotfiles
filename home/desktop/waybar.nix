@@ -15,7 +15,7 @@
         disable-scroll = true;
         disable-click = true;
         format = "{name}";
-        persistent_workspaces = {
+        persistent-workspaces = {
           "1" = [ ];
           "2" = [ ];
           "3" = [ ];

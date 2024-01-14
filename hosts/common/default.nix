@@ -1,6 +1,5 @@
 { inputs, colors, ... }: {
   imports = [
-    ./sound.nix
     ./console.nix
     ./networking.nix
     ./users.nix
@@ -29,6 +28,8 @@
       tarball-ttl = 604800;
     };
   };
+
+  sound.enable = true;
 
   services = {
     upower.enable = true;

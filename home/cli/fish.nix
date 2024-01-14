@@ -37,7 +37,7 @@
       ":q" = "exit";
       ":h" = "man";
       mkdir = "mkdir -p";
-      nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#fuku";
+      nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro";
       c = "clear";
       wgdn = "wg-quick down wg0";
       wgup = "wg-quick up wg0";

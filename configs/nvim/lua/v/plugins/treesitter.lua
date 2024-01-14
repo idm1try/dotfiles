@@ -88,10 +88,9 @@ return {
           node_decremental = "<c-backspace>",
         },
       },
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-      },
+    })
+    require("ts_context_commentstring").setup({
+      enable_autocmd = false,
     })
   end,
 }

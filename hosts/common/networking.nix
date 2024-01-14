@@ -1,5 +1,9 @@
 { ... }: {
-  networking.wireless.iwd.enable = true;
+  networking.wireless.iwd = {
+    enable = true;
+    settings.General.EnableNetworkConfiguration = true;
+  };
+  networking.wg-quick.interfaces.wg0.configFile = "/var/secrets/wg0.conf";
   networking.extraHosts = ''
     0.0.0.0 youtube.com
     0.0.0.0 www.youtube.com

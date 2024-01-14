@@ -2,7 +2,7 @@
   description = "Nix Environment";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "github:nixos/nixpkgs/eac4131";
     nur.url = "github:nix-community/nur";
 
     nixos-apple-silicon = {
@@ -45,11 +45,11 @@
         crust = "000000";
       };
     in {
-      nixosConfigurations."fuku" = nixpkgs.lib.nixosSystem {
+      nixosConfigurations."kitaro" = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         specialArgs = { inherit inputs colors; };
         modules = [
-          ./hosts/fuku
+          ./hosts/kitaro
           ./hosts/common
           home-manager.nixosModules.home-manager
         ];
