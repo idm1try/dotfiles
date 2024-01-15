@@ -407,6 +407,7 @@
         amp2html
         ublock-origin
         privacy-redirect
+        wikiwand-wikipedia-modernized
       ];
     };
   };
