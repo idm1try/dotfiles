@@ -252,6 +252,11 @@
           background-color: #${colors.mauve} !important;
         }
       }
+      @-moz-document url-prefix("https://iv.nboeck.de"), url-prefix("https://iv.winston.sh") {
+        body.dark-theme {
+          background-color: #${colors.base} !important;
+        }
+      }
     '';
 
     settings = {
@@ -384,6 +389,8 @@
       "browser.search.hiddenOneOffs" = "Google,Amazon.com,Bing";
       "browser.gesture.swipe.right" = "";
       "browser.gesture.swipe.left" = "";
+      "browser.translations.enable" = false;
+      "media.videocontrols.picture-in-picture.enabled" = false;
       "full-screen-api.warning.timeout" = 0;
     };
   in {
