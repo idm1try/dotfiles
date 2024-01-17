@@ -4,6 +4,7 @@
     ./cli/fish.nix
     ./cli/neovim.nix
     ./cli/himalaya.nix
+    ./cli/comodoro.nix
 
     ./desktop/gtk.nix
     ./desktop/sway.nix
