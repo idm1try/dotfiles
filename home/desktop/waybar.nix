@@ -52,6 +52,7 @@
       backlight = {
         format =
           "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>bri</span> {percent}%";
+        tooltip = false;
       };
       "sway/language" = {
         format =
