@@ -9,14 +9,10 @@ return {
     local heirline = require("heirline")
     local conditions = require("heirline.conditions")
     local utils = require("heirline.utils")
-    local colors = require("catppuccin.palettes").get_palette()
+    local colors = require("catppuccin.palettes").get_palette() or ""
 
     conditions.buffer_not_empty = function()
       return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
-    end
-
-    conditions.hide_in_width = function(size)
-      return vim.api.nvim_get_option("columns") > (size or 140)
     end
 
     local Align = { provider = "%=", hl = { bg = colors.mantle } }
@@ -406,6 +402,7 @@ return {
     }
 
     heirline.setup({
+      ---@diagnostic disable-next-line: missing-fields
       statusline = {
         ViModeSepLeft,
         FileNameBlock,

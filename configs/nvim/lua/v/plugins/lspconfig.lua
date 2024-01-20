@@ -44,16 +44,12 @@ return {
         source = false,
         prefix = "▎",
         format = function(diagnostic)
-          return string.format(
-            "%s%s ",
-            diagnostic.source and string.format("[%s]: ", diagnostic.source) or "",
-            diagnostic.message
-          )
+          return string.format("%s ", diagnostic.message)
         end,
       },
       float = {
         source = false,
-        header = false,
+        header = "",
         format = function(diagnostic)
           return string.format(
             "%s%s ",
@@ -117,27 +113,6 @@ return {
     require("neodev").setup()
     local servers = {
       nil_ls = {},
-      eslint = {
-        root_dir = lspconfig.util.root_pattern(".eslintrc", ".eslintrc.js", ".eslintrc.json"),
-        on_attach = function(client, bufnr)
-          client.server_capabilities.documentFormattingProvider = true
-          on_attach(client, bufnr)
-        end,
-        settings = {
-          format = {
-            enable = false,
-          },
-        },
-        handlers = {
-          ["window/showMessageRequest"] = function(_, result)
-            if result.message:find("ENOENT") then
-              return vim.NIL
-            end
-
-            return vim.lsp.handlers["window/showMessageRequest"](nil, result)
-          end,
-        },
-      },
       html = {
         on_attach = function(client, bufnr)
           client.server_capabilities.documentFormattingProvider = false

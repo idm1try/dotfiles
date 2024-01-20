@@ -1,7 +1,7 @@
 return {
   "nvim-tree/nvim-web-devicons",
   config = function()
-    local colors = require("catppuccin.palettes").get_palette()
+    local colors = require("catppuccin.palettes").get_palette() or ""
 
     require("nvim-web-devicons").setup({
       override = {
