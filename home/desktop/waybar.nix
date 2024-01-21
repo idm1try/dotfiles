@@ -38,7 +38,7 @@
           "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.red}'>bat</span> {capacity}%";
         format-charging =
           "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>bat [ac]</span> {capacity}%";
-        states = { critical = 15; };
+        states = { critical = 30; };
         interval = 5;
         tooltip = false;
       };
