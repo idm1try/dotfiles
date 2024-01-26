@@ -77,6 +77,7 @@ return {
             PmenuSbar = { bg = colors.crust },
             PmenuThumb = { bg = colors.surface0 },
             VertSplit = { fg = colors.base },
+            CmpGhostText = { link = "Comment" },
 
             TelescopeSelection = { bg = colors.surface0 },
             TelescopePromptCounter = { fg = colors.mauve, style = { "bold" } },
