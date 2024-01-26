@@ -106,7 +106,12 @@ return {
       end,
     })
 
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    local capabilities = vim.tbl_deep_extend(
+      "force",
+      {},
+      vim.lsp.protocol.make_client_capabilities(),
+      require("cmp_nvim_lsp").default_capabilities()
+    )
 
     local lspconfig = require("lspconfig")
 
@@ -168,7 +173,7 @@ return {
     for server, config in pairs(servers) do
       lspconfig[server].setup(Utils.merge_tables({
         on_attach,
-        capabilities,
+        capabilities = capabilities,
       }, config))
     end
 
