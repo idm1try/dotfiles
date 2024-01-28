@@ -19,6 +19,7 @@
       nodejs.symbol = " ";
       package.symbol = " ";
       rust.symbol = " ";
+      bun.disabled = true;
       git_branch = {
         symbol = " ";
         format = "[$symbol$branch(:$remote_branch)]($style) ";

@@ -17,6 +17,7 @@
     fd
     nodejs
     nodePackages.pnpm
+    bun
     cargo
   ];
   xdg.configFile."wezterm" = {

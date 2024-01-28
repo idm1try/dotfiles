@@ -402,6 +402,11 @@ return {
           color = colors.red,
           name = "PackageLockJson",
         },
+        ["bun.lockb"] = {
+          icon = "",
+          color = colors.mauve,
+          name = "Bunlock",
+        },
         [".gitignore"] = {
           icon = "",
           color = colors.peach,
