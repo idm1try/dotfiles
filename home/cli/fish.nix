@@ -42,7 +42,6 @@
       c = "clear";
       wgdn = "wg-quick down wg0";
       wgup = "wg-quick up wg0";
-      p = "pnpm";
       g = "git";
       gl =
         "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
