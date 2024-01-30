@@ -46,7 +46,7 @@ return {
 
       cmp.setup({
         enabled = function()
-          local in_prompt = vim.api.nvim_buf_get_option(0, "buftype") == "prompt"
+          local in_prompt = vim.api.nvim_get_option_value("buftype", { scope = "local" }) == "prompt"
           if in_prompt then
             return false
           end
@@ -58,6 +58,8 @@ return {
         },
         completion = {
           completeopt = "menu,menuone,noselect",
+          keyword_pattern = [[\%(-\?\d\+\%(\.\d\+\)\?\|\h\w*\%(-\w*\)*\)]],
+          keyword_length = 1,
         },
         window = {
           completion = {

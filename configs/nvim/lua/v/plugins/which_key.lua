@@ -5,9 +5,10 @@ return {
     local wk = require("which-key")
 
     wk.register({
-      ["<leader>f"] = { name = "+telescope" },
-      ["<leader>g"] = { name = "+git" },
-      ["<leader>l"] = { name = "+lsp" },
+      ["<leader>f"] = { name = "+[telescope]" },
+      ["<leader>g"] = { name = "+[git]" },
+      ["<leader>l"] = { name = "+[lsp]" },
+      ["<leader>t"] = { name = "+[typescript]" },
     }, {
       mode = "n",
       prefix = "",

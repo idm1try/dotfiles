@@ -9,7 +9,7 @@
       stylua
       lua-language-server
 
-      nodePackages."@tailwindcss/language-server"
+      tailwindcss-language-server
       nodePackages.typescript
       nodePackages.typescript-language-server
       nodePackages.vscode-langservers-extracted

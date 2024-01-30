@@ -113,12 +113,28 @@ return {
     require("neodev").setup()
     local servers = {
       nil_ls = {},
-      html = {
-        on_attach = function(client, bufnr)
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-          on_attach(client, bufnr)
-        end,
+      rust_analyzer = {},
+      taplo = {},
+      lua_ls = {
+        settings = {
+          Lua = {
+            format = { enable = false },
+            completion = { callSnippet = "Replace" },
+            workspace = { checkThirdParty = false },
+          },
+        },
+      },
+      tailwindcss = {
+        root_dir = lspconfig.util.root_pattern(
+          "tailwind.config.js",
+          "tailwind.config.cjs",
+          "tailwind.config.mjs",
+          "tailwind.config.ts",
+          "postcss.config.js",
+          "postcss.config.cjs",
+          "postcss.config.mjs",
+          "postcss.config.ts"
+        ),
       },
       jsonls = {
         on_attach = function(client, bufnr)
@@ -135,31 +151,14 @@ return {
           provideFormatter = true,
         },
       },
-      lua_ls = {
-        settings = {
-          Lua = {
-            format = { enable = false },
-            completion = { callSnippet = "Replace" },
-            workspace = { checkThirdParty = false },
-          },
-        },
-      },
-      tailwindcss = {},
-      tsserver = {
-        on_attach = function(client, bufnr)
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-          on_attach(client, bufnr)
-        end,
-        root_dir = lspconfig.util.root_pattern("package.json"),
-      },
-      rust_analyzer = {},
       yamlls = {
         settings = {
           yaml = {
-            schemas = {
-              ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+            schemaStore = {
+              enable = false,
+              url = "",
             },
+            schemas = require("schemastore").yaml.schemas(),
           },
         },
       },

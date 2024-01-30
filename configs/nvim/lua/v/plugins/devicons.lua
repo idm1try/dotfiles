@@ -572,15 +572,25 @@ return {
           color = colors.peach,
           name = "Rollup",
         },
-        ["tailwind.config.ts"] = {
-          icon = "󰞍",
-          color = colors.sapphire,
-          name = "Tailwind",
-        },
         ["tailwind.config.js"] = {
-          icon = "󰞍",
-          color = colors.sapphire,
-          name = "Tailwindjs",
+          icon = "󱏿",
+          color = colors.sky,
+          name = "TailwindConfig",
+        },
+        ["tailwind.config.cjs"] = {
+          icon = "󱏿",
+          color = colors.sky,
+          name = "TailwindConfig",
+        },
+        ["tailwind.config.mjs"] = {
+          icon = "󱏿",
+          color = colors.sky,
+          name = "TailwindConfig",
+        },
+        ["tailwind.config.ts"] = {
+          icon = "󱏿",
+          color = colors.sky,
+          name = "TailwindConfig",
         },
       },
       default = true,
