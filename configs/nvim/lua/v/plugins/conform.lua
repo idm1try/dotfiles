@@ -25,11 +25,6 @@ return {
     },
     formatters = {
       injected = { options = { ignore_errors = true } },
-      dprint = {
-        condition = function(ctx)
-          return vim.fs.find({ "dprint.json" }, { path = ctx.filename, upward = true })[1]
-        end,
-      },
     },
     format_on_save = {
       timeout_ms = 500,
