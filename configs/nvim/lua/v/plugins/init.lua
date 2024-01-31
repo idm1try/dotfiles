@@ -31,6 +31,7 @@ require("lazy").setup({
   { import = "v.plugins.which_key" },
   { import = "v.plugins.hop" },
   { import = "v.plugins.typescript-tools" },
+  { import = "v.plugins.conform" },
 }, {
   defaults = {
     lazy = true,

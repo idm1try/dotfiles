@@ -15,12 +15,6 @@
       nodePackages.vscode-langservers-extracted
       nodePackages.yaml-language-server
 
-      cargo
-      taplo
-      rust-analyzer
-      rustc
-      rustfmt
-
       dprint
       nil
       nixfmt
