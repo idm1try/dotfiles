@@ -86,17 +86,26 @@ end
 local function get_current_working_dir(tab)
 	local cwd_uri = tab.active_pane.current_working_dir
 
-	cwd_uri = cwd_uri:sub(8)
+	if cwd_uri then
+		local cwd = ""
+		if type(cwd_uri) == "userdata" then
+			cwd = file_path
+		else
+			cwd_uri = cwd_uri:sub(8)
+			local slash = cwd_uri:find("/")
+			if slash then
+				cwd = cwd_uri:sub(slash):gsub("%%(%x%x)", function(hex)
+					return string.char(tonumber(hex, 16))
+				end)
+			end
+		end
 
-	local slash = cwd_uri:find("/")
-	local cwd = cwd_uri:sub(slash)
+		if cwd == os.getenv("HOME") then
+			return " ~"
+		end
 
-	local HOME_DIR = os.getenv("HOME")
-	if cwd == HOME_DIR then
-		return "  ~"
+		return string.format(" %s", string.match(cwd, "[^/]+$"))
 	end
-
-	return string.format("  %s", string.match(cwd, "[^/]+$"))
 end
 
 function Tab.setup(config)
