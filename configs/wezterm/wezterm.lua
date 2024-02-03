@@ -14,6 +14,7 @@ local config = {
 		top = 30,
 		bottom = 30,
 	},
+	use_resize_increments = true,
 	inactive_pane_hsb = {
 		saturation = 1.0,
 		brightness = 1.0,
@@ -23,7 +24,6 @@ local config = {
 	warn_about_missing_glyphs = false,
 	show_update_window = false,
 	check_for_updates = false,
-	line_height = 1.4,
 	window_decorations = "RESIZE",
 	window_close_confirmation = "NeverPrompt",
 	hide_mouse_cursor_when_typing = false,

@@ -7,6 +7,7 @@ function fonts.setup(config)
 	config.font_size = 12
 	config.underline_thickness = "200%"
 	config.underline_position = "-4pt"
+	config.line_height = 1.6
 	config.font_rules = {
 		{
 			italic = false,
