@@ -25,14 +25,10 @@ return {
       indent = {
         indent_size = 2,
         padding = 1,
-        with_markers = true,
-        indent_marker = "│",
-        last_indent_marker = "└",
-        highlight = "IndentBlanklineChar",
+        with_markers = false,
         with_expanders = true,
         expander_collapsed = "",
         expander_expanded = "",
-        expander_highlight = "IndentBlanklineContextChar",
       },
       icon = {
         folder_closed = "",
