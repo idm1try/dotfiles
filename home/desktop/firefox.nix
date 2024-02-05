@@ -1,7 +1,7 @@
 { pkgs, colors, ... }: {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox;
+    package = pkgs.firefox-beta;
   };
 
   programs.firefox.profiles = let
@@ -407,7 +407,6 @@
         amp2html
         ublock-origin
         privacy-redirect
-        wikiwand-wikipedia-modernized
       ];
     };
   };

@@ -2,18 +2,78 @@ return {
   "nvim-telescope/telescope.nvim",
   version = false,
   keys = {
-    { "<leader>ff", "<CMD>Telescope find_files hidden=true<CR>", desc = "[telescope] find file" },
-    { "<leader><leader>", "<CMD>Telescope find_files hidden=true<CR>", desc = "[telescope] find file" },
+    {
+      "<leader><leader>",
+      function()
+        require("telescope.builtin").find_files({
+          hidden = true,
+        })
+      end,
+      desc = "[telescope] find file",
+    },
     {
       "<leader>fg",
-      "<CMD>Telescope live_grep<CR>",
+      function()
+        require("telescope.builtin").live_grep({
+          prompt_prefix = "     ",
+        })
+      end,
       desc = "[telescope] find file by grep",
     },
-    { "<leader>fb", "<CMD>Telescope buffers<CR>", desc = "[telescope] find buffers" },
-    { "<leader>fd", "<CMD>Telescope diagnostics<CR>", desc = "[telescope] diagnostics" },
-    { "<leader>gf", "<CMD>Telescope git_status<CR>", desc = "[git] files status" },
-    { "<leader>gc", "<CMD>Telescope git_commits<CR>", desc = "[git] commits" },
-    { "<leader>gb", "<CMD>Telescope git_branches<CR>", desc = "[git] branches" },
+    {
+      "<leader>fb",
+      function()
+        require("telescope.builtin").buffers({
+          prompt_prefix = "     ",
+        })
+      end,
+      desc = "[telescope] find buffers",
+    },
+    {
+      "<leader>fd",
+      function()
+        require("telescope.builtin").diagnostics({
+          prompt_prefix = "     ",
+        })
+      end,
+      desc = "[telescope] diagnostics",
+    },
+    {
+      "<leader>gf",
+      function()
+        require("telescope.builtin").git_status({
+          prompt_prefix = "     ",
+        })
+      end,
+      desc = "[git] status",
+    },
+    {
+      "<leader>gc",
+      function()
+        require("telescope.builtin").git_commits({
+          prompt_prefix = "    ",
+        })
+      end,
+      desc = "[git] commits",
+    },
+    {
+      "<leader>gb",
+      function()
+        require("telescope.builtin").git_branches({
+          prompt_prefix = "    ",
+        })
+      end,
+      desc = "[git] branches",
+    },
+    {
+      "gr",
+      function()
+        require("telescope.builtin").lsp_references({
+          prompt_prefix = "     ",
+        })
+      end,
+      desc = "[lsp] references",
+    },
   },
   dependencies = {
     "nvim-lua/plenary.nvim",

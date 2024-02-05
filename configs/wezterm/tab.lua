@@ -89,7 +89,7 @@ local function get_current_working_dir(tab)
 	if cwd_uri then
 		local cwd = ""
 		if type(cwd_uri) == "userdata" then
-			cwd = file_path
+			cwd = cwd_uri.file_path
 		else
 			cwd_uri = cwd_uri:sub(8)
 			local slash = cwd_uri:find("/")
@@ -101,10 +101,10 @@ local function get_current_working_dir(tab)
 		end
 
 		if cwd == os.getenv("HOME") then
-			return " ~"
+			return "~"
 		end
 
-		return string.format(" %s", string.match(cwd, "[^/]+$"))
+		return string.format("%s", string.match(cwd, "[^/]+$"))
 	end
 end
 
@@ -120,7 +120,7 @@ function Tab.setup(config)
 			{ Text = string.format("   ") },
 			"ResetAttributes",
 			{ Text = get_process(tab) },
-			{ Text = " " },
+			{ Text = "  " },
 			{ Text = get_current_working_dir(tab) },
 			{ Foreground = { Color = colors.base } },
 			{ Text = "  ▕" },

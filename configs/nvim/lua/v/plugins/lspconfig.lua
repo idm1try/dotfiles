@@ -72,7 +72,6 @@ return {
         )
         vim.keymap.set("n", "<space>lr", vim.lsp.buf.rename, { buffer = ev.buf, desc = "[lsp] rename" })
         vim.keymap.set("n", "<space>lc", vim.lsp.buf.code_action, { buffer = ev.buf, desc = "[lsp] code actions" })
-        vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "[lsp] references" })
       end,
     })
 

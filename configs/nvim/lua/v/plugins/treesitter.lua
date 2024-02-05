@@ -4,19 +4,13 @@ return {
   event = { "BufReadPost", "BufNewFile" },
   dependencies = {
     "windwp/nvim-ts-autotag",
-    "JoosepAlviste/nvim-ts-context-commentstring",
+    "nvim-treesitter/nvim-treesitter-textobjects",
   },
   config = function()
     local MAX_FILE_LINES = 5000
     local MAX_FILE_SIZE = 1048576 -- 1MB
 
     require("nvim-treesitter.configs").setup({
-      autotag = {
-        enable = true,
-      },
-      indent = {
-        enable = true,
-      },
       auto_install = false,
       sync_install = true,
       ignore_install = {},
@@ -88,9 +82,29 @@ return {
           node_decremental = "<c-backspace>",
         },
       },
-    })
-    require("ts_context_commentstring").setup({
-      enable_autocmd = false,
+      textobjects = {
+        select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {
+            ["ap"] = "@parameter.outer",
+            ["ip"] = "@parameter.inner",
+            ["ab"] = "@block.outer",
+            ["ib"] = "@block.inner",
+            ["af"] = "@function.outer",
+            ["if"] = "@function.inner",
+            ["ac"] = "@class.outer",
+            ["ic"] = "@class.inner",
+          },
+        },
+        move = { enable = false },
+      },
+      autotag = {
+        enable = true,
+      },
+      indent = {
+        enable = true,
+      },
     })
   end,
 }

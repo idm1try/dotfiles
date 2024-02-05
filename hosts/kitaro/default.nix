@@ -24,8 +24,6 @@
   boot = {
     consoleLogLevel = 0;
     kernelParams = [ "apple_dcp.show_notch=1" ];
-    initrd.services.udev.rules = ''
-      SUBSYSTEM=="power_supply", KERNEL=="macsmc-battery", ATTR{charge_control_end_threshold}="80"'';
   };
 
   networking.hostName = "kitaro";

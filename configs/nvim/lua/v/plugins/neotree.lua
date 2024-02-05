@@ -44,24 +44,34 @@ return {
         use_git_status_colors = true,
         highlight = "NeoTreeFileName",
       },
+      file_size = {
+        enabled = false,
+      },
+      type = {
+        enabled = false,
+      },
+      last_modified = {
+        enabled = false,
+      },
+      created = {
+        enabled = false,
+      },
       git_status = {
         symbols = {
-          added = "+",
-          modified = "~",
-          deleted = "",
-          renamed = "",
-          untracked = "",
-          ignored = "",
-          unstaged = "",
-          staged = "",
-          conflict = "",
+          added = "",
+          modified = "",
+          deleted = "",
+          renamed = "",
+          untracked = "",
+          ignored = "",
+          unstaged = "",
+          staged = "",
+          conflict = "",
         },
       },
     },
     commands = {},
     window = {
-      position = "left",
-      width = 34,
       mappings = {
         ["o"] = "open",
         ["<c-x>"] = "open_split",
@@ -73,6 +83,9 @@ return {
         visible = false,
         hide_dotfiles = false,
         hide_gitignored = false,
+        never_show = {
+          ".git",
+        },
       },
       follow_current_file = {
         enabled = true,
@@ -86,15 +99,6 @@ return {
             result.text = string.gsub(state.path, "(.*[/\\])(.*)", "%2")
           end
           return result
-        end,
-      },
-    },
-    event_handlers = {
-
-      {
-        event = "file_opened",
-        handler = function()
-          require("neo-tree").close_all()
         end,
       },
     },
