@@ -183,6 +183,8 @@
       }
       #alltabs-button { display: none !important; }
       #unified-extensions-button { color: var(--srf-secondary) !important; }
+
+      .sidebar-placesTreechildren::-moz-tree-row{ height: 2.2em !important; }
     '';
     userContent = ''
       :root {
