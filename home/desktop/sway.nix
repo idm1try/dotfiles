@@ -67,7 +67,7 @@
         "${mod}+Shift+p" = "exec grim -c - | wl-copy -t image/png";
 
         "${mod}+Return" = "exec wezterm";
-        "${mod}+d" = "exec firefox-beta";
+        "${mod}+d" = "exec firefox";
 
         "XF86AudioMute" = "exec amixer sset Master toggle";
         "XF86AudioRaiseVolume" = "exec amixer sset Master 5%+";

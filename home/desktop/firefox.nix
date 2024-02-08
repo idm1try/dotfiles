@@ -1,7 +1,7 @@
 { pkgs, colors, ... }: {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-beta;
+    package = pkgs.firefox;
   };
 
   programs.firefox.profiles = let
