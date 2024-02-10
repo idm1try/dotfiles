@@ -254,11 +254,6 @@
           background-color: #${colors.mauve} !important;
         }
       }
-      @-moz-document url-prefix("https://iv.nboeck.de"), url-prefix("https://iv.winston.sh") {
-        body.dark-theme {
-          background-color: #${colors.base} !important;
-        }
-      }
     '';
 
     settings = {
@@ -409,6 +404,9 @@
         amp2html
         ublock-origin
         privacy-redirect
+        clearurls
+        decentraleyes
+        stylus
       ];
     };
   };
