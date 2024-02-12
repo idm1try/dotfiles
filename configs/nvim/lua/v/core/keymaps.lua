@@ -7,4 +7,4 @@ map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "[search] clear" })
 
 map("n", "<leader>p", "<cmd>:Lazy<cr>", { desc = "[lazy] open" })
 
-map("n", "<leader>b", "<cmd>e ~/note.md<cr>", { desc = "[note] open" })
+map("n", "<leader>b", "<cmd>e ~/notes/note.md<cr>", { desc = "[note] open" })
