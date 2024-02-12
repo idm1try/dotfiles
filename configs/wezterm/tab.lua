@@ -73,14 +73,19 @@ local function get_process(tab)
 
 	local process_name = string.gsub(tab.active_pane.foreground_process_name, "(.*[/\\])(.*)", "%2")
 
-	if process_name == "" then
-		process_name = "fish"
+	if process_icons[process_name] then
+		return wezterm.format(process_icons[process_name])
+	elseif process_name == "" then
+		return wezterm.format({
+			{ Foreground = { Color = colors.peach } },
+			{ Text = "󰈺" },
+		})
+	else
+		return wezterm.format({
+			{ Foreground = { Color = colors.blue } },
+			{ Text = string.format("[%s]", process_name) },
+		})
 	end
-
-	return wezterm.format(
-		process_icons[process_name]
-			or { { Foreground = { Color = colors.blue } }, { Text = string.format("[%s]", process_name) } }
-	)
 end
 
 local function get_current_working_dir(tab)
