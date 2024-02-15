@@ -11,7 +11,7 @@
     ./desktop/waybar.nix
   ];
   home.stateVersion = "21.11";
-  home.packages = with pkgs; [ ripgrep wezterm fd nodejs bun ];
+  home.packages = with pkgs; [ ripgrep wezterm fd nodejs bun rink ];
   xdg.configFile."wezterm" = {
     source = config.lib.file.mkOutOfStoreSymlink
       "/home/idm1try/.dotfiles/configs/wezterm";

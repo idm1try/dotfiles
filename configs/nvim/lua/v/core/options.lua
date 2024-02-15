@@ -14,7 +14,7 @@ vim.opt.confirm = true
 vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.fileencoding = "utf-8"
-vim.opt.fillchars = { fold = " ", vert = " ", horiz = " ", eob = " ", msgsep = "‾", diff = "╱" }
+vim.opt.fillchars = { fold = " ", vert = " ", horiz = " ", eob = " ", msgsep = "‾", diff = " " }
 vim.opt.formatoptions = "jcroqlnt"
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.grepprg = "rg --vimgrep"
@@ -25,6 +25,7 @@ vim.opt.incsearch = true
 vim.opt.laststatus = 3
 vim.opt.list = false
 vim.opt.mouse = "a"
+vim.opt.mousemodel = "extend"
 vim.opt.number = false
 vim.opt.pumheight = 10
 vim.opt.relativenumber = false
@@ -52,6 +53,8 @@ vim.opt.updatetime = 200
 vim.opt.wildignorecase = true
 vim.opt.winminwidth = 5
 vim.opt.wrap = false
+vim.opt.statusline = " "
+vim.opt.diffopt = { "closeoff", "hiddenoff", "linematch:60", "foldcolumn:0" }
 
 vim.filetype.add({
   pattern = {

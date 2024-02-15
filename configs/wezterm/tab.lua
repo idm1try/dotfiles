@@ -69,6 +69,10 @@ local function get_process(tab)
 			{ Foreground = { Color = colors.peach } },
 			{ Text = "󰌌" },
 		},
+		["rink"] = {
+			{ Foreground = { Color = colors.yellow } },
+			{ Text = "󰃬" },
+		},
 	}
 
 	local process_name = string.gsub(tab.active_pane.foreground_process_name, "(.*[/\\])(.*)", "%2")

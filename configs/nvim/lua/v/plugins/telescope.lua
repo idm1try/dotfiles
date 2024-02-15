@@ -39,6 +39,15 @@ return {
       desc = "[telescope] diagnostics",
     },
     {
+      "<leader>fh",
+      function()
+        require("telescope.builtin").help_tags({
+          prompt_prefix = "    ",
+        })
+      end,
+      desc = "[telescope] help",
+    },
+    {
       "<leader>gf",
       function()
         require("telescope.builtin").git_status({

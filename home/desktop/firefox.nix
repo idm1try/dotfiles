@@ -52,6 +52,9 @@
         opacity: 0 !important;
         border-left: none !important;
       }
+      #tabbrowser-tabs {
+        --tab-loading-fill: unset !important;
+      }
       .titlebar-placeholder {
         border: none !important;
       }
@@ -185,6 +188,21 @@
       #unified-extensions-button { color: var(--srf-secondary) !important; }
 
       .sidebar-placesTreechildren::-moz-tree-row{ height: 2.2em !important; }
+
+       #context-navigation, #context-sep-navigation { 
+         display: none !important 
+       }
+
+      #toolbar-menubar {
+        display: none !important;
+      }
+
+      #browser vbox#appcontent tabbrowser,
+      #content, #tabbrowser-tabpanels,
+      browser[type=content-primary],
+      browser[type=content] > html { 
+        background: var(--srf-primary) !important 
+      }
     '';
     userContent = ''
       :root {
