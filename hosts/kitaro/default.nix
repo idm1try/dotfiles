@@ -24,6 +24,7 @@
   boot = {
     consoleLogLevel = 0;
     kernelParams = [ "apple_dcp.show_notch=1" ];
+    loader.efi.canTouchEfiVariables = false;
   };
 
   networking.hostName = "kitaro";

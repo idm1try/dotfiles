@@ -1,4 +1,5 @@
 { colors, pkgs, ... }: {
+  home.packages = with pkgs; [ fishPlugins.autopair fishPlugins.grc grc ];
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;

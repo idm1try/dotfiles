@@ -137,6 +137,7 @@ return {
             ["@constant"] = { fg = colors.text, style = { "bold" } },
             ["@variable.builtin"] = { fg = colors.pink },
             ["@type.builtin"] = { fg = colors.pink, style = { "bold" } },
+            ["@tag.attribute.tsx"] = { fg = colors.mauve, style = { "italic" } },
           }
         end,
       },

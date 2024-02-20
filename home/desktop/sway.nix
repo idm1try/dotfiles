@@ -80,6 +80,9 @@
         "XF86AudioRaiseVolume" = "exec amixer sset Master 5%+";
         "XF86AudioLowerVolume" = "exec amixer sset Master 5%-";
 
+        "${mod}+XF86AudioRaiseVolume" = "exec amixer sset Master 1%+";
+        "${mod}+XF86AudioLowerVolume" = "exec amixer sset Master 1%-";
+
         "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
         "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
         "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";

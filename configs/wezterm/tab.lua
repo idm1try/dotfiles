@@ -26,8 +26,8 @@ local function get_process(tab)
 			{ Text = "󰈺" },
 		},
 		["bash"] = {
-			{ Foreground = { Color = colors.subtext0 } },
-			{ Text = "" },
+			{ Foreground = { Color = colors.peach } },
+			{ Text = "󰈺" },
 		},
 		["htop"] = {
 			{ Foreground = { Color = colors.yellow } },
@@ -73,17 +73,24 @@ local function get_process(tab)
 			{ Foreground = { Color = colors.yellow } },
 			{ Text = "󰃬" },
 		},
+
+		-- yep its not best but okay
+		-- nixos-rebuild shows []
+		[""] = {
+			{ Foreground = { Color = colors.blue } },
+			{ Text = "" },
+		},
+		-- prevent showing python when using commands with grc colorizer
+		["python3.11"] = {
+			{ Foreground = { Color = colors.peach } },
+			{ Text = "󰈺" },
+		},
 	}
 
 	local process_name = string.gsub(tab.active_pane.foreground_process_name, "(.*[/\\])(.*)", "%2")
 
 	if process_icons[process_name] then
 		return wezterm.format(process_icons[process_name])
-	elseif process_name == "" then
-		return wezterm.format({
-			{ Foreground = { Color = colors.peach } },
-			{ Text = "󰈺" },
-		})
 	else
 		return wezterm.format({
 			{ Foreground = { Color = colors.blue } },
