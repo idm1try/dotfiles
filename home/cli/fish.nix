@@ -32,10 +32,15 @@
     shellAliases = {
       ll = "${pkgs.eza}/bin/eza --icons --long --sort type -a --git";
       ls = "${pkgs.eza}/bin/eza --icons --sort type -a --git";
+      tree =
+        "${pkgs.eza}/bin/eza --icons --sort type -a --git --tree --ignore-glob .git";
       top = "${pkgs.htop}/bin/htop";
       hm = "${pkgs.himalaya}/bin/himalaya";
       cp = "cp -r";
       rm = "rm -r";
+      du = "grc du -h";
+      df = "grc df -h";
+      copy = "wl-copy";
       ":q" = "exit";
       ":h" = "man";
       mkdir = "mkdir -p";
@@ -58,6 +63,7 @@
       set -gx SUDO_EDITOR $EDITOR
       set -gx XDG_CACHE_HOME ~/.cache
       set -gx MANPAGER "nvim +Man!"
+      set -gx PF_INFO "ascii title os host kernel uptime shell memory" 
 
       ${pkgs.nix-your-shell}/bin/nix-your-shell fish | source
 
