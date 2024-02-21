@@ -108,8 +108,8 @@
     fish_pager_color_description ${colors.overlay0}
   '';
 
-  xdg.configFile."grc" = {
-    source = "${inputs.grc-rs.packages.${pkgs.system}.default}/etc/grc";
+  xdg.configFile."grc-rs" = {
+    source = "${inputs.grc-rs.packages.${pkgs.system}.default}/etc/grc-rs";
     recursive = true;
   };
 }
