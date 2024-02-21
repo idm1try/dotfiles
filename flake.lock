@@ -91,6 +91,26 @@
         "type": "github"
       }
     },
+    "grc-rs": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1708532701,
+        "narHash": "sha256-EsvLluH0TYNkut5VB8KSpbB6PeXT+StdOMwz+iECYDM=",
+        "owner": "idm1try",
+        "repo": "grc-rs",
+        "rev": "27ee85cd99160627fecae7123a7d3578b6fa02fa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "idm1try",
+        "repo": "grc-rs",
+        "type": "github"
+      }
+    },
     "hercules-ci-effects": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -235,6 +255,7 @@
     },
     "root": {
       "inputs": {
+        "grc-rs": "grc-rs",
         "home-manager": "home-manager",
         "neovim-nightly": "neovim-nightly",
         "nixos-apple-silicon": "nixos-apple-silicon",

@@ -1,5 +1,6 @@
-{ colors, pkgs, ... }: {
-  home.packages = with pkgs; [ fishPlugins.autopair fishPlugins.grc grc ];
+{ colors, pkgs, inputs, ... }: {
+  home.packages =
+    [ pkgs.fishPlugins.autopair inputs.grc-rs.packages.${pkgs.system}.default ];
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
@@ -38,8 +39,8 @@
       hm = "${pkgs.himalaya}/bin/himalaya";
       cp = "cp -r";
       rm = "rm -r";
-      du = "grc du -h";
-      df = "grc df -h";
+      du = "grc-rs du -h";
+      df = "grc-rs df -h";
       copy = "wl-copy";
       ":q" = "exit";
       ":h" = "man";
@@ -66,6 +67,7 @@
       set -gx PF_INFO "ascii title os host kernel uptime shell memory" 
 
       ${pkgs.nix-your-shell}/bin/nix-your-shell fish | source
+      grc-rs --aliases --except=du,df | source
 
       fish_vi_key_bindings
 
@@ -105,4 +107,9 @@
     fish_pager_color_completion ${colors.text}
     fish_pager_color_description ${colors.overlay0}
   '';
+
+  xdg.configFile."grc" = {
+    source = "${inputs.grc-rs.packages.${pkgs.system}.default}/etc/grc";
+    recursive = true;
+  };
 }

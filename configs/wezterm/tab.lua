@@ -29,6 +29,10 @@ local function get_process(tab)
 			{ Foreground = { Color = colors.peach } },
 			{ Text = "󰈺" },
 		},
+		["grc-rs"] = {
+			{ Foreground = { Color = colors.peach } },
+			{ Text = "󰈺" },
+		},
 		["htop"] = {
 			{ Foreground = { Color = colors.yellow } },
 			{ Text = "󰞰" },
@@ -74,16 +78,9 @@ local function get_process(tab)
 			{ Text = "󰃬" },
 		},
 
-		-- yep its not best but okay
-		-- nixos-rebuild shows []
 		[""] = {
 			{ Foreground = { Color = colors.blue } },
 			{ Text = "" },
-		},
-		-- prevent showing python when using commands with grc colorizer
-		["python3.11"] = {
-			{ Foreground = { Color = colors.peach } },
-			{ Text = "󰈺" },
 		},
 	}
 

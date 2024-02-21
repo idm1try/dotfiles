@@ -17,6 +17,10 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    grc-rs = {
+      url = "github:idm1try/grc-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = { nixpkgs, home-manager, ... }@inputs:
     let
