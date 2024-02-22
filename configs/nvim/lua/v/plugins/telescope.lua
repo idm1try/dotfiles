@@ -48,6 +48,15 @@ return {
       desc = "[telescope] help",
     },
     {
+      "<leader>fm",
+      function()
+        require("telescope.builtin").man_pages({
+          prompt_prefix = "    ",
+        })
+      end,
+      desc = "[telescope] man pages",
+    },
+    {
       "<leader>gf",
       function()
         require("telescope.builtin").git_status({

@@ -1,4 +1,4 @@
-{ colors, pkgs, inputs, ... }: {
+{ colors, pkgs, inputs, lib, ... }: {
   home.packages =
     [ pkgs.fishPlugins.autopair inputs.grc-rs.packages.${pkgs.system}.default ];
   programs.zoxide = {
@@ -31,12 +31,13 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ll = "${pkgs.eza}/bin/eza --icons --long --sort type -a --git";
-      ls = "${pkgs.eza}/bin/eza --icons --sort type -a --git";
-      tree =
-        "${pkgs.eza}/bin/eza --icons --sort type -a --git --tree --ignore-glob .git";
-      top = "${pkgs.htop}/bin/htop";
-      hm = "${pkgs.himalaya}/bin/himalaya";
+      ll = "${lib.getExe pkgs.eza} --icons --long --sort type -a --git";
+      ls = "${lib.getExe pkgs.eza} --icons --sort type -a --git";
+      tree = "${
+          lib.getExe pkgs.eza
+        } --icons --sort type -a --git --tree --ignore-glob .git";
+      top = "${lib.getExe pkgs.htop}";
+      hm = "himalaya";
       cp = "cp -r";
       rm = "rm -r";
       du = "grc-rs du -h";
@@ -62,11 +63,10 @@
       set -gx EDITOR (which nvim)
       set -gx VISUAL $EDITOR
       set -gx SUDO_EDITOR $EDITOR
-      set -gx XDG_CACHE_HOME ~/.cache
       set -gx MANPAGER "nvim +Man!"
       set -gx PF_INFO "ascii title os host kernel uptime shell memory" 
 
-      ${pkgs.nix-your-shell}/bin/nix-your-shell fish | source
+      ${lib.getExe pkgs.nix-your-shell} fish | source
       grc-rs --aliases --except=du,df | source
 
       fish_vi_key_bindings

@@ -1,13 +1,6 @@
 { pkgs, lib, colors, ... }: {
   home = {
-    packages = with pkgs; [
-      wf-recorder
-      wl-clipboard
-      slurp
-      grim
-      brightnessctl
-      xdg-utils
-    ];
+    packages = with pkgs; [ wf-recorder wl-clipboard brightnessctl xdg-utils ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       DISABLE_QT5_COMPAT = "0";
@@ -56,7 +49,7 @@
       };
       bars = [{
         position = "top";
-        command = "${pkgs.waybar}/bin/waybar";
+        command = "${lib.getExe pkgs.waybar}";
       }];
       defaultWorkspace = "workspace 1";
       keybindings = let
@@ -68,10 +61,23 @@
             "exec 'swaymsg move container to workspace ${toString i}'";
         }) (lib.range 0 9));
       in tagBinds // {
-        "${mod}+o" = "exec ${pkgs.hyprpicker}/bin/hyprpicker -a -n";
+        "${mod}+o" = "exec ${lib.getExe pkgs.hyprpicker} -a -n";
+
         "${mod}+p" = ''
-          exec grim -g "$(slurp -b ${colors.mantle}80 -c 00000000)" -| wl-copy -t image/png'';
-        "${mod}+Shift+p" = "exec grim -c - | wl-copy -t image/png";
+          exec ${lib.getExe pkgs.grim} -g "$(${
+            lib.getExe pkgs.slurp
+          } -b ${colors.mantle}80 -c 00000000)" -| wl-copy -t image/png'';
+        "${mod}+Shift+p" =
+          "exec ${lib.getExe pkgs.grim} -c - | wl-copy -t image/png";
+
+        "${mod}+Alt+p" = ''
+          exec ${lib.getExe pkgs.grim} -g "$(${
+            lib.getExe pkgs.slurp
+          } -b ${colors.mantle}80 -c 00000000)" ~/pictures/screenshots/$(date "+%Y%m%d"_"%Hh%Mm%Ss"_grim).png'';
+        "${mod}+Shift+Alt+p" = ''
+          exec ${
+            lib.getExe pkgs.grim
+          } -c ~/pictures/screenshots/$(date "+%Y%m%d"_"%Hh%Mm%Ss"_grim).png '';
 
         "${mod}+Return" = "exec wezterm";
         "${mod}+d" = "exec firefox";
@@ -83,19 +89,24 @@
         "${mod}+XF86AudioRaiseVolume" = "exec amixer sset Master 1%+";
         "${mod}+XF86AudioLowerVolume" = "exec amixer sset Master 1%-";
 
-        "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
-        "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
-        "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+        "XF86AudioNext" = "exec ${lib.getExe pkgs.playerctl} next";
+        "XF86AudioPrev" = "exec ${lib.getExe pkgs.playerctl} previous";
+        "XF86AudioPlay" = "exec ${lib.getExe pkgs.playerctl} play-pause";
 
-        "XF86MonBrightnessDown" =
-          "exec ${pkgs.brightnessctl}/bin/brightnessctl s 5%-";
-        "XF86MonBrightnessUp" =
-          "exec ${pkgs.brightnessctl}/bin/brightnessctl s 5%+";
+        "XF86MonBrightnessDown" = "exec ${lib.getExe pkgs.brightnessctl} s 5%-";
+        "XF86MonBrightnessUp" = "exec ${lib.getExe pkgs.brightnessctl} s 5%+";
 
         "${mod}+XF86MonBrightnessDown" =
-          "exec ${pkgs.brightnessctl}/bin/brightnessctl s 1%-";
+          "exec ${lib.getExe pkgs.brightnessctl} s 1%-";
         "${mod}+XF86MonBrightnessUp" =
-          "exec ${pkgs.brightnessctl}/bin/brightnessctl s 1%+";
+          "exec ${lib.getExe pkgs.brightnessctl} s 1%+";
+
+        "XF86LaunchA" = "exec ${
+            lib.getExe pkgs.brightnessctl
+          } --device='kbd_backlight' s 5%-";
+        "XF86Search" = "exec ${
+            lib.getExe pkgs.brightnessctl
+          } --device='kbd_backlight' s 5%+";
 
         "${mod}+q" = "kill";
         "${mod}+r" = ''mode "resize"'';
