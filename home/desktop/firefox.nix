@@ -407,6 +407,7 @@
       "browser.translations.enable" = false;
       "media.videocontrols.picture-in-picture.enabled" = false;
       "full-screen-api.warning.timeout" = 0;
+      "apz.gtk.touchpad_pinch.enabled" = false;
     };
   in {
     home = {
