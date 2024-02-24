@@ -31,11 +31,11 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ll = "${lib.getExe pkgs.eza} --icons --long --sort type -a --git";
-      ls = "${lib.getExe pkgs.eza} --icons --sort type -a --git";
+      ll = "${lib.getExe pkgs.eza} --icons -l -s type -a --git";
+      ls = "${lib.getExe pkgs.eza} --icons -s type -a --git";
       tree = "${
           lib.getExe pkgs.eza
-        } --icons --sort type -a --git --tree --ignore-glob .git";
+        } --icons -s type -a --git -T -I '.git|node_modules|.next'";
       top = "${lib.getExe pkgs.htop}";
       hm = "himalaya";
       cp = "cp -r";
