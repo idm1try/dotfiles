@@ -408,6 +408,8 @@
       "browser.download.dir" = "/home/idm1try/downloads";
       "browser.urlbar.showSearchSuggestionsFirst" = false;
       "media.videocontrols.picture-in-picture.enabled" = false;
+      "extensions.formautofill.creditCards.enabled" = false;
+      "dom.forms.autocomplete.formautofill" = false;
       "full-screen-api.warning.timeout" = 0;
       "apz.gtk.touchpad_pinch.enabled" = false;
     };
