@@ -405,6 +405,8 @@
       "browser.gesture.swipe.right" = "";
       "browser.gesture.swipe.left" = "";
       "browser.translations.enable" = false;
+      "browser.download.dir" = "/home/idm1try/downloads";
+      "browser.urlbar.showSearchSuggestionsFirst" = false;
       "media.videocontrols.picture-in-picture.enabled" = false;
       "full-screen-api.warning.timeout" = 0;
       "apz.gtk.touchpad_pinch.enabled" = false;
@@ -426,6 +428,7 @@
         clearurls
         decentraleyes
         stylus
+        multi-account-containers
       ];
     };
   };
