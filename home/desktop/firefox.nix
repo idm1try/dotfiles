@@ -1,9 +1,25 @@
 { pkgs, colors, ... }: {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox;
+    package = pkgs.firefox.override {
+      nativeMessagingHosts = [ pkgs.tridactyl-native ];
+    };
   };
-
+  xdg.configFile."tridactyl/tridactylrc".text = ''
+    set modeindicatormodes {"normal":"false","insert":"true","input":"true","ignore":"true","ex":"true","hint":"false","visual":"true"}
+    set hintchars etovxqpdygfblzhckisuran
+    set hintuppercase false
+    unbind t
+    unbind T
+    unbind s
+    unbind S
+    unbind p
+    unbind P
+    unbind o
+    unbind O
+    unbind b
+    unbind B
+  '';
   programs.firefox.profiles = let
     userChrome = ''
       :root {
@@ -202,6 +218,12 @@
       browser[type=content-primary],
       browser[type=content] > html { 
         background: var(--srf-primary) !important 
+      }
+      #star-button-box {
+        display: none !important;
+      }
+      #pageAction-urlbar-_testpilot-containers {
+        display: none !important
       }
     '';
     userContent = ''
@@ -419,6 +441,40 @@
       search = {
         default = "DuckDuckGo";
         force = true;
+        engines = {
+          "duckduckgo" = {
+            urls = [{ template = "https://duckduckgo.com/?q={searchTerms}"; }];
+          };
+          "nix packages" = {
+            urls = [{
+              template =
+                "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query={searchTerms}";
+            }];
+            definedAliases = [ "nix" ];
+          };
+          "nix home manager" = {
+            urls = [{
+              template =
+                "https://github.com/nix-community/home-manager/search?q={searchTerms}";
+            }];
+            definedAliases = [ "nhm" ];
+          };
+          "invidious" = {
+            urls =
+              [{ template = "https://iv.nboeck.de/search?q={searchTerms}"; }];
+            definedAliases = [ "inv" ];
+          };
+          "github" = {
+            urls =
+              [{ template = "https://github.com/search?q={searchTerms}"; }];
+            definedAliases = [ "gh" ];
+          };
+          "npmjs" = {
+            urls =
+              [{ template = "https://www.npmjs.org/search?q={searchTerms}"; }];
+            definedAliases = [ "npm" ];
+          };
+        };
       };
       inherit settings;
       inherit userChrome;
@@ -430,6 +486,7 @@
         clearurls
         decentraleyes
         stylus
+        tridactyl
         multi-account-containers
       ];
     };
