@@ -9,6 +9,8 @@
     set modeindicatormodes {"normal":"false","insert":"true","input":"true","ignore":"true","ex":"true","hint":"false","visual":"true"}
     set hintchars etovxqpdygfblzhckisuran
     set hintuppercase false
+    unbind w
+    unbind W
     unbind t
     unbind T
     unbind s
