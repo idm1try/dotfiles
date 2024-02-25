@@ -6,7 +6,7 @@
     };
   };
   xdg.configFile."tridactyl/tridactylrc".text = ''
-    set modeindicatormodes {"normal":"false","insert":"true","input":"true","ignore":"true","ex":"true","hint":"false","visual":"true"}
+    set modeindicator false
     set hintchars etovxqpdygfblzhckisuran
     set hintuppercase false
     unbind w
@@ -447,7 +447,7 @@
           "duckduckgo" = {
             urls = [{ template = "https://duckduckgo.com/?q={searchTerms}"; }];
           };
-          "nix packages" = {
+          "nixpkgs" = {
             urls = [{
               template =
                 "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query={searchTerms}";
