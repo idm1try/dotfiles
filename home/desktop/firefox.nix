@@ -10,6 +10,19 @@
     set modeindicator false
     set hintchars etovxqpdygfblzhckisuran
     set hintuppercase false
+    unbind w
+    unbind W
+    unbind t
+    unbind T
+    unbind s
+    unbind S
+    unbind p
+    unbind P
+    unbind o
+    unbind O
+    unbind b
+    unbind B
+    unbind :
   '';
   programs.firefox.profiles = let
     userChrome = ''
