@@ -79,14 +79,14 @@
       }
 
       button {
-          border: none;
-          border-radius: 0;
-
+        border: none;
+        border-radius: 0;
       }
+
       button:hover {
-          box-shadow: inherit;
-          text-shadow: inherit;
-          background: inherit;
+        box-shadow: inherit;
+        text-shadow: inherit;
+        background: inherit;
       }
 
       #workspaces button {

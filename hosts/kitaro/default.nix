@@ -12,7 +12,6 @@
 
   hardware = {
     asahi = {
-      addEdgeKernelConfig = true;
       peripheralFirmwareDirectory = ./firmware;
       useExperimentalGPUDriver = true;
       experimentalGPUInstallMode = "driver";
