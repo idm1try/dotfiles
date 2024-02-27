@@ -32,6 +32,7 @@ require("lazy").setup({
   { import = "v.plugins.hop" },
   { import = "v.plugins.typescript-tools" },
   { import = "v.plugins.conform" },
+  { import = "v.plugins.himalaya" },
 }, {
   defaults = {
     lazy = true,

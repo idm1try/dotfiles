@@ -37,7 +37,6 @@
           lib.getExe pkgs.eza
         } --icons -s type -a --git -T -I '.git|node_modules|.next'";
       top = "${lib.getExe pkgs.htop}";
-      hm = "himalaya";
       cp = "cp -r";
       rm = "rm -r";
       du = "grc-rs du -h";
