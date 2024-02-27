@@ -233,6 +233,10 @@
     userContent = ''
       :root {
         scrollbar-width: none !important;
+
+        --tridactyl-hint-active-fg: var(--tridactyl-hint-fg) !important;
+        --tridactyl-hint-active-bg: var(--tridactyl-hint-bg) !important;
+        --tridactyl-hint-active-outline: var(--tridactyl-hint-outline) !important;
       }
       @-moz-document url(about:privatebrowsing) {
         :root {
@@ -465,7 +469,7 @@
           };
           "invidious" = {
             urls =
-              [{ template = "https://iv.nboeck.de/search?q={searchTerms}"; }];
+              [{ template = "https://inv.nadeko.net/search?q={searchTerms}"; }];
             definedAliases = [ "inv" ];
           };
           "github" = {
