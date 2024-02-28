@@ -469,7 +469,7 @@
           };
           "invidious" = {
             urls =
-              [{ template = "https://inv.nadeko.net/search?q={searchTerms}"; }];
+              [{ template = "https://iv.nboeck.de/search?q={searchTerms}"; }];
             definedAliases = [ "inv" ];
           };
           "github" = {
