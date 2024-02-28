@@ -1,7 +1,7 @@
 { ... }: {
   programs.himalaya = {
     enable = true;
-    settings.idm1try = {
+    settings.accounts.idm1try = {
       backend = "imap";
       email = "dimasavchenko1706@icloud.com";
       default = true;
