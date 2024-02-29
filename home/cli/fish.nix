@@ -63,7 +63,6 @@
       set -gx VISUAL $EDITOR
       set -gx SUDO_EDITOR $EDITOR
       set -gx MANPAGER "nvim +Man!"
-      set -gx PF_INFO "ascii title os host kernel uptime shell memory" 
 
       ${lib.getExe pkgs.nix-your-shell} fish | source
       grc-rs --aliases --except=du,df | source

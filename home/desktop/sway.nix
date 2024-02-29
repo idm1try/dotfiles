@@ -107,6 +107,12 @@
         "XF86Search" = "exec ${
             lib.getExe pkgs.brightnessctl
           } --device='kbd_backlight' s 5%+";
+        "${mod}+XF86LaunchA" = "exec ${
+            lib.getExe pkgs.brightnessctl
+          } --device='kbd_backlight' s 1%-";
+        "${mod}+XF86Search" = "exec ${
+            lib.getExe pkgs.brightnessctl
+          } --device='kbd_backlight' s 1%+";
 
         "${mod}+q" = "kill";
         "${mod}+r" = ''mode "resize"'';
