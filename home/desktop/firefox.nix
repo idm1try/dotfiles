@@ -51,6 +51,7 @@
       }
       :root {
         --tabs-border: transparent !important;
+        --inactive-titlebar-opacity: 1 !important;
       }
       .tab-background {
         border: none !important;
@@ -244,7 +245,7 @@
           scrollbar-width: none !important;
         }
       }
-       @-moz-document url("about:newtab"), url("about:home") {
+       @-moz-document url-prefix("about:newtab"), url-prefix("about:home"), url-prefix("about:privatebrowsing") {
         body {
           background-color: #${colors.base} !important;
         }
@@ -276,7 +277,7 @@
           display: none;
         }
       }
-      @-moz-document url-prefix("about:httpsonlyerror") {
+      @-moz-document url-prefix("about:httpsonlyerror"), url-prefix("about:certerror") {
         :root {
           background-color: #${colors.base} !important;
           color: #${colors.text} !important;
@@ -301,6 +302,47 @@
         }
         button.primary {
           background-color: #${colors.mauve} !important;
+        }
+      }
+      @-moz-document url-prefix("about:preferences"), 
+      url-prefix("about:networking"),
+      url-prefix("about:config"),
+      url-prefix("about:about"),
+      url-prefix("about:addons"), 
+      url-prefix("about:profiles"), 
+      url-prefix("about:webrtc"), 
+      url-prefix("about:policies"), 
+      url-prefix("about:cache"),
+      url-prefix("about:studies"),
+      url-prefix("about:support"),
+      url-prefix("about:serviceworkers"),
+      url-prefix("about:rights"),
+      url-prefix("about:protections"), 
+      url-prefix("about:telemetry"), 
+      url-prefix("about:compat"), 
+      url-prefix("about:certificate"), 
+      url-prefix("about:crashes"), 
+      url-prefix("about:downloads"), 
+      url-prefix("about:logging"), 
+      url-prefix("about:processes"), 
+      url-prefix("about:profiling"), 
+      url-prefix("about:robots"), 
+      url-prefix("about:unloads"), 
+      url-prefix("about:url-classifier"), 
+      url-prefix("about:webauthn"),
+      url-prefix("about:logins"),
+      url-prefix("about:loginsimportreport") {
+        :root {
+          background-color: #${colors.base} !important;
+          color: #${colors.text} !important;
+          --in-content-page-background: #${colors.base} !important;
+          --in-content-box-background: #${colors.base} !important;
+          --in-content-table-background: #${colors.base} !important;
+          --in-content-box-border-color: #${colors.base} !important;
+          --in-content-primary-button-background: #${colors.mauve} !important;
+          --link-color: #${colors.mauve} !important;
+          --link-color-hover: #d6bdff !important;
+          --link-color-active: #ad7aff !important;
         }
       }
     '';
