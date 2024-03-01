@@ -85,9 +85,12 @@ return {
       capabilities = capabilities,
       settings = {
         Lua = {
+          runtime = { version = "LuaJIT" },
+          diagnostics = { globals = { "vim" } },
           format = { enable = false },
           completion = { callSnippet = "Replace" },
           workspace = { checkThirdParty = false },
+          telemetry = { enable = false },
         },
       },
     })

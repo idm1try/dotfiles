@@ -237,6 +237,7 @@
         --tridactyl-hint-active-fg: var(--tridactyl-hint-fg) !important;
         --tridactyl-hint-active-bg: var(--tridactyl-hint-bg) !important;
         --tridactyl-hint-active-outline: var(--tridactyl-hint-outline) !important;
+        --tridactyl-hintspan-font-family: CartographCF Nerd Font !important;
       }
       @-moz-document url(about:privatebrowsing) {
         :root {

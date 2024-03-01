@@ -9,19 +9,22 @@
     enable = true;
     enableFishIntegration = true;
     settings = {
-      nix_shell.symbol = " ";
-      c.symbol = " ";
+      format =
+        "$directory$git_branch$git_commit$git_state$git_status$nix_shell$cmd_duration$line_break$character";
+      nix_shell = {
+        format = "via [ nix]($style) ";
+        heuristic = true;
+      };
       directory = {
         style = "cyan bold italic";
         read_only = " ";
       };
-      docker_context.symbol = " ";
-      golang.symbol = " ";
-      lua.symbol = " ";
-      nodejs.symbol = " ";
-      package.symbol = " ";
-      rust.symbol = " ";
-      bun.disabled = true;
+      character = {
+        vimcmd_symbol = "[❯](bold blue)";
+        vimcmd_visual_symbol = "[❯](bold purple)";
+        vimcmd_replace_symbol = "[❯](bold yellow)";
+        vimcmd_replace_one_symbol = "[❯](bold yellow)";
+      };
       git_branch = {
         symbol = " ";
         format = "[$symbol$branch(:$remote_branch)]($style) ";
