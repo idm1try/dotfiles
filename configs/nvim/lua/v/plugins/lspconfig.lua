@@ -81,6 +81,14 @@ return {
       capabilities = capabilities,
     })
 
+    lspconfig.cssls.setup({
+      capabilities = capabilities,
+    })
+
+    lspconfig.html.setup({
+      capabilities = capabilities,
+    })
+
     lspconfig.lua_ls.setup({
       capabilities = capabilities,
       settings = {

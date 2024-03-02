@@ -45,7 +45,6 @@ return {
         types = { "bold" },
       },
       integrations = {
-        notify = true,
         lsp_trouble = true,
         dashboard = false,
         hop = true,
@@ -124,6 +123,8 @@ return {
             NeoTreeGitUnstaged = { fg = colors.red },
             NeoTreeGitUntracked = { fg = colors.blue },
             NeoTreeGitStaged = { fg = colors.green },
+            NeoTreeTitleBar = { fg = colors.mantle },
+
             -- carbon
             Structure = { fg = colors.pink },
             StorageClass = { fg = colors.pink },
