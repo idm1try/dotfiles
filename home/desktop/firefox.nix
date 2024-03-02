@@ -39,15 +39,15 @@
       #PersonalToolbar,
       #navigator-toolbox,
       #sidebar-box {
-        background-color: var(--srf-primary) !important;
+        background-color: #${colors.base} !important;
         -moz-appearance: none !important;
         background-image: none !important;
         border: none !important;
         box-shadow: none !important;
       }
       ::selection {
-        background-color: var(--srf-accent);
-        color: var(--srf-primary);
+        background-color: #${colors.mauve};
+        color: #${colors.base};
       }
       :root {
         --tabs-border: transparent !important;
@@ -63,7 +63,7 @@
       .tab-background[selected] {
         -moz-appearance: none !important;
         background-image: none !important;
-        background-color: var(--srf-secondary)!important;
+        background-color: #${colors.mantle}!important;
       }
       .tabbrowser-tabs {
         border: none !important;
@@ -142,7 +142,7 @@
         border-top: 0px !important;
       }
       #nav-bar {
-        background: var(--srf-secondary) !important;
+        background: #${colors.mantle} !important;
         border: none !important;
         box-shadow: none !important;
         margin-top: 0px !important;
@@ -153,41 +153,41 @@
       #history-panel,
       #sidebar-search-container,
       #bookmarksPanel {
-        background: var(--srf-primary) !important;
+        background: #${colors.base} !important;
       }
       #search-box {
         -moz-appearance: none !important;
-        background: var(--srf-primary) !important;
+        background: #${colors.base} !important;
         border-radius: 6px !important;
       }
       #sidebar-search-container {
-        background-color: var(--srf-primary) !important;
+        background-color: #${colors.base} !important;
       }
       #sidebar-icon {
         display: none !important;
       }
       .sidebar-placesTree {
-        color: var(--srf-text) !important;
+        color: #${colors.text} !important;
       }
       #sidebar-switcher-target {
-        color: var(--srf-text) !important;
+        color: #${colors.text} !important;
       }
       #sidebar-header {
-        background: var(--srf-primary) !important;
+        background: #${colors.base} !important;
       }
       #sidebar-box {
-        --sidebar-background-color: var(--srf-primary) !important;
+        --sidebar-background-color: #${colors.base} !important;
       }
       #sidebar-splitter {
         border: none !important;
         opacity: 1 !important;
-        background-color: var(--srf-primary) !important;
+        background-color: #${colors.base} !important;
       }
       .urlbarView {
         display: none !important;
       }
       #urlbar-input-container {
-        background-color: var(--srf-secondary) !important;
+        background-color: #${colors.mantle} !important;
         border: 1px solid rgba(0, 0, 0, 0) !important;
         border-radius: 0!important;
       }
@@ -198,37 +198,48 @@
         box-shadow: none !important;
       }
       .urlbarView-url {
-        color: var(--srf-text) !important;
+        color: #${colors.text} !important;
       }
-
-      .titlebar-buttonbox-container { display: none !important; }
+      .titlebar-buttonbox-container { 
+        display: none !important;
+      }
       #urlbar-go-button {
         display: none !important;
       }
-      #alltabs-button { display: none !important; }
-      #unified-extensions-button { color: var(--srf-secondary) !important; }
-
-      .sidebar-placesTreechildren::-moz-tree-row{ height: 2.2em !important; }
-
-       #context-navigation, #context-sep-navigation { 
-         display: none !important 
-       }
-
+      #alltabs-button {
+        display: none !important;
+      }
+      #unified-extensions-button { 
+        color: #${colors.mantle} !important; 
+      }
+      .sidebar-placesTreechildren::-moz-tree-row {
+        height: 2.2em !important; 
+      }
+      #context-navigation, #context-sep-navigation { 
+        display: none !important 
+      }
       #toolbar-menubar {
         display: none !important;
       }
-
       #browser vbox#appcontent tabbrowser,
       #content, #tabbrowser-tabpanels,
       browser[type=content-primary],
       browser[type=content] > html { 
-        background: var(--srf-primary) !important 
+        background: #${colors.base} !important;
       }
       #star-button-box {
         display: none !important;
       }
       #pageAction-urlbar-_testpilot-containers {
-        display: none !important
+        display: none !important;
+      }
+      .tab-secondary-label {
+        font-size: .85em !important;
+        text-transform: lowercase !important;
+        opacity: 0.69 !important;
+      }
+      .tab-icon-overlay {
+        fill-opacity: 0.69 !important;
       }
     '';
     userContent = ''

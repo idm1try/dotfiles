@@ -67,7 +67,7 @@ return {
         },
         ["d.ts"] = {
           icon = "",
-          color = colors.text,
+          color = colors.overlay2,
           name = "TypescriptDefinition",
         },
         kt = {
