@@ -351,9 +351,14 @@
           --in-content-table-background: #${colors.base} !important;
           --in-content-box-border-color: #${colors.base} !important;
           --in-content-primary-button-background: #${colors.mauve} !important;
+          --in-content-primary-button-background-hover: #d6bdff !important;
+          --in-content-primary-button-background-active: #ad7aff !important;
           --link-color: #${colors.mauve} !important;
           --link-color-hover: #d6bdff !important;
           --link-color-active: #ad7aff !important;
+          --color-accent-primary: #${colors.mauve} !important;
+          --color-accent-primary-hover: #d6bdff !important;
+          --color-accent-primary-active: #ad7aff !important;
         }
       }
     '';
