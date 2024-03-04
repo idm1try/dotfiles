@@ -3,6 +3,7 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim",
+    "sindrets/diffview.nvim",
   },
   cmd = "Neogit",
   keys = {
@@ -16,8 +17,5 @@ return {
   },
   opts = {
     disable_hint = true,
-    integrations = {
-      diffview = false,
-    },
   },
 }
