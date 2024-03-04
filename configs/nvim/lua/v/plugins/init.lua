@@ -33,7 +33,6 @@ require("lazy").setup({
   { import = "v.plugins.typescript-tools" },
   { import = "v.plugins.conform" },
   { import = "v.plugins.himalaya" },
-  { import = "v.plugins.neogit" },
 }, {
   defaults = {
     lazy = true,
