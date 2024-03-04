@@ -49,6 +49,7 @@ return {
         dashboard = false,
         hop = true,
         nvimtree = false,
+        neogit = true,
         native_lsp = {
           enabled = true,
           virtual_text = {
@@ -97,6 +98,7 @@ return {
 
             GitSignsChange = { fg = colors.peach },
             GitSignsCurrentLineBlame = { link = "Comment" },
+            NeogitDiffContextHighlight = { bg = colors.base },
 
             IndentBlanklineChar = { fg = colors.surface0 },
             IndentBlanklineContextChar = { fg = colors.surface2 },
