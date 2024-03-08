@@ -1,6 +1,10 @@
 return {
   "pmizio/typescript-tools.nvim",
-  dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "neovim/nvim-lspconfig",
+    { "dmmulroy/ts-error-translator.nvim", config = true },
+  },
   event = "VeryLazy",
   keys = {
     { "<leader>tg", "<cmd>TSToolsGoToSourceDefinition<cr>", desc = "[typescript] goto source definition" },

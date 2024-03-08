@@ -2,7 +2,6 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "b0o/schemastore.nvim",
     "hrsh7th/cmp-nvim-lsp",
     { "folke/neodev.nvim", opts = {} },
   },
@@ -89,6 +88,10 @@ return {
       capabilities = capabilities,
     })
 
+    lspconfig.yamlls.setup({
+      capabilities = capabilities,
+    })
+
     lspconfig.lua_ls.setup({
       capabilities = capabilities,
       settings = {
@@ -123,26 +126,8 @@ return {
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
       end,
-      settings = {
-        json = {
-          schemas = require("schemastore").json.schemas(),
-        },
-      },
       init_options = {
         provideFormatter = true,
-      },
-    })
-
-    lspconfig.yamlls.setup({
-      capabilities = capabilities,
-      settings = {
-        yaml = {
-          schemaStore = {
-            enable = false,
-            url = "",
-          },
-          schemas = require("schemastore").yaml.schemas(),
-        },
       },
     })
   end,

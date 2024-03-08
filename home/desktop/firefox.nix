@@ -23,6 +23,7 @@
     unbind b
     unbind B
     unbind :
+    unbind <c-f>
   '';
   programs.firefox.profiles = let
     userChrome = ''
@@ -342,7 +343,12 @@
       url-prefix("about:url-classifier"), 
       url-prefix("about:webauthn"),
       url-prefix("about:logins"),
-      url-prefix("about:loginsimportreport") {
+      url-prefix("about:loginsimportreport"),
+      url-prefix("about:httpsonlyerror"), 
+      url-prefix("about:certerror"),
+      url-prefix("about:neterror"),
+      url-prefix("about:sessionrestore")
+      {
         :root {
           background-color: #${colors.base} !important;
           color: #${colors.text} !important;
@@ -507,40 +513,65 @@
     home = {
       id = 0;
       search = {
-        default = "DuckDuckGo";
+        default = "searxng";
         force = true;
         engines = {
-          "duckduckgo" = {
-            urls = [{ template = "https://duckduckgo.com/?q={searchTerms}"; }];
+          "searxng" = {
+            urls =
+              [{ template = "https://searxng.site/search?q={searchTerms}"; }];
+            definedAliases = [ "srx" ];
           };
-          "nixpkgs" = {
+          "ddg" = {
+            urls = [{ template = "https://duckduckgo.com/?q={searchTerms}"; }];
+            definedAliases = [ "ddg" ];
+          };
+          "nix" = {
             urls = [{
               template =
                 "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query={searchTerms}";
             }];
             definedAliases = [ "nix" ];
           };
-          "nix home manager" = {
+          "nhm" = {
             urls = [{
               template =
                 "https://github.com/nix-community/home-manager/search?q={searchTerms}";
             }];
             definedAliases = [ "nhm" ];
           };
-          "invidious" = {
+          "inv" = {
             urls =
               [{ template = "https://iv.nboeck.de/search?q={searchTerms}"; }];
             definedAliases = [ "inv" ];
           };
-          "github" = {
+          "lrs" = {
+            urls =
+              [{ template = "https://reddit.simo.sh/search?q={searchTerms}"; }];
+            definedAliases = [ "lrs" ];
+          };
+          "wiki" = {
+            urls = [{
+              template =
+                "https://en.wikipedia.org/wiki/Special:Search?search={searchTerms}";
+            }];
+            definedAliases = [ "wiki" ];
+          };
+          "gh" = {
             urls =
               [{ template = "https://github.com/search?q={searchTerms}"; }];
             definedAliases = [ "gh" ];
           };
-          "npmjs" = {
+          "npm" = {
             urls =
               [{ template = "https://www.npmjs.org/search?q={searchTerms}"; }];
             definedAliases = [ "npm" ];
+          };
+          "osm" = {
+            urls = [{
+              template =
+                "https://www.openstreetmap.org/search?query={searchTerms}";
+            }];
+            definedAliases = [ "osm" ];
           };
         };
       };
@@ -556,6 +587,7 @@
         stylus
         tridactyl
         multi-account-containers
+        istilldontcareaboutcookies
       ];
     };
   };
