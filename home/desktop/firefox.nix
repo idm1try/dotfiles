@@ -513,60 +513,64 @@
     home = {
       id = 0;
       search = {
-        default = "searxng";
+        default = "4get";
         force = true;
         engines = {
-          "searxng" = {
+          "4get" = {
+            urls = [{ template = "https://4get.ca/web?s={searchTerms}"; }];
+            definedAliases = [ "4g" ];
+          };
+          srx = {
             urls =
               [{ template = "https://searxng.site/search?q={searchTerms}"; }];
             definedAliases = [ "srx" ];
           };
-          "ddg" = {
+          ddg = {
             urls = [{ template = "https://duckduckgo.com/?q={searchTerms}"; }];
             definedAliases = [ "ddg" ];
           };
-          "nix" = {
+          nix = {
             urls = [{
               template =
                 "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query={searchTerms}";
             }];
             definedAliases = [ "nix" ];
           };
-          "nhm" = {
+          nhm = {
             urls = [{
               template =
                 "https://github.com/nix-community/home-manager/search?q={searchTerms}";
             }];
             definedAliases = [ "nhm" ];
           };
-          "inv" = {
+          iv = {
             urls =
               [{ template = "https://iv.nboeck.de/search?q={searchTerms}"; }];
-            definedAliases = [ "inv" ];
+            definedAliases = [ "iv" ];
           };
-          "lrs" = {
+          lr = {
             urls =
               [{ template = "https://reddit.simo.sh/search?q={searchTerms}"; }];
-            definedAliases = [ "lrs" ];
+            definedAliases = [ "lr" ];
           };
-          "wiki" = {
+          wiki = {
             urls = [{
               template =
                 "https://en.wikipedia.org/wiki/Special:Search?search={searchTerms}";
             }];
             definedAliases = [ "wiki" ];
           };
-          "gh" = {
+          gh = {
             urls =
               [{ template = "https://github.com/search?q={searchTerms}"; }];
             definedAliases = [ "gh" ];
           };
-          "npm" = {
+          npm = {
             urls =
               [{ template = "https://www.npmjs.org/search?q={searchTerms}"; }];
             definedAliases = [ "npm" ];
           };
-          "osm" = {
+          osm = {
             urls = [{
               template =
                 "https://www.openstreetmap.org/search?query={searchTerms}";

@@ -3,8 +3,7 @@
     primary = true;
     userName = "idm1try";
     realName = "Dmitry Savchenko";
-    address = "dimasavchenko1706@icloud.com";
-    aliases = [ "idm1try@icloud.com" ];
+    address = "idm1try@icloud.com";
     passwordCommand = "cat /var/secrets/mail";
     imap = {
       host = "imap.mail.me.com";
