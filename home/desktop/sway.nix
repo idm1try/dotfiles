@@ -24,6 +24,7 @@
     '';
     wrapperFeatures.gtk = true;
     config = {
+      bindkeysToCode = true;
       window = {
         titlebar = false;
         border = 0;

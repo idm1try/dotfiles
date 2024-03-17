@@ -31,41 +31,6 @@ local config = {
 	enable_scroll_bar = false,
 	front_end = "OpenGL",
 	mouse_wheel_scrolls_tabs = false,
-	pane_focus_follows_mouse = true,
-	hyperlink_rules = {
-		{
-			regex = "\\((\\w+://\\S+)\\)",
-			format = "$1",
-			highlight = 1,
-		},
-		{
-			regex = "\\[(\\w+://\\S+)\\]",
-			format = "$1",
-			highlight = 1,
-		},
-		{
-			regex = "\\{(\\w+://\\S+)\\}",
-			format = "$1",
-			highlight = 1,
-		},
-		{
-			regex = "<(\\w+://\\S+)>",
-			format = "$1",
-			highlight = 1,
-		},
-		{
-			regex = "\\b\\w+://\\S+[)/a-zA-Z0-9-]+",
-			format = "$0",
-		},
-		{
-			regex = "\\b\\w+@[\\w-]+(\\.[\\w-]+)+\\b",
-			format = "mailto:$0",
-		},
-		{
-			regex = [[["]?([\w\d]{1}[-\w\d]+)(/){1}([-\w\d\.]+)["]?]],
-			format = "https://www.github.com/$1/$3",
-		},
-	},
 }
 
 tab.setup(config)

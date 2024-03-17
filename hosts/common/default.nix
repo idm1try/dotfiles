@@ -7,7 +7,6 @@
     ./environment.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = with inputs; [ nur.overlay neovim-nightly.overlay ];
   home-manager = {
     useGlobalPkgs = true;

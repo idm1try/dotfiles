@@ -120,6 +120,7 @@ return {
         prompt_prefix = "     ",
         selection_caret = "  ",
         entry_prefix = "  ",
+        preview = { msg_bg_fillchar = " " },
         initial_mode = "insert",
         selection_strategy = "reset",
         sorting_strategy = "ascending",

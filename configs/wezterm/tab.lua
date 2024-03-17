@@ -33,6 +33,10 @@ local function get_process(tab)
 			{ Foreground = { Color = colors.peach } },
 			{ Text = "󰈺" },
 		},
+		["coreutils"] = {
+			{ Foreground = { Color = colors.peach } },
+			{ Text = "󰈺" },
+		},
 		["htop"] = {
 			{ Foreground = { Color = colors.yellow } },
 			{ Text = "󰞰" },

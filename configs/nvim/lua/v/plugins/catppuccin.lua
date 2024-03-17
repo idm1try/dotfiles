@@ -90,6 +90,7 @@ return {
             TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
             TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
             TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
+            TelescopePreviewMessage = { fg = colors.teal, style = { "italic" } },
 
             TelescopePromptTitle = { fg = colors.surface0, bg = colors.surface0 },
             TelescopeResultsTitle = { fg = colors.mantle, bg = colors.mantle },
