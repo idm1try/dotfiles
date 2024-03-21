@@ -36,6 +36,7 @@
     upower.enable = true;
     fstrim.enable = true;
     timesyncd.enable = true;
+    udisks2.enable = true;
   };
 
   boot.loader.systemd-boot.enable = true;
