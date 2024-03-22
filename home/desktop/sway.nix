@@ -1,6 +1,6 @@
 { pkgs, lib, colors, ... }: {
   home = {
-    packages = with pkgs; [ wf-recorder wl-clipboard brightnessctl xdg-utils ];
+    packages = with pkgs; [ wf-recorder wl-clipboard xdg-utils ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       DISABLE_QT5_COMPAT = "0";
