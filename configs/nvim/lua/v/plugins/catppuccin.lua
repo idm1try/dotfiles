@@ -140,6 +140,8 @@ return {
             ["@variable.builtin"] = { fg = colors.pink },
             ["@type.builtin"] = { fg = colors.pink, style = { "bold" } },
             ["@tag.attribute.tsx"] = { fg = colors.mauve, style = { "italic" } },
+            ["@tag.attribute"] = { fg = colors.mauve, style = { "italic" } },
+            ["@tag.builtin.tsx"] = { fg = colors.mauve },
           }
         end,
       },
