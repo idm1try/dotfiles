@@ -65,6 +65,16 @@ return {
           color = colors.blue,
           name = "Typescript",
         },
+        mts = {
+          icon = "",
+          color = colors.blue,
+          name = "Mts",
+        },
+        cts = {
+          icon = "",
+          color = colors.blue,
+          name = "Cts",
+        },
         ["d.ts"] = {
           icon = "",
           color = colors.overlay2,

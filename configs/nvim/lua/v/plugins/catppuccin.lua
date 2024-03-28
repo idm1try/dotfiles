@@ -109,6 +109,7 @@ return {
             VertSplit = { fg = colors.base },
             CmpGhostText = { link = "Comment" },
             Folded = { link = "Comment" },
+            LazyBackdrop = { bg = colors.base },
 
             TelescopeSelection = { bg = colors.surface0 },
             TelescopePromptCounter = { fg = colors.mauve, style = { "bold" } },
@@ -138,24 +139,6 @@ return {
             NoiceConfirmBorder = { bg = colors.mantle, fg = colors.mantle },
             NoiceMini = { link = "Comment" },
             NoiceLspProgressClient = { fg = colors.blue, style = { "italic", "bold" } },
-
-            NeoTreeNormal = { bg = colors.mantle },
-            NeoTreeRootName = { fg = colors.blue, style = { "bold" } },
-            NeoTreeNormalNC = { bg = colors.mantle },
-            NeoTreeFloatBorder = { link = "FloatBorder" },
-            NeoTreeTabActive = { fg = colors.text, bg = colors.mantle },
-            NeoTreeTabSeparatorActive = { fg = colors.mantle, bg = colors.mantle },
-            NeoTreeTabInactive = { fg = colors.surface2, bg = colors.crust },
-            NeoTreeTabSeparatorInactive = { fg = colors.crust, bg = colors.crust },
-            NeoTreeWinSeparator = { fg = colors.base, bg = colors.base },
-            NeoTreeGitConflict = { fg = colors.red },
-            NeoTreeGitDeleted = { fg = colors.red },
-            NeoTreeGitIgnored = { fg = colors.overlay0 },
-            NeoTreeGitModified = { fg = colors.peach },
-            NeoTreeGitUnstaged = { fg = colors.red },
-            NeoTreeGitUntracked = { fg = colors.blue },
-            NeoTreeGitStaged = { fg = colors.green },
-            NeoTreeTitleBar = { fg = colors.mantle },
 
             -- carbon
             Structure = { fg = colors.pink },

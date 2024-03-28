@@ -7,7 +7,7 @@
     ./environment.nix
   ];
 
-  nixpkgs.overlays = with inputs; [ nur.overlay neovim-nightly.overlay ];
+  nixpkgs.overlays = with inputs; [ nur.overlay ];
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;

@@ -59,16 +59,8 @@ return {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(ev)
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = ev.buf, desc = "[lsp] goto declaration" })
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf, desc = "[lsp] goto definition" })
         vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, desc = "[lsp] hover" })
-        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = ev.buf, desc = "[lsp] goto implementation" })
         vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "[lsp] signature help" })
-        vim.keymap.set(
-          "n",
-          "<space>D",
-          vim.lsp.buf.type_definition,
-          { buffer = ev.buf, desc = "[lsp] show type definition" }
-        )
         vim.keymap.set("n", "<space>lr", vim.lsp.buf.rename, { buffer = ev.buf, desc = "[lsp] rename" })
         vim.keymap.set("n", "<space>lc", vim.lsp.buf.code_action, { buffer = ev.buf, desc = "[lsp] code actions" })
       end,

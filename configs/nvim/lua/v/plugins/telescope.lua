@@ -1,6 +1,13 @@
 return {
   "nvim-telescope/telescope.nvim",
   version = false,
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-telescope/telescope-file-browser.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+  },
   keys = {
     {
       "<leader><leader>",
@@ -84,6 +91,16 @@ return {
       desc = "[git] branches",
     },
     {
+      "<leader>n",
+      function()
+        require("telescope").extensions.file_browser.file_browser({
+          prompt_prefix = "     ",
+        })
+      end,
+      desc = "[telescope] files",
+    },
+    -- telescope lsp keybinds
+    {
       "gr",
       function()
         require("telescope.builtin").lsp_references({
@@ -92,12 +109,33 @@ return {
       end,
       desc = "[lsp] references",
     },
-  },
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",
-    "nvim-treesitter/nvim-treesitter",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    {
+      "gd",
+      function()
+        require("telescope.builtin").lsp_definitions({
+          prompt_prefix = "     ",
+        })
+      end,
+      desc = "[lsp] goto definition",
+    },
+    {
+      "<space>D",
+      function()
+        require("telescope.builtin").lsp_type_definitions({
+          prompt_prefix = "     ",
+        })
+      end,
+      desc = "[lsp] show type definition",
+    },
+    {
+      "gi",
+      function()
+        require("telescope.builtin").lsp_implementations({
+          prompt_prefix = "     ",
+        })
+      end,
+      desc = "[lsp] goto implementation",
+    },
   },
   config = function()
     local telescope = require("telescope")
@@ -139,17 +177,17 @@ return {
           "dist/",
           "build/",
           "target/",
-          "**/*.png",
-          "**/*.jpg",
-          "**/*.jpeg",
-          "**/*.webp",
-          "**/*.mp4",
-          "**/*.gif",
-          "**/*.mp3",
-          "**/*.woff2",
-          "**/*.woff",
-          "**/*.otf",
-          "**/*.ttf",
+          "%.png",
+          "%.jpg",
+          "%.jpeg",
+          "%.webp",
+          "%.mp4",
+          "%.gif",
+          "%.mp3",
+          "%.woff2",
+          "%.woff",
+          "%.otf",
+          "%.ttf",
         },
         generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
         path_display = { "absolute" },
@@ -180,6 +218,22 @@ return {
           override_generic_sorter = true,
           override_file_sorter = true,
           case_mode = "smart_case",
+        },
+        file_browser = {
+          path = "%:p:h",
+          no_ignore = true,
+          hidden = true,
+          file_ignore_patterns = {},
+          hijack_netrw = true,
+          display_stat = false,
+          dir_icon_hl = "CmpItemKind",
+          mappings = {
+            ["i"] = {
+              ["<bs>"] = function()
+                vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<bs>", true, false, true), "tn", false)
+              end,
+            },
+          },
         },
       },
     })

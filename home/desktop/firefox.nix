@@ -24,6 +24,7 @@
     unbind B
     unbind :
     unbind <c-f>
+    unbind <c-i>
   '';
   programs.firefox.profiles = let
     userChrome = ''
