@@ -17,8 +17,7 @@
 
       dprint
       nil
-      nixfmt
-      tree-sitter
+      nixfmt-classic
 
       fzf
       gcc
@@ -28,7 +27,8 @@
   };
 
   xdg.configFile."nvim" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/idm1try/.dotfiles/configs/nvim";
+    source = config.lib.file.mkOutOfStoreSymlink
+      "/home/idm1try/.dotfiles/configs/nvim";
     recursive = true;
   };
 }
