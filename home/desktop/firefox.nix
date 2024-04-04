@@ -243,6 +243,15 @@
       .tab-icon-overlay {
         fill-opacity: 0.69 !important;
       }
+      .infobar {
+        background-color: #${colors.base} !important;
+        margin: 0px !important;
+        border-radius: 0px !important;
+        border: none !important;
+      }
+      .infobar::before {
+        display: none !important;
+      }
     '';
     userContent = ''
       :root {
@@ -367,6 +376,58 @@
           --color-accent-primary-hover: #d6bdff !important;
           --color-accent-primary-active: #ad7aff !important;
         }
+      }
+      @-moz-document regexp("^(?!.*.pdf?normal).*") {
+          :root {
+            --body-bg-color: #${colors.base} !important;
+            --main-color: #${colors.text} !important;
+            --toolbar-bg-color: #${colors.base} !important;
+            --field-color: #${colors.text} !important;
+            --field-bg-color: #${colors.mantle} !important;
+            --field-border-color: #${colors.surface0} !important;
+            --sidebar-toolbar-bg-color: #${colors.base} !important;
+            --toolbar-icon-bg-color: #${colors.overlay2} !important;
+            --toolbar-icon-hover-bg-color: #${colors.subtext0} !important;
+            --toolbar-border-color: #${colors.crust}00 !important;
+            --dropdown-btn-bg-color: #${colors.mantle} !important;
+            --button-hover-color: #${colors.surface0} !important;
+            --separator-color: #${colors.base} !important;
+            --doorhanger-bg-color: #${colors.mantle} !important;
+            --doorhanger-border-color: #${colors.crust}00 !important;
+            --doorhanger-hover-color: #${colors.text} !important;
+            --doorhanger-hover-bg-color: #${colors.surface0} !important;
+            --doorhanger-separator-color: #${colors.surface0} !important;
+            --progressBar-color: #${colors.mauve} !important;
+            --progressBar-bg-color: #${colors.base} !important;
+            --progressBar-blend-color: #${colors.mauve}70 !important;
+            --toggled-btn-color: #${colors.text} !important;
+            --toggled-btn-bg-color: #${colors.surface0}70 !important;
+            --toggled-hover-active-btn-color: #${colors.surface0} !important;
+            --scrollbar-color: #${colors.crust}00 !important;
+            --scrollbar-bg-color: #${colors.crust}00 !important;
+          }
+          .editorParamsToolbarContainer .editorParamsSlider::-moz-range-progress {
+            background-color: #${colors.mauve} !important;
+          }
+          :is(.toolbarButton, .secondaryToolbarButton).toggled, .splitToolbarButton.toggled > .toolbarButton.toggled {
+            background-color: #${colors.crust} !important;
+          }
+          .dropdownToolbarButton > select {
+            height: 26px !important;
+            font-size: 13px !important;
+          }
+          .toolbarField {
+            border: 0px !important;
+            border-radius: 0px !important;
+            padding: 3px 8px !important;
+            margin: 3px !important;
+            border: 0px !important;
+            color: #${colors.text} !important;
+            font-size: 13px !important;
+          }
+          #zoomOut, #zoomIn, #next, #previous {
+            display: none !important;
+          }
       }
     '';
 
