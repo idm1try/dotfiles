@@ -50,11 +50,7 @@
       mkdir = "mkdir -p";
       nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro";
       c = "clear";
-      wgdn = "wg-quick down wg0";
-      wgup = "wg-quick up wg0";
       g = "git";
-      gl =
-        "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
     };
     shellInit = ''
       set TTY1 (tty)
@@ -77,6 +73,23 @@
       set -g fish_cursor_insert line
       set -g fish_cursor_replace_one underscore
       set -g fish_cursor_visual block
+
+      # make autocompletion work with gitconfig aliases 
+      set -g __fish_git_alias_a add
+      set -g __fish_git_alias_d diff
+      set -g __fish_git_alias_co checkout
+      set -g __fish_git_alias_cm commit
+      set -g __fish_git_alias_ca commit
+      set -g __fish_git_alias_ps push
+      set -g __fish_git_alias_pl pull
+      set -g __fish_git_alias_st status
+      set -g __fish_git_alias_br branch
+      set -g __fish_git_alias_ba branch
+      set -g __fish_git_alias_bm branch
+      set -g __fish_git_alias_bn branch
+      set -g __fish_git_alias_lg log
+      set -g __fish_git_alias_type cat-file
+      set -g __fish_git_alias_dump cat-file
     '';
   };
 
