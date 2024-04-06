@@ -6,7 +6,7 @@
     nur.url = "github:nix-community/nur";
 
     nixos-apple-silicon = {
-      url = "github:tpwrules/nixos-apple-silicon";
+      url = "github:zzywysm/nixos-asahi";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {

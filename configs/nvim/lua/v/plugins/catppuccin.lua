@@ -140,6 +140,12 @@ return {
             NoiceMini = { link = "Comment" },
             NoiceLspProgressClient = { fg = colors.blue, style = { "italic", "bold" } },
 
+            Todo = { fg = colors.mauve, bg = colors.none, style = { "bold" } },
+            ["@comment.error"] = { fg = colors.red, bg = colors.none, style = { "bold" } },
+            ["@comment.warning"] = { fg = colors.yellow, bg = colors.none, style = { "bold" } },
+            ["@comment.note"] = { fg = colors.blue, bg = colors.none, style = { "bold" } },
+            ["@comment.todo"] = { fg = colors.mauve, bg = colors.none, style = { "bold" } },
+
             -- carbon
             Structure = { fg = colors.pink },
             StorageClass = { fg = colors.pink },
@@ -148,11 +154,6 @@ return {
             Number = { fg = colors.text },
             Float = { fg = colors.text },
             Boolean = { fg = colors.pink },
-            Todo = { fg = colors.mauve, bg = colors.none, style = { "bold" } },
-            ["@comment.error"] = { fg = colors.red, bg = colors.none, style = { "bold" } },
-            ["@comment.warning"] = { fg = colors.yellow, bg = colors.none, style = { "bold" } },
-            ["@comment.note"] = { fg = colors.blue, bg = colors.none, style = { "bold" } },
-            ["@comment.todo"] = { fg = colors.mauve, bg = colors.none, style = { "bold" } },
             ["@function.builtin"] = { fg = colors.pink },
             ["@method"] = { fg = colors.pink },
             ["@constant"] = { fg = colors.text, style = { "bold" } },
