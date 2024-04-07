@@ -429,6 +429,95 @@
             display: none !important;
           }
       }
+      @-moz-document url-prefix(about:devtools), url-prefix(chrome:) {
+        :root {
+           --theme-body-background: #${colors.base} !important;
+           --theme-body-emphasized-background: #${colors.base} !important;
+           --theme-body-alternate-emphasized-background: #${colors.base} !important;
+           --theme-sidebar-background: #${colors.base} !important;
+           --theme-tab-toolbar-background: #${colors.mantle} !important;
+           --theme-focus-outline-color: #${colors.mauve} !important;
+           --theme-toolbar-background: #${colors.base} !important;
+           --theme-toolbar-color: #${colors.overlay0} !important;
+           --theme-toolbar-selected-color: #${colors.mauve} !important;
+           --theme-toolbar-highlighted-color: #${colors.green} !important;
+           --theme-toolbar-background-hover: #${colors.surface0} !important;
+           --theme-toolbar-background-alt: #${colors.base} !important;
+           --theme-toolbar-background-highlighted: #${colors.mauve} !important;
+           --theme-toolbar-error-background: #${colors.red} !important;
+           --theme-toolbar-hover: #${colors.surface0} !important;
+           --theme-toolbar-hover-active: #${colors.surface0} !important;
+           --theme-toolbar-separator: #${colors.surface0} !important;
+           --toolbarbutton-background: #${colors.surface1} !important;
+           --toolbarbutton-hover-background: #${colors.surface1} !important;
+           --toolbarbutton-focus-background: #${colors.surface0} !important;
+           --toolbarbutton-focus-color: #${colors.subtext0} !important;
+           --toolbarbutton-checked-background: #${colors.mauve} !important;
+           --toolbarbutton-checked-focus-background: #${colors.mauve} !important;
+           --toolbarbutton-checked-color: #${colors.text} !important;
+           --theme-accordion-header-background: #${colors.surface0} !important;
+           --theme-accordion-header-hover: #${colors.surface1} !important;
+           --theme-selection-background: #${colors.surface0} !important;
+           --theme-selection-background-hover: #${colors.surface0}80 !important;
+           --theme-selection-focus-background: #${colors.surface1} !important;
+           --theme-selection-color: #${colors.subtext0} !important;
+           --theme-splitter-color: #${colors.surface0};
+           --theme-emphasized-splitter-color: #${colors.surface0};
+           --theme-emphasized-splitter-color-hover: #${colors.surface1};
+           --theme-icon-color: #${colors.overlay0} !important;
+           --theme-icon-dimmed-color: #${colors.overlay0} !important;
+           --theme-icon-checked-color: #${colors.mauve} !important;
+           --theme-icon-error-color: #${colors.red} !important;
+           --theme-icon-warning-color: #${colors.yellow} !important;
+           --theme-comment: #${colors.overlay1} !important;
+           --theme-body-color: #${colors.overlay1} !important;
+           --theme-link-color: #${colors.mauve} !important;
+           --theme-text-color-alt: #${colors.overlay1} !important;
+           --theme-text-color-inactive: #${colors.overlay0} !important;
+           --theme-text-color-error: #${colors.subtext0} !important;
+           --theme-text-color-strong: #${colors.text} !important;
+           --theme-stack-trace-text: #${colors.red} !important; 
+           --theme-highlight-green: #${colors.green} !important;
+           --theme-highlight-blue: #${colors.mauve} !important;
+           --theme-highlight-purple: #${colors.green} !important;
+           --theme-highlight-red: #${colors.teal} !important;
+           --theme-highlight-yellow: #${colors.yellow} !important;
+           --theme-highlight-bluegrey: #${colors.blue} !important;
+           --theme-highlight-lightorange: #${colors.peach} !important;
+           --theme-highlight-orange: #${colors.peach} !important;
+           --theme-highlight-pink: #${colors.pink} !important;
+           --theme-highlight-gray: #${colors.subtext0} !important;
+           --theme-graphs-purple: #${colors.mauve} !important;
+           --theme-graphs-yellow: #${colors.yellow} !important;
+           --theme-graphs-orange: #${colors.peach} !important;
+           --theme-graphs-grey: #${colors.overlay0} !important;
+           --theme-graphs-full-red: #${colors.red} !important;
+           --theme-popup-background: #${colors.mantle} !important;
+           --theme-popup-color: #${colors.overlay2} !important;
+           --theme-popup-border-color: #${colors.crust}00 !important;
+           --theme-toolbarbutton-background: #${colors.base} !important;
+           --theme-toolbarbutton-color: #${colors.overlay0} !important;
+           --theme-toolbarbutton-hover-background: #${colors.surface0} !important;
+           --theme-toolbarbutton-checked-background: #${colors.surface1} !important;
+           --theme-toolbarbutton-checked-color: #${colors.subtext0} !important;
+           --theme-toolbarbutton-checked-hover-background: #${colors.surface2} !important;
+           --theme-toolbarbutton-checked-hover-color: #${colors.subtext0} !important;
+           --theme-toolbarbutton-active-background: #${colors.surface1} !important;
+           --theme-toolbarbutton-active-color: #${colors.subtext0} !important;
+           --theme-select-background: #${colors.surface0} !important;
+           --theme-select-color: #${colors.text} !important;
+           --theme-select-hover-border-color: #${colors.surface1} !important;
+           --theme-contrast-background: #${colors.yellow}40 !important;
+           --theme-contrast-background-alpha: #${colors.yellow}20 !important;
+           --theme-contrast-color: #${colors.subtext0} !important;
+           --theme-contrast-border: #${colors.yellow} !important;
+           --table-selection-background-hover: #${colors.surface0} !important;
+           --tab-line-selected-color: #${colors.crust}00 !important;
+        }
+        .perf-photon-button-primary { background-color: #${colors.surface0} !important; }
+        .perf-photon-button-primary:hover { background-color: #${colors.surface1} !important; }
+        .devtools-tab-line { display: none !important; }
+      }
     '';
 
     settings = {
