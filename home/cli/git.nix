@@ -2,7 +2,7 @@
   programs.git = {
     enable = true;
     userName = "idm1try";
-    userEmail = "dimasavchenko1706@icloud.com";
+    userEmail = "idm1try@icloud.com";
     extraConfig = {
       github.user = "idm1try";
       init.defaultBranch = "main";
