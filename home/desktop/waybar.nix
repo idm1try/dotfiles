@@ -1,6 +1,15 @@
-{ colors, ... }: {
+{ colors, pkgs, ... }: {
   programs.waybar = {
     enable = true;
+    package = pkgs.waybar.override {
+      cavaSupport = false;
+      hyprlandSupport = false;
+      mpdSupport = false;
+      mprisSupport = false;
+      traySupport = false;
+      pulseSupport = false;
+      sndioSupport = false;
+    };
     settings = [{
       bar_id = "bar-0";
       ipc = true;
