@@ -18,6 +18,10 @@
   };
   wayland.windowManager.sway = {
     enable = true;
+    package = pkgs.sway-unwrapped.override {
+      enableXWayland = false;
+      trayEnabled = false;
+    };
     systemd.enable = true;
     extraSessionCommands = ''
       export XDG_CURRENT_DESKTOP=sway;
@@ -50,7 +54,7 @@
       };
       bars = [{
         position = "top";
-        command = "${lib.getExe pkgs.waybar}";
+        command = "waybar";
       }];
       defaultWorkspace = "workspace 1";
       keybindings = let

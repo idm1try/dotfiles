@@ -514,6 +514,9 @@
            --table-selection-background-hover: #${colors.surface0} !important;
            --tab-line-selected-color: #${colors.crust}00 !important;
         }
+        ::selection {
+          background-color: #${colors.surface2} !important;
+        }
         .perf-photon-button-primary { background-color: #${colors.surface0} !important; }
         .perf-photon-button-primary:hover { background-color: #${colors.surface1} !important; }
         .devtools-tab-line { display: none !important; }

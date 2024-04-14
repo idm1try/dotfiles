@@ -44,6 +44,9 @@
       rm = "rm -r";
       du = "grc-rs du -h";
       df = "grc-rs df -h";
+      iw = "iwctl station wlan0";
+      find = "fd";
+      grep = "rg";
       copy = "wl-copy";
       ":q" = "exit";
       ":h" = "man";
