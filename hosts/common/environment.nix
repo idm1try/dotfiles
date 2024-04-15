@@ -8,7 +8,7 @@
       XDG_DATA_HOME = "$HOME/.local/share";
       XDG_BIN_HOME = "$HOME/.local/bin";
       XDG_PICTURES_DIR = "$HOME/pictures";
-      XDG_DOWNLOADS_DIR = "$HOME/downloads";
+      XDG_DOWNLOADS_DIR = "/tmp/downloads";
     };
   };
 }

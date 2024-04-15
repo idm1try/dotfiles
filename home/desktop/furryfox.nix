@@ -664,8 +664,8 @@
       "browser.gesture.swipe.right" = "";
       "browser.gesture.swipe.left" = "";
       "browser.translations.enable" = false;
-      "browser.download.dir" = "/home/idm1try/downloads";
-      "browser.download.lastDir" = "/home/idm1try/downloads";
+      "browser.download.dir" = "/tmp/downloads";
+      "browser.download.lastDir" = "/tmp/downloads";
       "browser.urlbar.showSearchSuggestionsFirst" = false;
       "media.videocontrols.picture-in-picture.enabled" = false;
       "extensions.formautofill.creditCards.enabled" = false;
