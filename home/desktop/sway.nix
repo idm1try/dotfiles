@@ -139,6 +139,7 @@
         unfocused = style;
         urgent = style;
       };
+      seat = { "*".hide_cursor = "when-typing enable"; };
       output = {
         "*".bg = "#${colors.mantle} solid_color";
         "eDP-1".scale = "1";
