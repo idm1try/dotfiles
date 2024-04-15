@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
-    nur.url = "github:nix-community/nur";
 
     nixos-apple-silicon = {
       url = "github:tpwrules/nixos-apple-silicon";
@@ -15,6 +14,11 @@
     };
     grc-rs = {
       url = "github:idm1try/grc-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    firefox-addons = {
+      url =
+        "gitlab:rycee/nur-expressions/83a5049cfc2e37d9ef5b540aa01c0e5cc1e2a00f?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

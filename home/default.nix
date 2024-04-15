@@ -7,7 +7,7 @@
 
     ./desktop/gtk.nix
     ./desktop/sway.nix
-    ./desktop/firefox.nix
+    ./desktop/furryfox.nix
     ./desktop/waybar.nix
   ];
   home.stateVersion = "21.11";
