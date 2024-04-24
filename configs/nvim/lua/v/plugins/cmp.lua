@@ -9,12 +9,16 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-calc",
       "saadparwaiz1/cmp_luasnip",
-      "L3MON4D3/LuaSnip",
+      "l3mon4d3/LuaSnip",
+      "rafamadriz/friendly-snippets",
     },
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
+
+      require("luasnip.loaders.from_vscode").lazy_load()
 
       local kinds = {
         Text = "",
@@ -112,6 +116,7 @@ return {
           { name = "luasnip" },
           { name = "nvim_lua" },
           { name = "buffer" },
+          { name = "calc" },
         },
         preselect = cmp.PreselectMode.None,
       })

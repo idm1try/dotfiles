@@ -835,7 +835,9 @@
         force = true;
         engines = {
           "4get" = {
-            urls = [{ template = "https://4get.ca/web?s={searchTerms}"; }];
+            urls = [{
+              template = "https://4get.silly.computer/web?s={searchTerms}";
+            }];
             definedAliases = [ "4g" ];
           };
           srx = {
