@@ -49,7 +49,7 @@
           natural_scroll = "enabled";
           accel_profile = "adaptive";
           scroll_factor = "0.45";
-          pointer_accel = "0.27";
+          pointer_accel = "0.47";
         };
       };
       bars = [{
