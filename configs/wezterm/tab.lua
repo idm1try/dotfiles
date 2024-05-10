@@ -81,6 +81,10 @@ local function get_process(tab)
 			{ Foreground = { Color = colors.yellow } },
 			{ Text = "󰃬" },
 		},
+		["timg"] = {
+			{ Foreground = { Color = colors.mauve } },
+			{ Text = "" },
+		},
 
 		[""] = {
 			{ Foreground = { Color = colors.blue } },
