@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url =
-      "github:nixos/nixpkgs/e68f2a37797d6d335829954ee9d94789625d7b94";
+      "github:nixos/nixpkgs/5bc228bd92e8e1e503f5f6ee873a7c4348af27ba";
 
     nixos-apple-silicon = {
       url = "github:tpwrules/nixos-apple-silicon";
