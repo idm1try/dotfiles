@@ -11,6 +11,9 @@
       stylua
       lua-language-server
 
+      rust-analyzer
+      rustfmt
+
       tailwindcss-language-server
       nodePackages.typescript
       nodePackages.typescript-language-server
@@ -22,7 +25,6 @@
       nixfmt-classic
 
       fzf
-      gcc
       gnumake
       unzip
     ];
