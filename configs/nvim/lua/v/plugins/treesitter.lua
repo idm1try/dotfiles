@@ -3,7 +3,7 @@ return {
   build = ":TSUpdate",
   event = { "BufReadPost", "BufNewFile" },
   dependencies = {
-    "windwp/nvim-ts-autotag",
+    { "windwp/nvim-ts-autotag", config = true },
     "nvim-treesitter/nvim-treesitter-textobjects",
   },
   config = function()
@@ -94,9 +94,6 @@ return {
           },
         },
         move = { enable = false },
-      },
-      autotag = {
-        enable = true,
       },
       indent = {
         enable = true,

@@ -131,6 +131,8 @@ return {
             GitSignsChange = { fg = colors.peach },
             GitSignsCurrentLineBlame = { link = "Comment" },
 
+            HimalayaHead = { fg = colors.overlay0 },
+
             IndentBlanklineChar = { fg = colors.surface0 },
             IndentBlanklineContextChar = { fg = colors.surface2 },
 

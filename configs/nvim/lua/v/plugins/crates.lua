@@ -4,13 +4,13 @@ return {
   event = "BufRead Cargo.toml",
   opts = {
     text = {
-      loading = "  Loading ",
+      loading = "  loading ",
       version = "  %s ",
       prerelease = "  %s ",
       yanked = "  %s ",
-      nomatch = "  No match ",
+      nomatch = "  no match ",
       upgrade = "  %s ",
-      error = "  Error fetching crate ",
+      error = "  error fetching crate ",
     },
   },
 }
