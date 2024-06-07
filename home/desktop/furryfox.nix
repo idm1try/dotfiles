@@ -1,9 +1,10 @@
 { pkgs, colors, inputs, ... }: {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox.override {
-      nativeMessagingHosts = [ pkgs.tridactyl-native ];
-    };
+    package =
+      inputs.nixpkgs-old.legacyPackages."aarch64-linux".firefox.override {
+        nativeMessagingHosts = [ pkgs.tridactyl-native ];
+      };
   };
   xdg.configFile."tridactyl/tridactylrc".text = ''
     set noiframe true

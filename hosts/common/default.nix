@@ -29,6 +29,8 @@
 
   sound.enable = true;
 
+  security.pam.services.swaylock = { };
+
   services = {
     upower.enable = true;
     fstrim.enable = true;
