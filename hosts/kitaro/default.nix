@@ -17,7 +17,7 @@
       experimentalGPUInstallMode = "driver";
       withRust = true;
     };
-    opengl.enable = true;
+    graphics.enable = true;
   };
 
   boot = {

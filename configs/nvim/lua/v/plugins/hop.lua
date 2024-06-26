@@ -3,7 +3,7 @@ return {
   keys = {
     {
       "f",
-      ":HopCamelCase<cr>",
+      ":HopWord<cr>",
       desc = "[hop]",
     },
   },
