@@ -52,6 +52,14 @@
           pointer_accel = "0.47";
         };
       };
+      startup = [{
+        command = ''
+          ${lib.getExe pkgs.swayidle} -w \
+            timeout 180 'swaylock -f' \
+            before-sleep 'swaylock -f'
+        '';
+        always = true;
+      }];
       bars = [{
         position = "top";
         command = "waybar";
@@ -64,9 +72,10 @@
           "${mod}+${toString i}" = "exec 'swaymsg workspace ${toString i}'";
           "${mod}+Shift+${toString i}" =
             "exec 'swaymsg move container to workspace ${toString i}'";
-        }) (lib.range 0 9));
+        }) (lib.range 1 9));
       in tagBinds // {
         "${mod}+o" = "exec ${lib.getExe pkgs.hyprpicker} -a -n";
+        "${mod}+0" = "exec swaylock -f";
 
         "${mod}+p" = ''
           exec ${lib.getExe pkgs.grim} -g "$(${
@@ -144,6 +153,21 @@
         "*".bg = "#${colors.mantle} solid_color";
         "eDP-1".scale = "1";
       };
+    };
+    extraConfig = ''
+      bindswitch lid:on exec sleep 4 && ${
+        lib.getExe pkgs.ffmpeg_7-headless
+      } -f v4l2 -s 640x480 -i /dev/video0 -ss 0:0:1 -frames 1 ~/pictures/shots/lid-$(date "+%Y%m%d"_"%Hh%Mm%Ss").jpg && ${
+        lib.getExe pkgs.xmppc
+      } --jid idm1trynotifications@5222.de --pwd "$(cat /var/secrets/xmpp_password)" -m message chat idm1try@5222.de "laptop opened"
+    '';
+  };
+  programs.swaylock = {
+    enable = true;
+    settings = {
+      no-unlock-indicator = true;
+      ignore-empty-password = true;
+      color = "${colors.crust}";
     };
   };
 }
