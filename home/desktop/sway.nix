@@ -97,11 +97,15 @@
         "${mod}+d" = "exec firefox";
 
         "XF86AudioMute" = "exec amixer sset Master toggle";
-        "XF86AudioRaiseVolume" = "exec amixer sset Master 5%+";
-        "XF86AudioLowerVolume" = "exec amixer sset Master 5%-";
+        "XF86AudioRaiseVolume" =
+          "exec ${pkgs.alsa-utils}/bin/amixer sset Master 5%+";
+        "XF86AudioLowerVolume" =
+          "exec ${pkgs.alsa-utils}/bin/amixer sset Master 5%-";
 
-        "${mod}+XF86AudioRaiseVolume" = "exec amixer sset Master 1%+";
-        "${mod}+XF86AudioLowerVolume" = "exec amixer sset Master 1%-";
+        "${mod}+XF86AudioRaiseVolume" =
+          "exec ${pkgs.alsa-utils}/bin/amixer sset Master 1%+";
+        "${mod}+XF86AudioLowerVolume" =
+          "exec ${pkgs.alsa-utils}/bin/amixer sset Master 1%-";
 
         "XF86AudioNext" = "exec ${lib.getExe pkgs.playerctl} next";
         "XF86AudioPrev" = "exec ${lib.getExe pkgs.playerctl} previous";

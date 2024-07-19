@@ -15,6 +15,7 @@
       peripheralFirmwareDirectory = ./firmware;
       useExperimentalGPUDriver = true;
       experimentalGPUInstallMode = "driver";
+      setupAsahiSound = true;
       withRust = true;
     };
     graphics.enable = true;
