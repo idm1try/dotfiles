@@ -63,13 +63,13 @@
       "locked": {
         "lastModified": 1708537354,
         "narHash": "sha256-T38n1bryzQHCCvhwacMJKZiCuFnQRDZvwYZhVhaGQ9M=",
-        "owner": "idm1try",
+        "owner": "mariesavch",
         "repo": "grc-rs",
         "rev": "8a6ef0843be6342c1d6bdc620df0d4dff700b4cc",
         "type": "github"
       },
       "original": {
-        "owner": "idm1try",
+        "owner": "mariesavch",
         "repo": "grc-rs",
         "type": "github"
       }

@@ -6,7 +6,7 @@ local fonts = require("fonts")
 local config = {
 	term = "wezterm",
 	set_environment_variables = {
-		TERMINFO_DIRS = "/etc/profiles/per-user/idm1try/share/terminfo",
+		TERMINFO_DIRS = "/etc/profiles/per-user/marie/share/terminfo",
 	},
 	window_padding = {
 		left = 30,

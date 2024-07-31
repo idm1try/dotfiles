@@ -1,8 +1,8 @@
 { pkgs, ... }: {
   programs.fish.enable = true;
-  users.users.idm1try = {
+  users.users.marie = {
     isNormalUser = true;
-    home = "/home/idm1try";
+    home = "/home/marie";
     extraGroups = [ "wheel" "audio" "video" "render" "input" ];
     shell = pkgs.fish;
   };

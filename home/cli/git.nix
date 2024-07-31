@@ -1,10 +1,10 @@
 { ... }: {
   programs.git = {
     enable = true;
-    userName = "idm1try";
-    userEmail = "idm1try@icloud.com";
+    userName = "mariesavch";
+    userEmail = "mariesavch@icloud.com";
     extraConfig = {
-      github.user = "idm1try";
+      github.user = "mariesavch";
       init.defaultBranch = "main";
       difftool.prompt = false;
       mergetool = {

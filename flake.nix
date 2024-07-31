@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     grc-rs = {
-      url = "github:idm1try/grc-rs";
+      url = "github:mariesavch/grc-rs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     firefox-addons = {

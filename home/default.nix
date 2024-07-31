@@ -14,7 +14,7 @@
   home.packages = with pkgs; [ ripgrep wezterm fd nodejs bun cargo rustc gcc ];
   xdg.configFile."wezterm" = {
     source = config.lib.file.mkOutOfStoreSymlink
-      "/home/idm1try/.dotfiles/configs/wezterm";
+      "/home/marie/.dotfiles/configs/wezterm";
     recursive = true;
   };
 }

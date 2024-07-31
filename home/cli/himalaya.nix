@@ -1,9 +1,9 @@
 { ... }: {
-  accounts.email.accounts.idm1try = {
+  accounts.email.accounts.marie = {
     primary = true;
-    userName = "idm1try";
-    realName = "Dmitry Savchenko";
-    address = "idm1try@icloud.com";
+    userName = "marie";
+    realName = "Marie Savchenko";
+    address = "mariesavch@icloud.com";
     passwordCommand = "cat /var/secrets/mail";
     imap = {
       host = "imap.mail.me.com";

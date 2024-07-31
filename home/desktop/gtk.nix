@@ -7,7 +7,7 @@ in {
       name = "CartographCF Nerd Font";
       size = 12;
     };
-    gtk2.configLocation = "/home/idm1try/.config/gtk-2.0/gtkrc";
+    gtk2.configLocation = "/home/marie/.config/gtk-2.0/gtkrc";
     gtk3.extraConfig.gtk-application-prefer-dark-theme = is_dark;
     gtk4.extraConfig.gtk-application-prefer-dark-theme = is_dark;
   };

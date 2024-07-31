@@ -161,9 +161,7 @@
     extraConfig = ''
       bindswitch lid:on exec sleep 4 && ${
         lib.getExe pkgs.ffmpeg_7-headless
-      } -f v4l2 -s 640x480 -i /dev/video0 -ss 0:0:1 -frames 1 ~/pictures/shots/lid-$(date "+%Y%m%d"_"%Hh%Mm%Ss").jpg && ${
-        lib.getExe pkgs.xmppc
-      } --jid idm1trynotifications@5222.de --pwd "$(cat /var/secrets/xmpp_password)" -m message chat idm1try@5222.de "laptop opened"
+      } -f v4l2 -s 640x480 -i /dev/video0 -ss 0:0:1 -frames 1 ~/pictures/shots/lid-$(date "+%Y%m%d"_"%Hh%Mm%Ss").jpg
     '';
   };
   programs.swaylock = {

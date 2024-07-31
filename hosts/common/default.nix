@@ -11,7 +11,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs colors; };
-    users.idm1try.imports = [ ../../home ];
+    users.marie.imports = [ ../../home ];
   };
   nix = {
     gc.automatic = true;
